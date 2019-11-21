@@ -1,0 +1,80 @@
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+	<!-- 数据库信息 -->
+	<property name="connection.driver_class">
+		com.mysql.jdbc.Driver
+	</property>
+	<property name="connection.url">jdbc:mysql:///bishe</property>
+	<property name="connection.username">root</property>
+	<property name="connection.password">123</property>
+	<!-- 可选项信息 -->
+	<property name="dialect">
+		org.hibernate.dialect.MySQLDialect
+	</property>
+	<!-- <property name="show_sql">true</property>
+	<property name="format_sql">true</property> -->
+	 <!--自动建表 -->
+	  <property name="hibernate.hbm2ddl.auto">update</property>
+	<!-- hbm文件 -->
+	<mapping class="entity.Admin" />
+	<mapping class="entity.Admire" />
+	   <mapping class="entity.Book" />
+	   <mapping class="entity.BookSon" />
+	   <mapping class="entity.BorrowTable" />
+	   <mapping class="entity.Category" />
+	   <mapping class="entity.Collect" />
+       <mapping class="entity.Comment" />
+	   <mapping class="entity.OnlineOrder" />
+	   <mapping class="entity.OnlineWarn" />
+	   <mapping class="entity.Refer" />
+	   <mapping class="entity.ReferTable" />
+	   <mapping class="entity.Reply"  />
+	   <mapping class="entity.ShareBook"  />
+	   <mapping class="entity.ShareBookCollect"  />
+	   <mapping class="entity.User" />
+       <mapping class="entity.ReferTable" />
+       <mapping class="entity.ApplyNear" />
+       <mapping class="entity.ConfirmOrder" />
+       <mapping class="entity.Topic" />
+       <mapping class="entity.TopicBook" />
+       <mapping class="entity.Slide" />
+        <mapping class="entity.Discount" />
+        <mapping class="entity.DiscountUser" />
+       <mapping class="entity.Reduce" />
+        <mapping class="entity.GroupMore" />
+         <mapping class="entity.GroupBook" />
+         <mapping class="entity.GroupMain" />
+         <mapping class="entity.GroupMember" />
+         <mapping class="entity.Dynamic" />
+         <mapping class="entity.DynamicComment" />
+         <mapping class="entity.DynamicReply" />
+         <mapping class="entity.CommentAdmire" />
+         <mapping class="entity.DynamicAdmire" />
+         <mapping class="entity.Fan" />
+           <mapping class="entity.BookType" />
+          <mapping  class="entity.MyEleBook"/>
+           <mapping  class="entity.ReadHistroy"/>
+           <mapping  class="entity.Notice"/>
+             <mapping  class="entity.HotSearch"/>
+           <mapping  class="entity.OutPay"/>
+             <mapping  class="entity.UserRecharge"/>
+               <mapping  class="entity.UserVipRecharge"/>
+                <mapping  class="entity.UserToUsers"/>
+                <mapping  class="entity.UserToBooks"/>
+                <mapping  class="entity.BookToUsers"/>
+                 <mapping  class="entity.BookToBooks"/>
+                 <mapping  class="entity.UserBrowse"/>
+                 <mapping  class="entity.UserSearch"/>
+
+</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,48 @@
+.j_select {
+	margin:0;
+	padding:0;
+	cursor:pointer;
+	position: relative;
+	background:#fff;
+	display:inline-block;
+	width:200px;
+}
+.j_select .current_select {
+	margin:0;
+	padding:0;
+	height:30px;
+	line-height:30px;
+	text-indent:1em;
+	border:1px solid #ccc;
+	box-shadow:1px 1px 2px #ccc;
+	border-right:0;
+}
+}
+.j_select ul {
+	margin:0;
+	padding:0;
+	 border:1px solid #eee;
+	border-radius:2px;
+	display:none; 
+	box-shadow:1px 1px 2px #ccc;
+	background:#fff;
+	position:absolute;
+	width:calc(100% - 2px) !important;
+	max-height:302px;
+	overflow:auto;
+	outline:none;
+	z-index:99 !important;
+}
+.j_select ul li {
+	margin:0;
+	padding:0;
+	line-height:30px;
+	text-indent:1em;
+	list-style:none;
+}
+.j_select ul li:hover {
+	background:#f90;color:#fff;cursor:default;
+}
+.j_select ul li.current_item {
+	background:#f90;color:#fff;cursor:default;
+}

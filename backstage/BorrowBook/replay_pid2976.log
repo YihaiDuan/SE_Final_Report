@@ -1,0 +1,40 @@
+JvmtiExport can_access_local_variables 0
+JvmtiExport can_hotswap_or_post_breakpoint 0
+JvmtiExport can_post_on_exceptions 0
+# 166 ciObject found
+ciMethod java/lang/Object <init> ()V 4097 1 28745 0 -1
+ciMethod java/lang/String <init> ([CII)V 4097 1 5430 0 -1
+ciMethod java/lang/String length ()I 4097 1 33622 0 -1
+ciMethod java/lang/String charAt (I)C 4097 1 114993 0 -1
+ciMethod java/lang/String startsWith (Ljava/lang/String;I)Z 2049 673 5376 0 -1
+ciMethod java/lang/String startsWith (Ljava/lang/String;)Z 2049 1 6447 0 -1
+ciMethod java/lang/String endsWith (Ljava/lang/String;)Z 2049 1 2028 0 -1
+ciMethod java/lang/String indexOf (I)I 3073 1 3214 0 -1
+ciMethod java/lang/String indexOf (II)I 1649 49153 860 0 -1
+ciMethod java/lang/String lastIndexOf (I)I 2049 1 1374 0 -1
+ciMethod java/lang/String lastIndexOf (II)I 977 49153 743 0 -1
+ciMethod java/lang/String indexOf (Ljava/lang/String;)I 2049 1 1172 0 -1
+ciMethod java/lang/String indexOf (Ljava/lang/String;I)I 2049 1 1748 0 -1
+ciMethod java/lang/String indexOf ([CII[CIII)I 1425 73729 1059 0 -1
+ciMethod java/lang/String substring (I)Ljava/lang/String; 2049 1 299 0 -1
+ciMethod java/lang/String substring (II)Ljava/lang/String; 2049 1 3133 0 -1
+ciMethod java/lang/AbstractStringBuilder <init> (I)V 2049 1 1969 0 -1
+ciMethod java/lang/AbstractStringBuilder append (Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; 4097 1 3989 0 -1
+ciMethod java/lang/AbstractStringBuilder append (I)Ljava/lang/AbstractStringBuilder; 0 0 1 0 -1
+ciMethod java/lang/StringBuilder <init> ()V 2049 1 1291 0 -1
+ciMethod java/lang/StringBuilder append (Ljava/lang/String;)Ljava/lang/StringBuilder; 4097 1 3190 0 -1
+ciMethod java/lang/StringBuilder append (I)Ljava/lang/StringBuilder; 0 0 1 0 -1
+ciMethod java/lang/StringBuilder toString ()Ljava/lang/String; 2049 1 1344 0 -1
+ciMethod java/net/URL getQuery ()Ljava/lang/String; 1025 1 128 0 -1
+ciMethod java/net/URL getPath ()Ljava/lang/String; 1025 1 128 0 -1
+ciMethod java/net/URL getUserInfo ()Ljava/lang/String; 1025 1 128 0 -1
+ciMethod java/net/URL getAuthority ()Ljava/lang/String; 1025 1 128 0 -1
+ciMethod java/net/URL getPort ()I 1025 1 128 0 -1
+ciMethod java/net/URL getProtocol ()Ljava/lang/String; 1025 1 128 0 -1
+ciMethod java/net/URL getHost ()Ljava/lang/String; 1025 1 128 0 -1
+ciMethod java/net/URL getRef ()Ljava/lang/String; 1025 1 128 0 -1
+ciMethod java/lang/Integer parseInt (Ljava/lang/String;I)I 193 369 24 0 -1
+ciMethod java/lang/Integer parseInt (Ljava/lang/String;)I 17 1 2 0 -1
+ciMethodData java/lang/String charAt (I)C 2 114993 orig 264 8 177 230 92 0 0 0 0 104 61 205 17 0 0 0 0 120 1 0 0 32 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 137 249 13 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 80 0 0 0 255 255 255 255 7 0 1 0 0 0 0 0 data 10 0x10007 0x0 0x40 0x1bf31 0xa0007 0x1bf31 0x30 0x0 0x120002 0x0 oops 0
+ciMethodData java/lang/String length ()I 2 33622 orig 264 8 177 230 92 0 0 0 0 24 60 205 17 0 0 0 0 32 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 177 10 4 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 255 255 255 0 0 0 0 0 0 0 0 data 0 oops 0
+ciMethodData java/lang/Object <init> ()V 2 28745 orig 264 8 177 230 92 0 0 0 0 128 4 205 17 0 0 0 0 32 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 7
