@@ -1,0 +1,81 @@
+page{
+   background:#f7f7f7;
+     font-size:36rpx;
+}
+.top{
+    background:#fff;
+    margin:20rpx 0rpx;
+    padding:20rpx 0;
+    text-align:center;
+    letter-spacing: 16rpx;
+    font-size:36rpx;
+    color:#007bff;
+}
+.placeholder1{
+   color:#ccc;
+}
+.username,.password,.name,.name3{
+   background:#fff;
+   padding:20rpx;
+   display:flex;
+ 
+}
+.username,.name,.password{
+  border-bottom:2rpx solid #ccc;
+}
+.name2{
+  flex-direction: column;
+ 
+}
+.text1{
+ 
+  line-height:50rpx;
+  margin-right:20rpx;
+ letter-spacing: 4rpx;
+ 
+}
+.text2{
+  padding-bottom:20rpx;
+
+
+}
+.inputclass{
+  flex:1;
+
+
+}
+.button{
+   margin:60rpx 20rpx;
+
+    background:#007bff;
+   color:#fff;
+  
+}
+.buttom-hover{
+
+   background:#FE5701;
+   color:#fff;
+
+}
+.navigater{
+   padding:20rpx 20rpx;
+  color:#999;
+
+}
+.checkbox{
+    margin-right:30rpx;
+    width:400rpx;
+  
+}
+.username1{
+  font-size:30rpx;
+ 
+  padding-left:40rpx;
+  padding-right:40rpx;
+  color:#ccc;
+  display:flex;
+  background:#fff;
+ border-bottom:2rpx solid #ccc;
+}
+
+

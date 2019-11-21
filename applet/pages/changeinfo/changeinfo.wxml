@@ -1,0 +1,76 @@
+
+
+<view>
+
+<view   wx:if="{{nicknamebol}}">
+<form   bindsubmit="changenickname">
+<view style="display:flex;">
+<input  type="text"   value="{{nickname}}"  name="nickname"  class="changename"  />
+<button form-type="submit"  value="保存"  size="mini" style="margin:30rpx 10rpx;background:#007bff;color:#fff;">保存</button>    
+</view>
+</form>
+<text style="font-size:26rpx;margin-left:50rpx;margin-top:-10rpx;color:#999;display:block;">好名字可以让别人更容易记住你</text>
+
+</view>
+
+<view   wx:if="{{signbol}}">
+<form   bindsubmit="changesign">
+<view style="display:flex;">
+<input  type="text"   value="{{sign}}"  name="sign"  class="changename"  />
+<button form-type="submit"  value="保存"  size="mini" style="margin:30rpx 10rpx;background:#007bff;color:#fff;">保存</button>    
+</view>
+</form>
+<text style="font-size:26rpx;margin-left:50rpx;margin-top:-10rpx;color:#999;display:block;">留下你的个性签名，让更多人了解你</text>
+
+</view>
+
+
+
+
+
+<view    wx:if="{{e_mailbol}}" >
+<form  bindsubmit="changemail" >
+<view style="display:flex;">
+<input  type="text"  name="e_mail" value="{{e_mail}}"  name="e_mail"  class="changename" />
+<button form-type="submit"  value="保存"  size="mini" style="margin:30rpx 10rpx;background:#007bff;color:#fff;">保存</button>  
+</view>
+</form>
+</view>
+
+
+
+
+<view    wx:if="{{sexbol}}">
+<form    bindsubmit="changesex">
+<view style="display:flex;">
+<radio-group class="radio-group group" bindchange="radioChange"   name="sex" >
+  <label class="radio" wx:for="{{items}}" style="margin-right:40rpx;">
+<label  wx:if="{{item.name==sex}}" >
+    <radio value="{{item.name}}"  wx:if="{{item.name==sex}}"   checked />{{item.value}}
+</label>
+
+<label  wx:if="{{item.name!=sex}}">
+<radio value="{{item.name}}"     />{{item.value}}
+</label>
+
+  </label>
+</radio-group>
+
+<button form-type="submit"  value="保存"  size="mini" style="margin:20rpx 10rpx;background:#007bff;color:#fff;">保存</button> 
+</view>
+</form>
+
+</view>
+
+
+<view   wx:if="{{phonebol}}">
+<form  bindsubmit="changephone" >
+<view style="display:flex;">
+<input  type="text"  name="phone" value="{{phone}}"  name="phone"  class="changename" />
+<button form-type="submit"  value="保存"  size="mini" style="margin:30rpx 10rpx;background:#007bff;color:#fff;">保存</button>  
+</view>
+</form>
+</view>
+
+
+</view>

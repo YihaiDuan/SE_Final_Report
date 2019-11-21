@@ -1,0 +1,51 @@
+
+
+
+
+<view class="box">
+<view class="content">
+<view class="booknews">
+<image src="{{groupbook.bookimages}}" class="bookimages"></image>
+<view class="bookname">
+<view class="bone">{{groupbook.booktitle}}</view>
+<view class="btow">作者：{{groupbook.author}}</view>
+<view class="price1">押金: <text style="color:#007bff;">{{groupbook.cash}}</text>
+</view>
+</view>
+
+</view>
+</view>
+
+<view class="integral">
+<text style="flex:1;font-size:34rpx;">借阅币剩余: {{money}}(1借阅币可以抵押1元)</text>
+
+</view>
+</view>
+
+
+
+<view class="payable">需支付:<text style="margin-left:16rpx;font-size:38rpx;color:#007bff;">{{groupbook.cash}}元</text></view>
+
+
+<view style="text-align:center;">
+<form  bindsubmit="pay"  report-submit="true"  wx:if="{{combol}}">
+<button  plain="true"  form-type="submit" size="mini" style="color:#fff;background:#007bff;border-color:#007bff;padding:0 280rpx;font-size:35rpx">确认支付</button>
+</form>
+
+<navigator hover-class="none" url="../recharge/recharge"  wx:if="{{!combol}}">
+<button  plain="true"   size="mini" style="color:#fff;background:#007bff;border-color:#007bff;padding:0 280rpx;font-size:35rpx">立即充值</button>
+</navigator>
+
+</view>
+
+<view class="tishi">
+<view class="title">温馨提示</view>
+<view class="content">
+<text class="ctext">· 组团图书享受打折优惠</text>
+<text class="ctext">· 组团成功借书单生效</text>
+<text class="ctext">· 组团活动时间到期，组团解散，押金退回</text>
+<text class="ctext">· 在"借单"页面点击"拼"即可调取拼团二维码</text>
+</view>
+</view>
+
+

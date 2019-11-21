@@ -1,0 +1,61 @@
+<scroll-view scroll-y="true" class="page-body">
+
+<navigator url="../mymessage/mymessage"  hover-class="none">
+<view class="news" style="margin-bottom:0;position:relative">我的消息
+<text    wx:if="{{readstatus=='true'}}"   class="iconfont icon-xiaohongdianx" style="color:#D00000;font-size:60rpx;position:absolute;top:26rpx;right:30rpx;" >
+</text>
+</view>
+</navigator>
+
+<navigator url="../myapply/myapply"  hover-class="none">
+
+<view class="news"  style="margin-top:0;border-top:0;position:relative">我的申请
+<text   wx:if="{{dostatus=='true'}}"  class="iconfont icon-xiaohongdianx" style="color:#D00000;font-size:60rpx;position:absolute;top:26rpx;right:30rpx;" >
+</text>
+</view>
+</navigator>
+<view class="news" style="line-height:40rpx;" >
+<view class="section" style="padding:0;margin-bottom:20rpx;display:flex">
+
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}"   style="flex:1">
+  <view  class="picker" style="padding-top:10rpx;"><text>{{array[index]}}</text>
+    </view>
+  </picker>
+<view  bindtap="map"   class="map">地图导航</view>
+
+</view>
+
+
+<view class="booknews"  wx:for="{{sharelist}}" style="padding:18rpx;">
+
+<navigator url="../neardetails/neardetails?borrowid={{item.borrowid}}&distance={{item.distance}}"  hover-class="none" style="display:flex;">
+    <view>
+    <image src="{{item.bookimages}}" class="left" ></image>
+    </view>
+     
+    <view class="right">
+     <text class="one">{{item.booktitle}}</text>
+     <text class="tow">{{item.introduce}}</text>
+     <view class="user">
+     <text class="username" style="width:140rpx">借书人:{{item.nickname}}</text>
+     <text class="iconfont icon-dingwei" style="font-size:26rpx; vertical-align:text-top;margin-right:6rpx;margin-left:20rpx;color:#007bff;"></text>
+
+     <text class="username1"   wx:if="{{item.distance=='距离未知'}}">{{item.distance}}</text>
+
+ <text class="username1"   wx:if="{{item.distance!='距离未知'}}">{{item.distance}}km</text>
+
+<text class="username1" style="margin-left:18rpx;"><text class="iconfont icon-time" style="font-size:26rpx; vertical-align:text-top;margin-right:10rpx;margin-left:20rpx;color:#007bff;position:relative;bottom:4rpx;"></text><text style="position:relative;top:2rpx;"> 剩{{item.day}}天</text></text>   
+     </view>
+
+    </view>
+ </navigator>
+
+</view>
+
+</view>
+
+ <view class="load" wx:if="{{show}}">已加载完全部内容</view>
+</scroll-view>
+
+
+

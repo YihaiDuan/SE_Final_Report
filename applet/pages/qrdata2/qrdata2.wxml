@@ -1,0 +1,64 @@
+
+
+<view class="top" wx:if="{{!scanbol}}">
+ <icon type="success" size="80" color="#007bff"/>
+ <text  class="textnotice">还书成功!</text> 
+</view>
+
+
+
+<view     wx:if="{{scanbol}}">
+<view class="top" >
+<text class="one" wx:if="{{BorrowQR!=0}}">请进行还书确认</text>
+</view>
+
+
+<!-- <view class="news"   wx:if="{{BorrowQR!=0}}">
+<image src="http://localhost:8080/BorrowBook/images/{{BorrowQR.BorrowQR}}" class="image">
+</image> 
+</view> -->
+
+
+<!--确认退款-->
+
+<view  wx:if="{{pay}}">
+<view class="payable"style="margin-left:50rpx">图书馆退押金:<text style="margin-left:16rpx;font-size:38rpx;color:#007bff;">{{count}}元</text></view>
+
+<form  bindsubmit="returnbook"  report-submit="true"  >
+<button  plain="true"  form-type="submit" size="mini" style="color:#fff;background:#007bff;border-color:#007bff;margin-left:10px;padding:0px 280rpx;font-size:34rpx">确认还书</button>
+</form>
+
+</view>
+<!--支付费用-->
+<view   wx:if="{{!pay}}">
+
+<view class="payable">需支付:<text style="margin-left:16rpx;font-size:38rpx;color:#007bff;">{{-count}}元</text></view>
+
+
+
+
+
+<view style="text-align:center;"   wx:if="{{paybol}}">
+<form  bindsubmit="pay"  report-submit="true"  wx:if="{{combol}}">
+<button  plain="true"  form-type="submit" size="mini" style="color:#fff;background:#007bff;border-color:#007bff;padding:0 280rpx;font-size:34rpx">确认支付</button>
+</form>
+
+<navigator hover-class="none" url="../recharge/recharge"  wx:if="{{!combol}}">
+<button  plain="true"   size="mini" style="color:#fff;background:#007bff;border-color:#007bff;padding:0 280rpx;font-size:34rpx">立即充值</button>
+</navigator>
+</view>
+
+<view style="text-align:center;"   wx:if="{{!paybol}}">
+<form   report-submit="true"  wx:if="{{combol}}">
+<button  plain="true"  size="mini" style="color:#fff;background:#007bff;border-color:#007bff;padding:0 280rpx;font-size:34rpx">已支付</button>
+</form>
+</view>
+
+
+</view>
+
+</view>
+
+
+
+

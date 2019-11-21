@@ -1,0 +1,83 @@
+
+.body{
+   position:absolute;
+
+
+
+}
+.page-body{
+  display:flex;
+  flex-direction: column;
+}
+.top{
+  display:flex;
+  flex-direction: column;
+}
+.one{
+   margin:30rpx 0; 
+   flex:1;
+   text-align: center;
+   font-size:30rpx;
+}
+.news{
+    margin:20rpx 60rpx;
+  background: #fff;
+  padding-bottom:20rpx;
+  border-radius: 10rpx;
+}
+.image{
+    display:block;
+    margin:0 auto;
+   width:480rpx;
+   height:480rpx;
+}
+
+.booknews{
+   display:flex;
+   padding:0 160rpx;
+}
+
+.booknews image{
+ width:40rpx;
+ height:40rpx;
+margin-right:20rpx;
+
+}
+.text{
+    display:block;
+   text-align:center;
+    font-size:30rpx;
+
+}
+.list{
+    flex:1;
+    padding:20rpx 30rpx;
+    border-bottom:1px solid #f6f7f8;
+    display:flex;
+
+}
+.limage{
+    width:140rpx;
+    height:186rpx;
+}
+.listright{
+    flex:1;
+    padding-left:20rpx;
+    display:flex;
+    flex-direction: column;
+
+}
+.l1{
+  font-size:34rpx;
+  margin-bottom:20rpx;
+}
+.l2{
+   font-size:28rpx;
+   color:#ccc;
+}
+.bottom{
+margin-right:20rpx;
+margin-top:150rpx;
+font-size:26rpx;
+
+}

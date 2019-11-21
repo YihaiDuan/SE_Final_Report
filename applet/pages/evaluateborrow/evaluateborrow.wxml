@@ -1,0 +1,39 @@
+<view class="top"  >
+<text style="line-height:60rpx;font-size:34rpx;margin-right:30rpx;color:#999;">图书评分:</text>
+<view style="display:flex;position:relative;">
+<view wx:for="{{stars}}" style="flex:1;">
+  <image class="star-image" style="left: {{item*80}}rpx" src="{{key > item ?(key-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
+    <view class="item" style="left:0rpx" data-key="{{item+0.5}}" bindtap="selectLeft"></view>
+    <view class="item" style="left:20rpx" data-key="{{item+1}}" bindtap="selectRight"></view>
+  </image>
+</view>
+
+</view>
+<text style="line-height:60rpx;position:absolute;right:80rpx;top:40rpx;color:#007bff;font-weight:600;font-size:34rpx;">{{evaluate}}</text>
+</view>
+<view class="release">
+<form bindsubmit="submit">
+    <textarea placeholder="请输入您对此书的看法" name="textarea"   name="content"  value="{{content}}"
+    placeholder-style="font-size:28rpx;line-height:40tpx;letter-spacing:4rpx;color:#999;" style="padding:30rpx;font-size:28rpx;line-height:40tpx;letter-spacing:4rpx;height:300rpx;border-bottom:1rpx solid #F5F6F0" maxlength="50" bindinput="changevalue"/>
+     
+     
+<view class="nickname"   style="display:flex;margin-bottom:50rpx;padding 10rpx 30rpx;margin-top:20rpx">
+<radio-group  style="flex:1" class="radio-group" >
+<label    wx:if="{{nicknamebol}}" >
+    <radio value="true" bindtap="radioChange"  data-id="{{1}}" checked="true"/>  匿名</label>
+     <label  wx:if="{{!nicknamebol}}" >
+     <radio value="false"bindtap="radioChange"  data-id="{{0}}" />  匿名
+     </label> 
+</radio-group>
+<view  style="margin-right:20rpx;margin-top:10rpx">
+你的评论会以匿名的形式展现
+</view>
+</view>
+
+   
+    <view style="clear:both;text-align:center;">
+    <button form-type="submit" style="background:#007bff;color:#fff;font-size:36rpx;border-color:#007bff;padding:0 280rpx;" plain="true" size="mini"> 提交 </button>
+    </view>
+  </form>
+</view>
+

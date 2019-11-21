@@ -1,0 +1,16 @@
+
+.top{
+height:150rpx;
+padding-top:60rpx;
+text-align: center;
+
+
+}
+.textnotice{
+
+color:#333;
+margin-top:40rpx;
+font-weight: 700;
+font-size:34rpx;
+display: block;
+}

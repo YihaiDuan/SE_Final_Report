@@ -1,0 +1,137 @@
+
+<navigator url="../sharehome/sharehome"  wx:if="{{bol}}"  style="display:flex"  hover-class="none"  >
+<view class="recommend"    >
+<text 
+class="iconfont icon-tubiaolunkuohua11 " style="font-size:50rpx;line-height:60rpx;margin-right:10rpx;margin-left:-6rpx;color:#007bff"></text><text class="retext">私人图书圈</text>
+</view>
+</navigator>
+
+
+<view class="recommend" style="margin-top:30rpx;"  wx:if="{{!bol}}"   bindtap="nologin" >
+
+<text class="iconfont icon-tubiaolunkuohua11"style="font-size:50rpx;line-height:60rpx;margin-right:10rpx;margin-left:-6rpx;color:#007bff"></text><text class="retext">私人图书圈</text>
+</view>
+
+
+<navigator url="../sharepeople/sharepeople" hover-class="none" wx:if="{{bol}}">
+<view class="recommend1"    >
+<text class="iconfont icon-wodefenxiang" style="font-size:30rpx;line-height:60rpx;margin-right:23rpx;color:#007bff"></text>
+<text class="retext">我的私书</text>
+</view>
+</navigator>
+
+
+
+<view class="recommend1" wx:if="{{!bol}}"  bindtap="nologin"   hover-class="none">
+<text class="iconfont icon-wodefenxiang" style="font-size:30rpx;line-height:60rpx;margin-right:23rpx;color:#007bff"></text>
+<text class="retext">我的私书</text>
+</view>
+
+
+
+<view   wx:if="{{bol}}" >
+
+<!--已经上传过个人信息-->
+
+<view  wx:if="{{logs.personQR!='null'&&logs.latitude!='null'}}" >
+<view class="recommend"  bindtap="sharebookscan"  >
+<text class="iconfont icon-saoyisao" style="font-size:35rpx;line-height:60rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">扫码分享</text>
+</view>
+</view>
+
+<!--还没有上传过个人信息-->
+<view  wx:if="{{logs.personQR=='null'&&logs.latitude=='null'}}" >
+<view class="recommend"  bindtap="nosharenolocation"  >
+<text class="iconfont icon-saoyisao" style="font-size:38rpx;line-height:60rpx;margin-right:17rpx;color:#007bff"></text>
+<text class="retext">私人分享</text>
+</view>
+</view>
+
+
+
+<view  wx:if="{{logs.personQR!='null'&&logs.latitude=='null'}}" >
+<view class="recommend"  bindtap="nolocation"  >
+<text class="iconfont icon-saoyisao" style="font-size:38rpx;line-height:60rpx;margin-right:17rpx;color:#007bff"></text>
+<text class="retext">私人分享</text>
+</view>
+</view>
+
+
+<view  wx:if="{{logs.personQR=='null'&&logs.latitude!='null'}}" >
+<view class="recommend"  bindtap="noshare"  >
+<text class="iconfont icon-saoyisao" style="font-size:38rpx;line-height:60rpx;margin-right:17rpx;color:#007bff"></text>
+<text class="retext">私人分享</text>
+</view>
+</view>
+</view>
+
+<view class="recommend"  bindtap="nologin" wx:if="{{!bol}}"    >
+<text class="iconfont icon-saoyisao" style="font-size:38rpx;line-height:60rpx;margin-right:17rpx;color:#007bff"></text>
+<text class="retext">私人分享</text>
+</view>
+
+
+<view  wx:if="{{bol}}">
+
+
+<view  wx:if="{{logs.latitude=='null'}}"   bindtap="sharelocation">
+
+<view class="recommend "     >
+<text class="iconfont icon-fujin1" style="font-size:38rpx;line-height:60rpx;margin-right:17rpx;color:#007bff"></text>
+<text class="retext">附近的人</text>
+</view>
+
+
+
+</view>
+
+
+
+<view  wx:if="{{logs.latitude!='null'}}"   >
+<navigator url="../nearpeople/nearpeople?action=distance"  hover-class="none">
+<view class="recommend">
+<text class="iconfont icon-fujin1" style="font-size:35rpx;line-height:60rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">附近的人</text>
+
+<text  wx:if="{{dostatus=='true'||readstatus=='true'}}"   class="iconfont icon-xiaohongdianx" style="color:#D00000;font-size:60rpx;position:absolute;top:36rpx;right:40rpx;" >
+</text>
+</view>
+
+
+</navigator>
+</view>
+
+</view>
+
+
+
+<view  wx:if="{{!bol}}"  bindtap="nologin">
+
+<view class="recommend"     >
+<text class="iconfont icon-fujin1" style="font-size:35rpx;line-height:60rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">附近的人</text>
+</view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+

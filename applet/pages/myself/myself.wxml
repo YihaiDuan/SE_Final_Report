@@ -1,0 +1,123 @@
+<view class="mynews">
+
+
+
+<navigator url="../register/register" wx:if="{{!bol}}"   hover-class="none">
+<image src="../../images/userimages.png" class="userimage"></image>
+</navigator>
+
+
+<navigator url="../mynews/mynews" wx:if="{{bol}}"
+hover-class="none">
+
+
+<image src="../../images/userimages.png"    wx:if="{{logs.userimages=='null'}}"  class="userimage"></image>
+
+<image src="{{logs.userimages}}"    wx:if="{{logs.userimages!='null'}}"  class="userimage"></image>
+
+</navigator>
+
+<view class="user"  wx:if="{{bol}}">
+<text class="name">昵称:{{logs.nickname}}</text>
+</view>
+<text>余额:{{moneyscore.money}}</text>
+<text>积分:{{moneyscore.score}}</text>
+</view>
+
+
+
+<view class="recommend"     wx:if="{{!bol}}"
+bindtap="nologin">
+<text class="iconfont icon-shoucang" style="font-size:35rpx;line-height:60rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">我的收藏</text>
+</view>
+
+
+<navigator url="../collect/collect"      wx:if="{{bol}}"    style="display:flex"  hover-class="none">
+<view class="recommend"  >
+<text class="iconfont icon-shoucang" style="font-size:35rpx;line-height:60rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">我的收藏</text>
+</view>
+</navigator>
+
+
+
+<navigator  url='../mycomment/mycomment'  style="display:flex"  hover-class="none" >
+<view class="recommend"    wx:if="{{bol}}">
+
+<text class="iconfont icon-wodexiaoxi" style="font-size:35rpx;line-height:60rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">评论消息</text>  
+</view>
+</navigator>
+
+
+
+<!--用户没有登录-->
+
+<view class="recommend"    wx:if="{{!bol}}"
+bindtap="nologin">
+<!--<image src="../../images/我的评论.png" class="reimage"></image>-->
+<text class="iconfont icon-wodexiaoxi" style="font-size:35rpx;line-height:60rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">评论消息</text>  
+
+</view>
+
+<navigator url="../refer/refer"  hover-class="none"   wx:if="{{bol}}">
+<view class="recommend" style="position:relative"      >
+<text class="iconfont icon-tuijian2" style="font-size:35rpx;line-height:60rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">推荐阅读</text>
+<text class="iconfont icon-xiaohongdianx" style="color:#D00000;font-size:60rpx;position:absolute;top:35%;right:30rpx;" wx:if="{{referstatus}}"></text>
+</view>
+</navigator>
+
+
+
+
+
+
+
+<view class="recommend" style="position:relative" wx:if="{{!bol}}" bindtap="nologin">
+<text class="iconfont icon-tuijian2" style="font-size:35rpx;line-height:60rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">推荐阅读</text>
+</view>
+
+<navigator url="../libmap/libmap"  hover-class="none">
+<view class="recommend"   >
+<text class="iconfont icon-dingwei" style="font-size:35rpx;line-height:60rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">书馆位置</text>
+</view>
+</navigator>
+<contact-button 
+  type="default-light" 
+  size="20"
+  session-from="weapp"
+  open-type="contact" 
+  style="padding:20rpx;padding-left:40rpx;background:#fff;position:relative;"><text class="iconfont icon-kefu" style="position:absolute;left:40rpx;top:40rpx;color:#007bff;font-size:35rpx;"></text><text style="margin-left:16rpx;font-size:35rpx;position:absolute;top:50%;color:#000;margin-lefr:10rpx;">客服消息
+  </text>
+  <contact-button  style="background:#fff;opacity:0"></contact-button>
+ <contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button>
+</contact-button>
+<view style="height:20rpx;background:#fff;margin-bottom:30rpx;"></view>
+
+
+<navigator url="../mywallet/mywallet"  wx:if="{{bol}}"   hover-class="none">
+<view class="recommend" style="position:relative"  >
+<text class="iconfont icon-tuijian2" style="font-size:35rpx;line-height:60rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">我的账户</text>
+</view>
+</navigator>
+
+<view class="recommend" style="position:relative" wx:if="{{!bol}}" bindtap="nologin">
+
+<text class="iconfont icon-tuijian2" style="font-size:35rpx;line-height:60rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">我的账户</text>
+</view>
+
+<navigator url="../myset/myset"   hover-class="none">
+<view class="recommend"    >
+<text class="iconfont icon-shezhi" style="font-size:35rpx;line-height:60rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">设置</text>
+</view>
+</navigator>
+
+

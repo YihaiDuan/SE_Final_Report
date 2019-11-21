@@ -1,0 +1,123 @@
+<scroll-view class="page-body" scroll-y="true">
+<view class="text">
+ <image src="{{sharedetail.userimages}}" class="userimage"></image>
+ <view class="usernews" style="flex:1;margin-left:30rpx;">
+   <view class="user">
+     <text class="username2">{{sharedetail.nickname}}</text>
+      <text class="iconfont icon-dingwei" style="font-size:26rpx; vertical-align:text-top;margin-right:10rpx;color:#007bff;margin-top:6rpx;"></text>
+     <text class="username2"  wx:if="{{distance!='距离未知'}}">{{distance}}km</text>
+<text class="username2"  wx:if="{{distance=='距离未知'}}">{{distance}}</text>
+
+     </view>
+<navigator url="../sharepeople2/sharepeople2?userid={{sharedetail.userid}}&distance={{distance}}">
+ <view class="booknum">目前{{sharedetail.sharenum}}本可借</view>
+ </navigator>
+
+ </view>
+ <view class="qrcode">
+ 
+ <image class="qrimage"  data-url="{{sharedetail.personqr}}"  bindtap="download" src="http://localhost:8080/BorrowBook/images/{{sharedetail.personqr}}" ></image>
+ <text class="borrow" >点击先向Ta借书</text>
+ </view>
+ </view>
+<view class="top">
+<image src="{{sharedetail.bookimages}}" class="timages" mode="widthFix"/>
+<view class="zhebox">
+</view>
+<view class="booknews">
+<view class="bookone">
+<view class="bookimages">
+<image src="{{sharedetail.bookimages}}" style="width:310rpx;height:290rpx;margin-left:-55rpx;margin-top:-13rpx;" ></image>
+</view>
+<view class="bn">
+<view class="bone">{{sharedetail.sharebooktitle}}</view>
+<navigator  hover-class="none" url="../searchauthor/searchauthor?author={{detail.author}}">
+<view class="btow">作者：<text style="color:#54BB5F;">{{sharedetail.author}}</text></view>
+</navigator>
+
+<view class="bfour">藏书量：1本</view>
+<view class="bfour">版本号：{{sharedetail.isbn}}</view>
+<view class="bfour">出版社：{{sharedetail.publish}}</view>
+<view class="bfour">出版日期：{{sharedetail.publishdate}}</view>
+<view class="bfour"  >押金: <text  style="color:#007bff;font-size:40rpx">￥{{sharedetail.cash}}</text></view>
+
+</view>
+</view>
+
+</view>
+<view class="booktow">
+<view class="left">
+
+</view>
+
+<view class="right">
+
+</view>
+</view>
+
+
+<view   wx:if="{{bol}}"   >
+<text  bindtap="collect"  wx:if="{{sharedetail.collectbol=='false'}}"  data-shareid="{{sharedetail.shareid}}">收藏{{sharedetail.collectbol}}</text>
+
+
+<text  bindtap="nocollect" wx:if="{{sharedetail.collectbol=='true'}}"  data-shareid="{{sharedetail.shareid}}">已收藏{{sharedetail.collectbol}}</text>
+</view>
+
+
+
+<view class="bookthree">
+
+<view class="b1"  wx:if="{{bol&&sharedetail.collectbol=='false'}}" bindtap="collect"    data-shareid="{{sharedetail.shareid}}">   
+ <text class="iconfont icon-shoucang" style="margin-right:12rpx;font-size:28rpx;color:#fff"></text>收藏
+ </view>
+
+ <view class="b1"  wx:if="{{bol&&sharedetail.collectbol=='true'}}" bindtap="nocollect"  data-shareid="{{sharedetail.shareid}}">    
+ <text class="iconfont icon-shoucang" style="margin-right:12rpx;font-size:28rpx;color:#007bff"></text>已收藏
+ </view>
+
+
+<view class="b1"   bindtap="nologin" wx:if="{{!bol}}">   
+ <text class="iconfont icon-shoucang" style="margin-right:12rpx;font-size:28rpx;color:#fff"></text>收藏
+ </view>
+
+<view class="b2"    wx:if="{{bol}}" style=" vertical-align:text-top;">
+
+<text  class="iconfont icon-fenxiang1" style="margin-right:12rpx;font-size:28rpx;color:#fff;position:relative;top:-8rpx;"></text><button  plain="true"  open-type="share"
+size="mini" style="border-color:rgba(255,255,255,0);color:#fff;line-height:1;font-size:28rpx;padding-top:10rpx;position:relative;top:-3rpx;padding-left:0;">分享</button>
+</view>
+<view class="b2"  bindtap="nologin" wx:if="{{!bol}}">
+<text  class="iconfont icon-fenxiang1" style="margin-right:12rpx;font-size:28rpx;color:#fff"></text>分享
+</view>
+
+</view>
+</view>
+
+
+
+  <view style="border-top:20rpx solid #F5F5F5;">
+  <view class="synopsis">
+   <view class="imagetop" style="width:100%;height:">
+   </view>
+  </view>
+
+    <view class="abstractbody "  >
+<text class="jianjie">内容简介</text>
+ <text class="jianjiebody {{currentTab[0] ? 'on' : ''}}" >
+  <text class="text1">{{sharedetail.summary}}</text>
+ </text>
+</view>
+</view>
+   <view style="border-top:20rpx solid #F5F5F5;">
+  <view class="synopsis">
+   <view class="imagetop" style="width:100%;height:">
+   </view>
+  </view>
+
+</view>
+
+  
+ 
+</scroll-view>
+
+
+

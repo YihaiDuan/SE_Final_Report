@@ -1,0 +1,93 @@
+<scroll-view class="box" scroll-y="true">
+
+<view class="author" style="display:flex;">
+<view style="flex:1;">
+<navigator   wx:if="{{logs.userid==dynamicdetail.userid}}"  url="../userinf/userinf?userid={{dynamicdetail.userid}}&bol1=1"  hover-class="none">
+<image src="{{dynamicdetail.userimages}}" class="headimages"></image>
+</navigator>
+
+<navigator 
+wx:if="{{logs.userid!=dynamicdetail.userid}}"  url="../userinf/userinf?userid={{dynamicdetail.userid}}&bol1=0" hover-class="none">
+<image src="{{dynamicdetail.userimages}}" class="headimages"></image>
+</navigator>
+
+<view class="user">
+<view class="username"><navigator   wx:if="{{logs.userid==dynamicdetail.userid}}"  url="../userinf/userinf?userid={{dynamicdetail.userid}}&bol1=1"  hover-class="none">{{dynamicdetail.nickname}}
+</navigator>
+
+<navigator   wx:if="{{logs.userid!=dynamicdetail.userid}}"  url="../userinf/userinf?userid={{dynamicdetail.userid}}&bol1=0"  hover-class="none">{{dynamicdetail.nickname}}
+</navigator>
+</view>
+<view class="usertime">{{dynamicdetail.date}}</view>
+</view>
+</view>
+<view   wx:if="{{bol}}">
+<view  wx:if="{{dynamicdetail.fanbol!='2'}}">
+<view class="follow"   wx:if="{{dynamicdetail.fanbol=='0'}}"  data-otherid="{{dynamicdetail.userid}}"  data-dynamicid="{{dynamicdetail.dynamicid}}" bindtap="AddFan">+关注</view>
+<view class="follow"   wx:if="{{dynamicdetail.fanbol=='1'}}"  data-otherid="{{dynamicdetail.userid}}"  data-dynamicid="{{dynamicdetail.dynamicid}}"  bindtap="DeleteFan">已关注</view>
+</view>
+</view>
+
+<!-- <view  wx:if="{{!bol}}">
+<view class="follow" bindtap="nologin" >+关注</view>
+</view> -->
+
+
+</view>
+<view class="title" style="margin-top:10rp;padding:0 30rpx;">{{dynamicdetail.title}}</view>
+<view class="content" style="margin-bottom:30rpx;margin-top:30rpx;">
+<view class="paragraph">{{dynamicdetail.describ}}</view>
+
+</view>
+<view class="book">
+<view class="booktap">所评图书</view>
+<navigator  hover-class="none" url="../particulars/particulars?bookid={{dynamicdetail.bookid}}&advice={{dynamicdetail.typeid}}">
+<view style="margin-top:10rpx;background:#E7E9E8;padding:10rpx;display:flex;">
+<view class="imagebox">
+<image src="{{dynamicdetail.bookimages}}" class="bookimages"></image>
+</view>
+<view class="booknews" style="flex-direction:column;">
+<text class="bookname">{{dynamicdetail.booktitle}}</text>
+<text class="author">{{dynamicdetail.author}}</text>
+</view>
+</view>
+</navigator>
+</view>
+</scroll-view>
+
+
+<view class="thumbs"  >
+
+<view class="t1"   wx:if="{{bol}}"  wx:if="{{dynamicdetail.admirebol=='false'}}" >
+<text    bindtap="Addadmire"  data-dynamicid="{{dynamicdetail.dynamicid}}"  class="iconfont icon-icon-good" style="font-size:34rpx;color:#000">
+</text> {{dynamicdetail.admirenum}}
+</view>
+<view class="t1"   wx:if="{{bol}}"  wx:if="{{dynamicdetail.admirebol=='true'}}" >
+<text   wx:if="{{dynamicdetail.admirebol=='true'}}"   bindtap="Deleteadmire"  data-dynamicid="{{dynamicdetail.dynamicid}}"  class="iconfont icon-icon-good" style="font-size:34rpx;color:#007bff">
+</text> {{dynamicdetail.admirenum}}
+</view>
+
+
+<view class="t1"   wx:if="{{!bol}}">
+<text  bindtap="nologin"  class="iconfont icon-icon-good" style="font-size:34rpx;color:#000">
+</text> {{dynamicdetail.admirenum}}
+</view>
+
+
+
+
+<view class="t1">
+<navigator hover-class="none" url="../bookreviewc/bookreviewc?dynamicid={{dynamicdetail.dynamicid}}">
+<text class="iconfont icon-pinglun1" style="font-size:34rpx;color:#000;font-weight:bold;"></text> {{dynamicdetail.count}}
+</navigator>
+</view>
+
+
+<view class="t1">
+<button  plain="true"  style="border:0rpx solid #fff;padding:0rpx;margin-top:-35rpx"  open-type="share"   data-dynamicid="{{dynamicdetail.dynamicid}}">
+<text class="iconfont icon-wodefenxiang" style="font-size:34rpx;color:#000;">
+</text>
+</button>
+</view>
+
+</view>

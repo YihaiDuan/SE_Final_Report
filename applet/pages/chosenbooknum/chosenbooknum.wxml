@@ -1,0 +1,40 @@
+<scroll-view scroll-y="true" >
+<view class="top">
+<image src="https://www.titwdj.cn/BorrowBook/findbookimg/vip.jpg" class="topimages" mode="widthFix"></image>
+</view>
+
+<view class="body">
+
+
+<view class="booknews"  wx:for="{{booknum}}" >
+<navigator      url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.typeid}}"
+  style="display:flex"  hover-class="none">
+    <view>
+
+
+    <image src="{{item.bookimages}}" class="left" mode="aspectFit" ></image>
+    </view>
+
+    <view class="right">
+    <view style="display:flex;">
+    <view style="flex:1;">
+     <text class="one">{{item.booktitle}}</text>
+    </view>
+    
+     <text style=" color:#A0A19D; font-size:24rpx; vertical-align:text-bottom;display:block;margin-right:10rpx;color:#007bff">{{item.borrownum}} 次借阅</text>
+     </view>
+       <view class="user">
+      <text class="username" style="flex:1;display:block;"><text style="width:480rpx;overflow:hidden;display:inline-block;white-space: nowrap;vertical-align:text-top;">作者：{{item.author}}</text></text>
+     </view>
+     <text class="tow">{{item.bookintroduce}}</text>
+ 
+    </view>
+   </navigator>
+</view>
+
+
+
+
+</view>
+<view class="load" >已加载完全部内容</view>
+</scroll-view>

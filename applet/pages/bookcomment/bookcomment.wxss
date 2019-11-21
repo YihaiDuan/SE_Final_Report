@@ -1,0 +1,250 @@
+.box{
+padding:20rpx;
+
+}
+.cossition{
+letter-spacing: 4rpx;
+width:100%;
+
+
+}
+.uploadimages{
+width:200rpx;
+height:200rpx;
+
+}
+.buttonx{
+background:#007bff;
+color:#fff;
+font-size:34rpx;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.section{
+   display: flex;
+   padding:20rpx;
+  
+   background:#f9f9f9;
+   font-size:30rpx;
+}
+.inputclass{
+   margin:0 30rpx;
+   margin-top:20rpx;
+   border-bottom:1px solid #ccc;
+   flex:1;
+   
+}
+.placeholder1{
+   color:#ccc;
+}
+.inimages{
+  width:20rpx;
+  height:20rpx;
+ margin-top:10px;
+ margin-right:20rpx;
+}
+.button{
+   border-radius: 30rpx;
+  background:#FE5701;
+  color:#fff;
+  letter-spacing:4rpx;
+
+}
+.history{
+ display:flex;
+ flex-direction: column;
+    color:#999;
+}
+.historytext{
+  font-size:36rpx;
+  flex:1;
+  padding:30rpx 20rpx;
+ padding-bottom:10rpx;
+}
+.historybody{
+  padding:0rpx 20rpx;
+   display:flex;
+
+}
+.historytext1{
+     flex:1;
+     font-size:30rpx;
+     color:#999;
+    text-align:center;
+    line-height:40rpx;
+}
+.historyimages{
+   width:26rpx;
+   height:26rpx;
+  margin-top:46rpx;
+}
+.history2
+{ 
+   margin-top:50rpx;
+    text-align:center;
+    font-size:36rpx;
+    color:#999;
+}
+.searchtitle{
+    padding:30rpx 20rpx;
+    color:#999999;
+    font-size:30rpx;
+    border-bottom:2rpx solid #f5f5f5;
+      overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.left{
+  width:200rpx;
+  height:200rpx;
+   margin-right:10rpx;
+  
+}
+.right{
+   display:flex;
+   flex-direction: column;
+   margin-top:12rpx;
+}
+.one{
+  display:block;
+  margin-bottom:16rpx;  
+  font-size:30rpx;
+  color:#7E7F7A;
+   width:330rpx;
+   overflow:hidden;
+   white-space:nowrap;  
+  text-overflow:ellipsis;  
+}
+.tow{
+  font-size:26rpx;
+  color:#A0A19D;
+  width:480rpx;
+  height:70rpx;
+   overflow:hidden;
+}
+.user{
+ display:flex;
+ margin-bottom:16rpx;
+}
+.uimage{
+  width:32rpx;
+  height:32rpx;
+ margin-right:10rpx;
+ margin-top:3rpx;
+}
+.username{
+  font-size:26rpx;
+  color:#999;
+}
+
+
+
+
+.bookimages{
+  width:90rpx;
+  height:90rpx;
+  margin-top:-6rpx;
+  margin-left:-12rpx;
+
+}
+.imagebox{
+  width:60rpx;
+  height:90rpx;
+  overflow:hidden;
+
+}
+.booknews{
+flex:1;
+margin-left:16rpx;
+}
+.bookname{
+ color:#383A39;
+ font-size:28rpx;
+
+}
+.author{
+    
+    margin-top:6rpx;
+color:#7D7F7E;
+font-size:24rpx;
+
+}
+
+
+
+.booknews1{
+   display:flex;
+     border-bottom:1rpx solid #d6d7d0;
+}
+.left1{
+  width:200rpx;
+  height:200rpx;
+   margin-right:10rpx;
+  
+}
+.right1{
+   display:flex;
+   flex-direction: column;
+   margin-top:12rpx;
+}
+.one1{
+  display:block;
+  margin-bottom:16rpx;  
+  font-size:35rpx;
+  color:#000;
+   width:330rpx;
+   overflow:hidden;
+   white-space:nowrap;  
+  text-overflow:ellipsis;  
+}
+.author1{
+  display:block;
+  margin-bottom:16rpx;  
+  font-size:30rpx;
+  color:#999;
+   width:330rpx;
+   overflow:hidden;
+   white-space:nowrap;  
+  text-overflow:ellipsis;  
+
+}
+.tow1{
+  font-size:26rpx;
+  color:#A0A19D;
+  width:480rpx;
+  height:70rpx;
+   overflow:hidden;
+}
+
+.introduce1
+{
+font-size:26rpx;
+color:#A0A19D;
+width:480rpx;
+height:70rpx;
+overflow:hidden;
+}
+
+
+.load{
+text-align: center;
+margin-top:20rpx;
+margin-bottom:20rpx;
+color:#999;
+font-size:30rpx;
+
+}

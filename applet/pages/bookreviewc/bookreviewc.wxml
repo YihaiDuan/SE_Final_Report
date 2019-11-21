@@ -1,0 +1,127 @@
+<scroll-view scroll-y="true" class="box">
+<view class="commenttop"  wx:if="{{commentlist.size!=0}}">
+最新评论
+</view>
+
+
+<view class="commentbody" wx:if="{{commentlist.size!=0}}"  wx:for="{{commentlist}}" >
+<view class="usernews"   >
+<navigator   wx:if="{{logs.userid==item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=1"  hover-class="none">
+<image src="{{item.userimages}}" class="userimages"></image>
+</navigator>
+<navigator   wx:if="{{logs.userid!=item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=0"  hover-class="none">
+<image src="{{item.userimages}}" class="userimages"></image>
+</navigator>
+
+<view class="username"  wx:if="{{bol}}" data-commentid="{{item.commentid}}"  data-dynamicid="{{item.dynamicid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"  
+bindtap="replyshow">
+<navigator   wx:if="{{logs.userid==item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=1"  hover-class="none">
+<view class="uname">{{item.nickname}}</view>
+</navigator>
+<navigator   wx:if="{{logs.userid!=item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=0"  hover-class="none">
+<view class="uname">{{item.nickname}}</view>
+</navigator>
+<view class="utime">{{item.date}}</view>
+</view>
+
+<view class="username"  wx:if="{{!bol}}"  
+bindtap="nologin">
+<view class="uname">{{item.nickname}}</view>
+<view class="utime">{{item.date}}</view>
+</view>
+<!--点赞-->
+<view  wx:if="{{bol}}">
+<view class="give"   wx:if="{{item.admirebol=='true'}}">
+<text class="iconfont icon-dianzan" style="font-size:24rpx;margin-left:12rpx;color:#007bff"   bindtap="DeleteCommentadmire"   data-dynamicid="{{item.dynamicid}}"  data-commentid="{{item.commentid}}"></text>
+{{item.admirenum}}
+</view>
+
+<view class="give"   wx:if="{{item.admirebol=='false'}}">
+<text class="iconfont icon-dianzan" style="font-size:24rpx;margin-left:12rpx;"   bindtap="AddCommentadmire"   data-dynamicid="{{item.dynamicid}}"  data-commentid="{{item.commentid}}"></text>
+{{item.admirenum}}
+</view>
+
+</view>
+
+<view class="give"   wx:if="{{!bol}}"   bindtap="nologin">
+{{item.admirenum}}<text class="iconfont icon-dianzan" style="font-size:24rpx;margin-left:12rpx;"></text>
+</view>
+
+</view>
+
+<view class="commentcontent">
+
+<view  wx:if="{{bol}}" data-commentid="{{item.commentid}}"  data-dynamicid="{{item.dynamicid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"  
+bindtap="replyshow">
+ {{item.describ}}
+ </view>
+ <view  wx:if="{{!bol}}"  bindtap="nologin">
+ {{item.describ}}
+ </view>
+
+
+ <view class="replay"    >
+<view class="replaylist" wx:for="{{item.replylist}}"  wx:if="{{item.size!=0}}">
+
+
+<view class="replaynews"   wx:if="{{bol}}"  data-commentid="{{item.commentid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"   data-dynamicid="{{item.dynamicid}}"
+bindtap="replyshow" >
+<view class="replayname"  >{{item.nickname}}<text style="color:#383A39;margin-left:12rpx;">{{item.describ}}</text></view>
+<view class="replaytime">{{item.date}}</view>
+</view>
+
+<view class="replaynews"   wx:if="{{!bol}}" 
+bindtap="nologin" >
+<view class="replayname"  >{{item.nickname}}<text style="color:#383A39;margin-left:12rpx;">{{item.describ}}</text></view>
+<view class="replaytime">{{item.date}}</view>
+</view>
+
+</view>
+</view>
+</view>
+</view>
+</scroll-view>
+
+
+ <form   bindsubmit="mainsubmit" wx:if="{{bol}}" >
+     <view  class="picture2" >
+     <view class="pone">
+     <input type="text" auto-focus="true"  value="{{describ}}" class="bottominput3" placeholder="写评论"   cursor-spacing="20" auto-focus="true"   name="describ"/> 
+      <button  form-type="submit" hover-class="buttom-hover" plain="true"  class="buttonx" size="mini" style="border:1px solid #fff;padding:0;">发送</button>
+      </view>
+</view>
+  </form>
+
+
+<form   bindtap="nologin"   wx:if="{{!bol}}">
+     <view  class="picture2" >
+     <view class="pone">
+     <input type="text" auto-focus="true"  value="{{describ}}" class="bottominput3" placeholder="写评论"   cursor-spacing="20" auto-focus="true"   name="describ"/> 
+      <button  bindtap="nologin" hover-class="buttom-hover" plain="true"  class="buttonx" size="mini" style="border:1px solid #fff;padding:0;">发送</button>
+      </view>
+</view>
+  </form>
+
+<!--互相回复框-->
+
+ <form   bindsubmit="replysend" wx:if="{{formbol&&bol}}"  >
+     <view  class="picture2" >
+     <view class="pone">
+     <input type="text"  placeholder="{{click}}"   value=""  name="describ"  class="bottominput3"   cursor-spacing="20" auto-focus="true"   /> 
+      <button  form-type="submit" hover-class="buttom-hover" plain="true"  class="buttonx" size="mini" style="border:1px solid #fff;padding:0;">发送</button>
+      </view>
+</view>
+  </form>
+
+
+ <form   bindtap="nologin" wx:if="{{formbol&&!bol}}"  >
+     <view  class="picture2" >
+     <view class="pone">
+     <input type="text"  placeholder="{{click}}"   value=""  name="describ"  class="bottominput3"   cursor-spacing="20" auto-focus="true"   /> 
+      <button  bindtap="nologin" hover-class="buttom-hover" plain="true"  class="buttonx" size="mini" style="border:1px solid #fff;padding:0;">发送</button>
+      </view>
+</view>
+  </form>

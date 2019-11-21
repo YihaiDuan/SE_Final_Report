@@ -1,0 +1,41 @@
+<image src="../../images/loginback.jpg" class="logoimages"></image>
+<view class="box">
+<view class="top">
+<image src="../../images/yuan.png" class="peopleimages" mode="widthFix"></image>
+</view>
+<view class="content">
+<form bindsubmit="formSubmit">
+ <view class="config">
+ 
+ <text class="iconfont icon-renwu" style="font-size:36rpx;color:#fff;font-weight:700;"></text>
+ 
+ <input  type="text" placeholder-style="color:#ccc"  name="userid"   placeholder="手机号"  value="" style="flex:1;padding:0 20rpx;font-size:32rpx;color:#fff;"/>
+ </view>
+ <view class="config" style="margin-top:40rpx;">
+  <text class="iconfont icon-yaochi" style="font-size:36rpx;color:#fff;font-weight:700;"></text>
+  <input  type="password" placeholder-style="color:#ccc;" placeholder="密码"  style="flex:1;padding:0 20rpx;font-size:32rpx;color:#fff;"  value=""  name="password"/>
+ </view>
+   <button  form-type="submit" style="background:#007bff;color:#fff;  margin-top:60rpx;font-size:32rpx;border-radius:60rpx;">登 录</button>
+   </form>
+    <navigator url="../register3/register3" hover-class="none" class="navigater">
+   <view class="logo"><text class="lefttext" style="font-size:30rpx;">还没账号？</text><text class="righttext" style="font-size:30rpx">立即注册</text></view>
+  </navigator>
+</view>
+  <view class="login">
+  <view style="display:flex;">
+  <view style="flex:1;border-top:4rpx solid #fff;margin-right:16rpx;"></view>
+  <text style="margin-top:-16rpx;color:#fff;font-size:32rpx;">第三方登录</text>
+  <view  style="flex:1;border-top:4rpx solid #fff;margin-left:16rpx;"></view>
+  </view>
+  <view   style="width:100%;text-align:center;margin-top:40rpx;margin-bottom:160rpx;">
+
+
+<button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="wxlogin">授权登录</button>
+<view wx:else>请升级微信版本</view>
+ <!-- <text bindtap="wxlogin"  class="iconfont icon-weixin" style="font-size:100rpx;color:#fff;"></text> -->
+
+</view>
+</view>
+</view>
+
+

@@ -1,0 +1,59 @@
+ img<view>{{typelist.img}}</view>
+name<view>{{typelist.typename}}</view>
+<view  wx:for="{{typelist.list}}">
+<navigator url="../classification/classification?typeid={{item.cateid}}">
+类型名:<view>{{item.catename}}</view>
+</navigator>
+</view>
+
+<view class="search">   
+  <view class="search-result">  
+
+
+
+    <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">  
+   
+      <view class="result-item" wx:for="{{searchSongList}}" wx:key="unique"  data-data="{{item}}" >  <navigator url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.category_id}}"  style="display:flex"
+    hover-class="none"  >
+        <image src="{{item.bookimages}}" class="left" ></image>
+        <view style="display:flex;flex-direction: column;">
+        <text class="title">{{item.booktitle}}</text>  
+        <text class="catil">{{item.bookintroduce}}</text>
+        <view class="user" style="display:flex;margin-top:30rpx;">
+         <text class="username" style="flex:1;width:160rpx;overflow:hidden;white-space: nowrap;"><text class="iconfont icon-renwutouxiang" style="font-size:26rpx; margin-right:10rpx;color:#ccc;"></text>{{item.author}}</text>
+     <text class="username"><text class="iconfont icon-renqi" style="font-size:32rpx; vertical-align:text-top;margin-right:10rpx;margin-left:20rpx;color:#007bff;"></text>{{item.booknum}}</text>
+        </view>
+        </view> 
+        </navigator> 
+      </view>  
+      <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>  
+      <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>  
+    </scroll-view>    
+  </view>  
+</view>  
+<view class="fixed">
+<scroll-view  scroll-y="true" style="height:100%">
+<view class="list" bindtap="list1"  data-id="1" style="background:{{one}}">军事</view>
+<view class="list" bindtap="list2"   data-id="2"  style="background:{{tow}}">文学</view>
+<view class="list" bindtap="list3" data-id="3" style="background:{{three}}">历史</view>
+<view class="list" bindtap="list4"  data-id="4"  style="background:{{four}}">计算机</view>
+<view class="list" bindtap="list5" data-id="5" style="background:{{five}}">医学</view>
+<view class="list" bindtap="list6" data-id="6" style="background:{{six}}">艺术</view>
+<view class="list" bindtap="list7" data-id="7" style="background:{{seven}}">科学</view>
+<view class="list" bindtap="list8" data-id="8" style="background:{{engit}}">哲学</view>
+
+<view class="list" bindtap="list9" data-id="9" style="background:{{nine}}">教育</view>
+
+<view class="list" bindtap="list10"data-id="10" style="background:{{ten}}">环境</view>
+
+<view class="list" bindtap="list11" data-id="11" style="background:{{eleven}}">生物</view>
+
+<view class="list" bindtap="list12" data-id="12" style="background:{{twelve}}">天文</view>
+
+<view class="list" bindtap="list13" data-id="13" style="background:{{thirteen}}">农业</view>
+
+<view class="list" bindtap="list14"  data-id="14" style="background:{{fourteen}}">经济</view>
+
+<view class="list" bindtap="list15"  data-id="15" style="background:{{fifteen}}">语言</view>
+</scroll-view>
+</view>

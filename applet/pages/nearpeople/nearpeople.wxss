@@ -1,0 +1,149 @@
+page{
+   background:#f6f7f8;
+   color:#333;
+}
+.page-body{
+   display:flex;
+   flex-direction: column;
+}
+.text
+{
+display: flex;
+  /*横向居中对齐*/
+  justify-content: center;
+  padding:20rpx;
+}
+.searchtext{
+  padding:18rpx;
+  border:2rpx solid #007bff;
+  width:600rpx;
+  border-radius: 20rpx;
+  text-align:center;
+  font-size:32rpx;
+  color:#999;
+  background:#fff;
+}
+.pinsearch{
+    color:#fff;
+    background:#007bff;
+}
+.news{
+  background:#fff;
+
+}
+.newstop{
+    padding:30rpx 30rpx;
+    padding-bottom:10rpx;
+    font-size:40rpx;
+}
+.booknews{
+   display:flex;
+   padding-left:20rpx;
+   border-bottom:2rpx solid #E0E0E0;
+   
+}
+.left{
+  width:186rpx;
+height:186rpx;
+margin-right:10rpx;
+  
+}
+.right{
+   display:flex;
+   flex-direction: column;
+}
+.one{
+  margin-bottom:20rpx;  
+  color:#999;
+}
+.one{
+  margin-bottom:20rpx;  
+  width:480rpx;
+   overflow:hidden;
+   white-space:nowrap;  
+  text-overflow:ellipsis; 
+  font-size:  30rpx;
+  color:#000;
+}
+.user{
+ display:flex;
+ margin-top:30rpx;
+}
+.uimage{
+  width:32rpx;
+  height:32rpx;
+ margin-right:10rpx;
+ margin-top:3rpx;
+}
+.username{
+  font-size:26rpx;
+  color:#999;
+ justify-content: center;
+width:210rpx;
+overflow:hidden;
+white-space: nowrap;
+}
+.username1{
+  font-size:26rpx;
+  color:#999;
+ justify-content: center;
+
+}
+.section{
+  display:flex;
+  padding:30rpx 40rpx;
+  color:#999;
+  font-size:32rpx;
+}
+.inputclass{
+  background:#fff;
+  border:2rpx solid #007bff;
+  flex:1;
+  border-radius: 12rpx;
+  margin-right:16rpx;
+  padding:15rpx;
+}
+.searchbutton{
+   color:#fff;
+   background:#007bff;
+
+
+}
+.tow{
+  width:500rpx;
+  font-size:26rpx;
+  line-height:36rpx;
+  height:72rpx;
+  color:#999;
+  display:block;
+  overflow: hidden;
+ 
+  
+}
+.news{
+    margin:30rpx 0 ;
+    font-size:30rpx;
+   line-height:90rpx;
+    border-top:2rpx solid #E0E0E0;
+     border-bottom:2rpx solid #E0E0E0;
+    padding-bottom:0;
+    padding-left:30rpx;
+    padding-right:0;
+}
+
+.map{
+
+margin-right:30rpx;
+margin-top:5px;
+}
+
+.load{
+text-align: center;
+margin-top:20rpx;
+margin-bottom:20rpx;
+color:#999;
+font-size:30rpx;
+
+
+}
+

@@ -1,0 +1,40 @@
+<scroll-view scroll-y="true" class="page-body">
+ 
+<view class="news">
+   
+
+<view class="booknews"   wx:if="{{outpaylist.length!=0}}"  wx:for="{{outpaylist}}"   >
+<view style="width:300rpx;margin:20rpx auto;">
+<view class="time">{{item.date}}</view>
+</view>
+<view bindlongtap="deleterefer"  data-referid="{{item.id}}" style="display:flex;flex-direction: column;background:#fff;padding:20rpx">
+    
+    <view class="image">
+  <view  style="flex-direction:column">
+<view  style="font-size:30rpx;margin-bottom:10rpx;">退款到账通知</view>
+<view style="font-size:24rpx;color:#999;margin-bottom:20rpx">{{item.date}}</view>
+</view>
+<view  style="text-align:center">
+<view  style="font-size:30rpx;color:#999">退款金额</view>
+<view  style="font-size:40rpx" style="color:#007bff">￥{{item.cash}}</view>
+</view>
+    </view>
+    <view class="right">
+
+
+</view>
+<view class="right right1" style="border-bottom:0;position:relative;font-size:28rpx;">
+     <view  style="margin-bottom:10rpx"><text style="color:#999;">商户名称:</text>              个性图书推荐</view>
+     <view  style="margin-bottom:10rpx"><text style="color:#999;">退款来源:</text>              {{item.fromdes}}</view>
+     <view  style="margin-bottom:10rpx"><text style="color:#999;">退回方式:</text>              退回借阅币</view>
+      <view  style="margin-bottom:10rpx"><text style="color:#999;">到账时间:</text>    {{item.date}}</view>
+</view>
+</view>
+
+
+
+
+
+</view>
+</view>
+</scroll-view>

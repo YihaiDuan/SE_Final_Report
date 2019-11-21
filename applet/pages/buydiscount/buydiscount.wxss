@@ -1,0 +1,76 @@
+.top{
+background:#FE7101;
+color:#FFF;
+
+}
+.top{
+background:#BFDEF0;
+text-align:center;
+padding:60rpx;
+}
+.vouchers{
+ background:#FE7101;
+ width:380rpx;
+ padding:30rpx;
+ display:flex;
+ margin:0 auto;
+}
+.leftvouchers{
+ width:80rpx;
+ padding:0 20rpx;
+ font-size:38rpx;
+ box-sizing: border-box;
+ line-height: 38rpx;
+ border-right: 1rpx dotted #FFF;
+}
+.rightvouchers{
+ position:relative;
+ width:300rpx;
+
+}
+.price{
+ position:absolute;
+ right:20rpx;
+ bottom:0rpx;
+
+}
+.title{
+    padding:30rpx 20rpx;
+    font-size:42rpx;
+    color:#6B6B69;
+}
+.ctitle{
+padding-left:10rpx;
+border-left:8rpx solid #FE7101;
+line-height:42rpx;
+}
+.catalog{
+font-size:34rpx;
+color:#333;
+padding:10rpx 20rpx; 
+}
+.content{
+ padding:20rpx;
+ padding-top:0;
+ color:#999;
+ font-size:34rpx;
+ line-height:48rpx;
+}
+.bottombar{
+position:fixed;
+ bottom:0;
+ left:0;
+ width:100%;
+ border-top:1rpx solid #F6F7F0;
+ display:flex;
+}
+.leftbottombar{
+ flex:1;
+ padding:20rpx 30rpx;
+}
+.rightbottombar{
+padding:20rpx 40rpx;
+background:#FE7101;
+color:#FFF;
+font-size:34rpx;
+}

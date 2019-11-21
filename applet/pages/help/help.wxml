@@ -1,0 +1,30 @@
+
+
+<navigator url="../helpdetail/helpdetail?id=1"  style="display:flex"  hover-class="none"  class="recommend"  style="margin-top:30rpx;" >
+<view    >
+<text class="retext">借阅图书方法</text>
+</view>
+</navigator>
+
+<!-- <navigator url="../helpdetail/helpdetail?id=2"  style="display:flex"  hover-class="none"  class="recommend"  >
+<view    >
+
+<text class="retext">如何预订图书</text>
+</view>
+</navigator> -->
+
+
+<!-- <navigator url="../helpdetail/helpdetail?id=3"  style="display:flex"  hover-class="none"  class="recommend"  >
+<view     >
+
+<text class="retext">如何分享图书</text>
+</view>
+</navigator> -->
+
+
+<navigator url="../helpdetail/helpdetail?id=4"  style="display:flex"  hover-class="none"  class="recommend"   >
+<view    >
+
+<text class="retext">转借图书方法</text>
+</view>
+</navigator>

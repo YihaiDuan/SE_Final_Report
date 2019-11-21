@@ -1,0 +1,20 @@
+<view class="box">
+<view class="top">
+<navigator url="../myoutpay/myoutpay">
+<view style="float:right;font-size:30rpx;color:#999;margin-top:-80rpx;margin-right:40rpx">退币记录<view  wx:if="{{mesbol.bol4=='true'}}"style="background-color:#D00000;width:20rpx;height:20rpx; border-radius:50%;margin-top:-12px;margin-left:60px" ></view></view>
+</navigator>
+<view class="balance">借阅币余额</view>
+<view class="price">{{money}}</view>
+</view>
+<view class="operation">
+<navigator url="../recharge/recharge">
+<button class="recharge" plain="true" style="font-size:36rpx;background:#007bff;color:#fff;border:#007bff;margin-bottom:20rpx;border-radius:10rpx;">充值</button>
+</navigator>
+</view>
+
+
+
+
+
+
+</view>

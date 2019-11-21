@@ -1,0 +1,42 @@
+/*.top{
+height:300rpx;
+color:#fff;
+font-size:30rpx;
+text-align: center;
+line-height: 100rpx;
+position:relative;
+overflow: hidden;
+}
+.fenxiangimages{
+ width:100%;
+  filter: blur(2px);
+}
+.groupsuccess{
+  height:300rpx;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  font-size:60rpx;
+  letter-spacing: 16rpx;
+  margin-top:80rpx;
+  text-shadow: 2rpx 2rpx 4rpx #fff;
+}*/
+
+.top{
+   padding:60rpx 0;
+   text-align: center;
+   align-content: center;
+   padding-bottom:30rpx;
+}
+.success{
+text-align:center;
+line-height:60rpx;
+font-size:40rpx;
+letter-spacing: 10rpx;
+}
+.fenxiang{
+  padding:60rpx 60rpx;
+ font-size:32rpx;
+
+}

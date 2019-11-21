@@ -1,0 +1,284 @@
+<view class="page"bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start"  >
+
+<view wx:if="{{open}}" style="position:fixed;top:0;right:0;width:25%;height:100%;background:#000;opacity:0.5;z-index:2;"></view>
+
+
+    <view class="page-bottom" >
+        <view class="page-content" >
+        <view class="usernews">
+
+<navigator url="../register/register" wx:if="{{!bol}}"   hover-class="none">
+<image src="../../images/userimages.png" class="userimages"></image>
+</navigator>
+
+
+
+<navigator url="../userinf/userinf?userid={{logs.userid}}&bol1=1" wx:if="{{bol}}"
+hover-class="none">
+
+
+<image src="{{logs.userimages}}"    wx:if="{{logs.userimages=='null'}}"  class="userimages"></image>
+
+<image src="{{logs.userimages}}"    wx:if="{{logs.userimages!='null'}}"  class="userimages"></image>
+</navigator>
+
+
+
+
+        <view class="user1" wx:if="{{bol}}">
+       
+        <view class="userna">{{logs.nickname}}</view>
+        <view class="userdetail">
+        <view   wx:if="{{bol}}">
+<text  bindtap="sign" style="color:#fff;font-size:26rpx;border:1rpx solid #fff;padding:12rpx 18rpx;border-radius:32rpx;"   wx:if="{{user.sign=='0'}}"><text class="iconfont icon-jifen"  style="position:relative;top:4rpx;margin-right:4rpx;"></text>签到</text>
+<text  style="color:#fff;font-size:26rpx;border:1rpx solid #fff;padding:12rpx 18rpx;border-radius:32rpx;"  wx:if="{{user.sign=='1'}}"><text class="iconfont icon-jifen" style="position:relative;top:4rpx;margin-right:4rpx;"></text>已签到</text>
+</view>
+
+<view   wx:if="{{!bol}}">
+<text  bindtap="nologin"   style="color:#fff;font-size:26rpx;border:1rpx solid #fff;padding:12rpx 18rpx;border-radius:32rpx;"  wx:if="{{user.sign=='0'}}">
+<text class="iconfont icon-jifen"  style="position:relative;top:4rpx;margin-right:4rpx;"></text>签到</text>
+
+</view>
+        </view>
+     
+        </view> 
+
+          <view class="user1" wx:if="{{!bol}}">
+          <navigator url="../register/register"  hover-class="none">
+        <view class="userna" style="margin-top:40rpx;font-size:32rpx;"  >立即登录</view>
+        </navigator>
+        </view> 
+
+
+
+        </view>
+          <view class="price">
+        <view class="pt">
+        <navigator url="../mywallet/mywallet" wx:if="{{bol}}"   hover-class="none" >
+        <view class="pnumber" >{{user.money}}           <view class="pname">借阅币 <view  wx:if="{{mesbol.bol4=='true'}}"style="background-color:#D00000;width:20rpx;height:20rpx; border-radius:50%;margin-top:-20px;margin-left:60px" ></view></view>
+         </view>
+      </navigator>
+        <view class="pnumber" bindtap="nologin" wx:if="{{!bol}}">0
+        <view class="pname">借阅币</view>
+      
+        </view>
+        
+        </view>
+        <!-- <view class="pt">
+           <view class="pnumber"  wx:if="{{bol}}">
+           <navigator  hover-class="none" url="../mydiscount/mydiscount?canuser={{user.discountnum}}">
+           {{user.discountnum}}
+            <view class="pname">优惠卷</view>
+              </navigator>
+             </view>
+           
+        <view class="pnumber"  bindtap="nologin"  wx:if="{{!bol}}">0
+         <view class="pname">优惠卷</view></view>
+       
+        </view> -->
+        <view class="pt">
+         <view class="pnumber"  wx:if="{{bol}}">
+         <navigator hover-class="none" url="../myscore/myscore">
+         {{user.score}}
+            <view class="pname">积分</view>
+              </navigator>
+            </view>
+          
+     <view class="pnumber"  bindtap="nologin"  wx:if="{{!bol}}">0
+            <view class="pname">积分</view>
+            </view>
+        </view>
+        </view>
+
+
+<scroll-view scroll-y="true" style="height:{{clicentheight}}px">
+<navigator  url='../grade/grade'    hover-class="none" >
+<view class="recommend"  style="display:flex"   wx:if="{{bol}}">
+<view  style="display:flex;width:100%;">
+<text class="iconfont icon-huiyuan" style="font-size:32rpx;line-height:40rpx;margin-right:20rpx;color:#007bff"></text>
+<view wx:if="{{user.grade!='0'}}" style="display:flex;width:100%">
+<text   class="retext" style="flex:1;">会员中心</text> 
+<text   class="retext" style="margin-right:30rpx;">{{user.deadline}}到期</text> 
+</view>
+<text wx:if="{{user.grade=='0'}}" class="retext">会员中心</text>  
+</view>
+
+
+</view>
+</navigator>
+
+
+
+<!--用户没有登录-->
+
+<view class="recommend"    wx:if="{{!bol}}"
+bindtap="nologin">
+<!--<image src="../../images/我的评论.png" class="reimage"></image>-->
+<text class="iconfont icon-huiyuan" style="font-size:32rpx;line-height:40rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">会员中心</text>  
+</view>
+
+        <view class="recommend"     wx:if="{{!bol}}"
+bindtap="nologin" style="margin-top:20rpx;">
+<text class="iconfont icon-11" style="font-size:32rpx;line-height:40rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">我的收藏</text>
+</view>
+
+
+<navigator url="../collect/collect"      wx:if="{{bol}}"    style="display:flex"  hover-class="none">
+<view class="recommend"  >
+<text class="iconfont icon-11" style="font-size:32rpx;line-height:40rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">我的收藏</text>
+</view>
+</navigator>
+
+
+
+
+
+ <navigator  url='../allmessage/allmessage'  style="display:flex"  hover-class="none" >
+<view class="recommend"    wx:if="{{bol}}">
+
+<text class="iconfont icon-wodexiaoxi" style="font-size:32rpx;line-height:40rpx;margin-right:20rpx;color:#007bff"></text>
+<view class="retext">我的消息<view  wx:if="{{mesbol.bol1=='true'||mesbol.bol2=='true'||mesbol.bol3=='true'}}"style="background-color:#D00000;width:20rpx;height:20rpx; border-radius:50%;margin-top:-12px;margin-left:60px" ></view></view> 
+
+</view>
+</navigator>
+
+
+
+<!-- 用户没有登录 -->
+
+<view class="recommend"    wx:if="{{!bol}}"
+bindtap="nologin">
+<text class="iconfont icon-wodexiaoxi" style="font-size:32rpx;line-height:40rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">我的消息</text>  
+</view> 
+
+
+<navigator  url='../mytotal/mytotal'  style="display:flex"  hover-class="none" >
+<view class="recommend" style="padding-left:34rpx;"   wx:if="{{bol}}">
+
+<text class="iconfont icon-changxinyueli" style="font-size:32rpx;line-height:40rpx;margin-right:11rpx;color:#007bff"></text>
+<text class="retext">个人阅历</text>  
+</view>
+</navigator>
+
+
+
+<!--用户没有登录-->
+
+<view class="recommend" style="padding-left:34rpx;"   wx:if="{{!bol}}"
+bindtap="nologin">
+<!--<image src="../../images/我的评论.png" class="reimage"></image>-->
+<text class="iconfont icon-changxinyueli" style="font-size:32rpx;line-height:40rpx;margin-right:11rpx;color:#007bff"></text>
+<text class="retext">个人阅历</text>  
+</view>
+
+
+ 
+  <navigator url="../refer/refer"  hover-class="none"   wx:if="{{bol}}">
+<view class="recommend" style="position:relative"      >
+<text class="iconfont icon-icon-good" style="font-size:32rpx;line-height:40rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">推荐阅读</text>
+<text class="iconfont icon-xiaohongdianx" style="color:#D00000;font-size:60rpx;position:absolute;top:35%;right:30rpx;" wx:if="{{referstatus}}"></text>
+</view>
+</navigator>
+<view class="recommend" style="position:relative" wx:if="{{!bol}}" bindtap="nologin">
+<text class="iconfont icon-icon-good" style="font-size:32rpx;line-height:40rpx;margin-right:20rpx;color:#007bff"></text>
+<text class="retext">推荐阅读</text>
+</view>   
+ <contact-button 
+  type="default-light" 
+  size="20"
+  session-from="weapp"
+  open-type="contact" 
+  style="padding:20rpx;padding-left:40rpx;background:#FFFFFF;position:relative;border-bottom:1rpx solid #F5F5F5;"><text class="iconfont icon-kefu" style="position:absolute;left:40rpx;color:#007bff;font-size:32rpx;top:60%;margin-top:-10rpx;"></text><text style="font-size:32rpx;position:absolute;color:#000;top:60%;margin-top:-10rpx;margin-left:15rpx">客服消息
+  </text>
+  <contact-button  style="background:#fff;opacity:0"></contact-button>
+ <contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button><contact-button  style="background:#fff;opacity:0"></contact-button>
+</contact-button> 
+<navigator url="../myset/myset"   hover-class="none">
+<view class="recommend"   >
+<text class="iconfont icon-shezhi" style="font-size:32rpx;line-height:40rpx;margin-right:24rpx;color:#007bff"></text>
+<text class="retext">设置</text>
+</view>
+</navigator>
+</scroll-view>
+        </view>
+    </view>
+  
+ 
+<scroll-view class="page-body" scroll-y="true" bindscrolltoupper="refresh"  bindscrolltolower="onbottom" bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start" class="page-top {{open ? 'c-state1' : ''}}" style="border-top:1rpx solid #f5f6f7;">
+<view style="display:flex;margin-top:30rpx;margin-bottom:24rpx;padding:10rpx;">
+<view>
+<text class="iconfont icon-daohang" style="font-size:46rpx;margin-top:14rpx;margin-left:26rpx;margin-right:40rpx;color:#007bff;line-height:70rpx;position:relative;" bindtap="tap_ch" ></text>
+<view  wx:if="{{mesbol.bol1=='true'||mesbol.bol2=='true'||mesbol.bol3=='true'||mesbol.bol4=='true'||referstatus=='true'}}"style="background-color:#D00000;width:20rpx;height:20rpx; border-radius:50%;margin-top:-14px;margin-left:34px;position:relative;top:-12rpx;" ></view>
+</view>
+
+<view style="display:flex;position:relative;padding-bottom:4rpx;" class="searchtext" >
+
+
+ <navigator url="../search/search" class="text" hover-class="none" style="flex:1"   >
+ <view style="margin-top:10rpx;margin-bottom:4rpx;"><text class="iconfont icon-search2" style="color:#999;font-size:36rpx;margin-right:6rpx;margin-top:10rpx;"></text>   <text>请输入搜索内容</text>
+ </view>
+ </navigator>
+  <text bindtap="scan1"   class="iconfont icon-saoyisao" style="font-size:32rpx;color:#007bff;margin-right:16rpx;margin-top:14rpx;"></text>
+</view>
+</view>
+
+  <swiper class="swiperbox" autoplay="true" indicator-dots="true"   style="height:290rpx"
+interval="5000" duration="1500" circular="true">
+<swiper-item wx:for="{{imgUrls}}" >
+<navigator url="{{item.url}}" style="width:100% height:100%;">
+<image src="{{item.img}}"  class="limages" mode="widthFix" ></image>
+</navigator>
+</swiper-item>
+</swiper>  
+
+
+
+<view   wx:for="{{typelist}}" style="display:none;">
+name<view>{{item.typename}}</view>
+<view  wx:for="{{item.list}}">
+<navigator url="../typebook/typebook?cateid={{item.cateid}}">
+{{item.catename}}数量{{item.booknum}}
+</navigator>
+</view>
+</view>
+
+<view class="containe">
+
+
+  <view class="left_tabbar">
+    <scroll-view scroll-y="true" style="height:{{deviceHeight}}px;" class="left_tabbar_list">
+      <view bindtap="changeTab" data-index="{{index}}" data-name="{{item.tabName}}"  data-typeid="{{item.typeid}}" class="left_tabbar_item {{activeIndex==index?'active':''}}" wx:for="{{tabs}}">{{item.tabName}}</view>
+    </scroll-view>
+  </view>
+
+
+  <view class="right_content">
+    <scroll-view  scroll-y="true" style="height:{{deviceHeight}}px;" class="tab_panel">
+      <view>
+        <view wx:for="{{contentList}}" > 
+        <navigator hover-class="none"  url="../typebook/typebook?cateid={{item.cateid}}"   style="display:flex;">
+         <image src="{{item.img}}" class="typeimage" mode="aspectFill"></image>
+         <view class="rightnews">
+         <text class="name">{{item.name}}</text>
+         <text class="num">{{item.num}}本</text>
+         </view>
+         </navigator>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+
+
+
+
+
+<view class="load" wx:if="{{showloadall}}">已加载完全部内容</view>
+ </scroll-view>
+</view> 

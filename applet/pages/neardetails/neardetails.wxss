@@ -1,0 +1,408 @@
+page{
+ 
+   color:#999;
+}
+.page-body{
+   display:flex;
+   flex-direction: column;
+}
+.text
+{
+display: flex;
+  padding:20rpx 30rpx;
+    background:#f6f7f8;
+}
+.searchtext{
+  padding:18rpx;
+  border:2rpx solid #007bff;
+  width:600rpx;
+  border-radius: 20rpx;
+  text-align:center;
+  font-size:32rpx;
+  color:#999;
+  background:#fff;
+}
+.pinsearch{
+    color:#fff;
+    background:#007bff;
+}
+.news{
+  background:#fff;
+
+}
+.newstop{
+    padding:30rpx 30rpx;
+    padding-bottom:10rpx;
+    font-size:40rpx;
+}
+.booknews{
+   display:flex;
+   padding:20rpx 30rpx;
+  border-bottom:2rpx solid #eee; 
+}
+.left{
+  width:186rpx;
+height:186rpx;
+   margin-right:30rpx;
+  
+}
+.right{
+   display:flex;
+   flex-direction: column;
+}
+.one{
+  margin-bottom:20rpx;  
+}
+.tow{
+  width:500rpx;
+  font-size:34rpx;
+  color:#ccc;
+  display:block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.user{
+ display:flex;
+flex-direction: column;
+ flex:1;
+}
+.uimage{
+  width:32rpx;
+  height:32rpx;
+ margin-right:10rpx;
+ margin-top:3rpx;
+}
+.username{
+  font-size:26rpx;
+  color:#999;
+  margin-right:24rpx;
+
+
+}
+.username2{
+  font-size:32rpx;
+  color:#999;
+  margin-right:24rpx;
+}
+.userimage{
+   width:120rpx;
+   height:120rpx;
+   border-radius: 50%;
+   
+
+
+}
+.booknum{
+font-size:32rpx;
+  color:#ccc;
+  margin-top:20rpx;
+}
+.qrcode{
+   display:flex;
+   flex-direction: column;
+ 
+}
+.qrimage{
+  width:120rpx;
+  height:120rpx;
+  margin-left:16rpx;
+ margin:0 auto;
+
+}
+.borrow{
+font-size:32rpx;
+color:#ccc;
+margin-top:10rpx;
+}
+.synopsis{
+    
+    width:550rpx;
+    display:flex;
+    flex-direction: column;
+    margin:0 auto;
+    margin-top:80rpx;
+    padding-bottom:20rpx;
+}
+.synimages{
+    width:400rpx;
+    margin:0 auto;
+}
+.bookname{
+  flex:1;
+  text-align: center;
+ font-size:40rpx;
+ line-height:100rpx;
+  width:550rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+ 
+}
+.firstline
+{
+  display:flex;
+  padding:0 0rpx;
+  padding-left:20rpx;
+  margin-top:10rpx;
+}
+.towline
+{
+  display:flex;
+   padding:0 0rpx;
+   padding-left:20rpx;
+}
+.author,.press,.pressNumber{
+
+flex:1;
+font-size:24rpx;
+line-height:60rpx;
+color:#999;
+}
+.abstractbody
+{
+   flex:1;
+   padding:30rpx 40rpx;
+   padding-bottom:30rpx;
+   display:flex;
+   flex-direction: column;
+   border-top:26rpx solid #f5f5f5;
+}
+.jianjie
+{
+   flex:1;
+  font-size:38rpx;
+  font-weight:600;
+  padding-bottom:20rpx;
+  
+ 
+}
+.jianjiebody
+{
+  font-size:30rpx;
+  color:#999;
+  display: flex;
+ flex-direction: column;
+
+}
+ .text1{
+   display:block;
+   line-height:40rpx;
+   margin-bottom:30rpx;
+    text-indent:2em;
+}
+.evaluate{
+  padding:40rpx 30rpx;
+  padding-top:0rpx;
+
+ 
+  flex-direction: column;
+   display:flex;
+}
+.evaluatetop{
+    flex:1;
+    display:flex;
+}
+.evtext{
+   flex:1;
+   font-size:36rpx;
+   font-weight:bold;
+}
+.evimages{
+    width:34rpx;
+  height:34rpx; 
+
+}
+.evname{
+ flex:1;
+ font-size:26rpx;
+ color:#999;
+ float:right;
+}
+.evnews{
+  font-size:28rpx;
+  text-indent:2em;
+  margin:0 -20rpx;
+}
+.bookclassify{
+   margin:20rpx 0;
+   display:flex;
+  flex:1;
+  flex-direction: column;
+    padding-bottom:140rpx;
+}
+.bookclassify .classifytop{
+  flex:1;
+  display:flex;
+  padding:0 20rpx;
+  padding-bottom:30rpx;
+
+}
+.classifyimage{
+  width:28rpx;
+  height:28rpx; 
+}
+.toptext{
+   line-height:28rpx;
+    margin-left:10rpx;
+    font-size:36rpx;
+    flex:1;
+}
+.classifybody{
+  display:flex;
+  flex-direction: column;
+}
+.bodyno1,.bodyno2{
+   flex:1;
+  display:flex;
+  justify-content: space-around;
+  padding:10rpx 40rpx;
+}
+
+.news{
+   flex:1;
+   display:flex;
+    flex-direction:column ;
+}
+.bodyimages{
+    width:170rpx;
+   height:170rpx;
+margin:0 auto;
+
+}
+.bodyimages1{
+   width:70rpx;
+   height:70rpx;
+margin:0 auto;
+
+
+}
+.textbook{
+ width:140rpx;
+white-space: nowrap;
+padding:10rpx 0;
+text-align:center;
+font-size:28rpx;
+overflow: hidden;
+margin:0 auto;
+color:#999;
+
+}
+.bottombar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  display:flex;
+  font-size:34rpx;
+  border-top:2rpx solid #eee;
+}
+.bottomleft,.bottomright,.bottomcenter
+{
+ flex:1;
+ color:#007bff;
+ line-height: 90rpx;
+text-align:center;
+background:#fff;
+}
+.bottomcenter{
+  background:#ff7801;
+  color:#fff;
+}
+.look{
+ flex:1;
+ text-align: center;
+color:#007bff;
+font-size:40rpx;
+padding:30rpx 30rpx;
+border-top:2rpx solid #eee;
+border-bottom:2rpx solid #eee;
+margin-bottom:30rpx;
+}
+.somebook{
+  
+  border:4rpx solid #eee;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx #f5f5f5;
+  background:#fff;
+  width:500rpx;
+  height:250rpx;
+  position:fixed;
+  top:300rpx;
+  left:50%;
+  margin-left:-250rpx;
+}
+.button{
+  background:#f5f5f5;
+  color:#333;
+  font-size:34rpx;
+  line-height:80rpx;
+}
+.picker{
+  padding:20rpx;
+ line-height:160rpx;
+ text-align:center;
+ word-wrap:break-all;
+}
+.picker2
+{
+   text-align:center;
+   display:block;
+   line-height:40rpx;
+   padding:60rpx 20rpx;
+}
+.buttonbackground{
+  display:flex;
+
+}
+.sure{
+  padding:0 120rpx;
+}
+.line{
+  width:500rpx;
+   display:flex;
+   position:absolute;
+   left:0;
+   bottom:0;
+}
+.leftline{
+  flex:1;
+
+}
+.rightline{
+  flex:1;
+
+}
+.bottombar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  display:flex;
+  font-size:34rpx;
+  border-top:2rpx solid #eee;
+}
+.bottomleft,.bottomright,.bottomcenter
+{
+ flex:1;
+ color:#007bff;
+ line-height: 90rpx;
+text-align:center;
+background:#fff;
+}
+.bottomcenter{
+  background:#ff7801;
+  color:#fff;
+}
+.deat{
+ display:flex;
+ margin-top:16rpx;
+}
+.bookdata{
+   font-size:36rpx;
+    padding:30rpx 20rpx;
+    color:#333;
+    border-bottom:2rpx solid #eee;
+
+
+}

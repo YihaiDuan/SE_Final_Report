@@ -1,0 +1,41 @@
+<view>
+<view class="news">
+<view class="userimage" ><image src="{{applydetail.userimages}}" style="width:120rpx;height:120rpx;border-radius:50%;"></image></view>
+<view class="username">{{applydetail.nickname}}</view>
+
+</view>
+
+<view  class="news">
+
+<text style="font-size:32rpx;color:#ccc;margin-right:50rpx;margin-left:20rpx;">标题</text><text style="color:#333;font-size:32rpx;">{{applydetail.booktitle}}</text>
+
+</view>
+
+
+<view class="news">
+<text style="font-size:32rpx;color:#ccc;margin-right:50rpx;margin-left:20rpx;">来源</text><text style="color:#333;font-size:32rpx;">附近的人</text>
+
+</view>
+
+<view class="idea">
+<view   wx:if="{{applydetail.status=='0'}}"  bindtap="refuseapply"  data-id="{{applydetail.id}}" class="a1" >拒绝
+</view>
+<view  wx:if="{{logs.personQR=='null'}}" style="display:flex;flex:1;">
+<view  wx:if="{{applydetail.status=='0'}}" bindtap="noshare" class="a2" >同意
+</view>
+</view>
+
+<view  wx:if="{{logs.personQR!='null'}}"
+style="display:flex;flex:1;">
+<view   wx:if="{{applydetail.status=='0'}}"  bindtap="agreeapply"   data-id="{{applydetail.id}}" class="a2">同意
+</view>
+</view>
+</view>
+
+
+
+<view   wx:if="{{applydetail.status=='1'}}"  class="read">已同意</view>
+
+<view   wx:if="{{applydetail.status=='2'}}" class="read">已拒绝</view>
+
+</view>

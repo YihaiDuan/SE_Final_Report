@@ -1,0 +1,121 @@
+.top{
+  width:100%;
+  height:330rpx;
+  overflow:hidden;
+  position:relative;
+ 
+}
+.topimages{
+ width:100%;
+ margin-top:-40rpx;
+ 
+}
+.topbox{
+ width:600rpx;
+ height:200rpx;
+ overflow:hidden;
+ position:absolute;
+ top:46rpx;
+ left:50%;
+ margin-left:-300rpx;
+ z-index: 100;
+ box-shadow: 0rpx 5rpx 3rpx #ccc;
+
+}
+.topi{
+  margin-top:-60rpx;
+ width:700rpx;
+ z-index: 100;
+}
+.box{
+ position:absolute;
+ top:0;
+ left:0;
+ width:100%;
+ height:100%;
+ background:#ccc;
+ opacity: 0.8;
+ z-index: 100;
+}
+.body{
+  padding:10rpx;
+  margin-top:30rpx;
+}
+.title{
+ padding:20rpx 30rpx;
+ letter-spacing: 4rpx;
+ line-height:46rpx;
+}
+.content{
+padding:20rpx 30rpx;
+padding-top:0;
+font-size:30rpx;
+border-bottom:1rpx solid #F5F5F5;
+}
+.duan
+{
+line-height:40rpx;
+letter-spacing:3rpx;
+text-indent: 2em;
+color:#696969;
+
+}
+.booknews{
+   display:flex;
+   padding:20rpx 30rpx;
+  border-bottom:2rpx solid #eee; 
+}
+.left{
+  width:200rpx;
+  height:200rpx;
+   margin-right:10rpx;
+  
+}
+.right{
+   display:flex;
+   flex-direction: column;
+   margin-top:12rpx;
+}
+.one{
+  display:block;
+  margin-bottom:16rpx;  
+  font-size:30rpx;
+  color:#7E7F7A;
+   width:330rpx;
+   overflow:hidden;
+   white-space:nowrap;  
+  text-overflow:ellipsis;  
+}
+.tow{
+  font-size:26rpx;
+  color:#A0A19D;
+  width:480rpx;
+  height:70rpx;
+   overflow:hidden;
+   line-height:35rpx;
+}
+.user{
+ display:flex;
+ margin-bottom:16rpx;
+}
+.uimage{
+  width:32rpx;
+  height:32rpx;
+ margin-right:10rpx;
+ margin-top:3rpx;
+}
+.username{
+  font-size:26rpx;
+  color:#999;
+}
+
+
+.load{
+text-align: center;
+margin-top:20rpx;
+margin-bottom:20rpx;
+color:#999;
+font-size:24rpx;
+
+
+}

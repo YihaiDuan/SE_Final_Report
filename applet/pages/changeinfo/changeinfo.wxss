@@ -1,0 +1,14 @@
+.changename{
+  margin:30rpx;
+  margin-right:10rpx;
+  margin-bottom:0rpx;
+  border-bottom:2rpx solid #007bff;
+  padding:10rpx 20rpx;
+  flex:1;
+
+}
+.group{
+   margin:30rpx 90rpx;
+
+
+}

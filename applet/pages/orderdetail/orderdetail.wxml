@@ -1,0 +1,99 @@
+<view class="box">
+<view class="content">
+<view class="booknews">
+<image src="{{orderdetail.bookimages}}" class="bookimages"></image>
+<view class="bookname">
+<view class="bone">{{orderdetail.booktitle}}</view>
+<view class="btow">预订单号:  594d0c15ac5021ca{{orderdetail.id}}</view>
+
+<view class="btow">图书号:  {{orderdetail.booksonid}}</view>
+<view class="btow"  >押金:  <text  style="color:#007bff;font-size:30rpx;">￥{{orderdetail.cash}}</text></view>
+
+<view class="btow"   wx:if="{{orderdetail.status=='2'}}"    >状 态:<text style="color:#007bff;">已过期</text>
+</view>
+<view class="btow"  wx:if="{{orderdetail.status=='1'}}"    >状 态:<text style="color:#007bff;">已领取</text>
+</view>
+
+<view class="btow"  wx:if="{{orderdetail.status=='0'}}"      >状 态:<text style="color:#007bff;">  未领取</text>
+</view>
+
+</view>
+
+</view>
+</view>
+
+</view>
+
+
+
+
+<view class="tishi">
+<view class="title">借书时间：{{orderdetail.date}} </view>
+<view class="title">到期时间：{{orderdetail.orderdate}}</view>
+</view>
+
+
+
+
+
+<view style="text-align:center;"  wx:if="{{beyondbol=='false'}}">
+
+<form  bindsubmit="pay"  report-submit="true"  wx:if="{{combol}}">
+<button  plain="true"  form-type="submit" size="mini" style="color:#fff;background:#007bff;border-color:#007bff;padding:0 280rpx;">确认支付</button>
+</form>
+
+<navigator hover-class="none" url="../recharge/recharge"  wx:if="{{!combol}}">
+<button  plain="true"   size="mini" style="color:#fff;background:#007bff;border-color:#007bff;padding:0 280rpx;">立即充值</button>
+</navigator>
+
+</view>
+
+
+
+
+<view style="text-align:center;"  wx:if="{{beyondbol=='true'}}">
+<view style="display:flex;padding:10rpx 20rpx;">
+
+<button     plain="true" bindtap="transmit"  size="mini" style="padding:0 100rpx;border-color:#ccc;color;#333;">图书转借</button>
+
+<form  bindsubmit="newborrow"   report-submit="true">
+<button  wx:if="{{borrowdetail.renewstatus==0}}"  plain="true"   form-type="submit" size="mini" style="color:#fff;background:#007bff;border-color:#007bff;padding:0 100rpx;">图书续借</button>
+</form>
+
+
+<button    wx:if="{{borrowdetail.renewstatus!=0}}"  plain="true" size="mini" style="color:#fff;background:#007bff;border-color:#007bff;padding:0 100rpx;">已续借</button>
+
+
+</view>
+</view>
+
+
+
+
+<view class="tishi">
+<view class="title">温馨提示</view>
+<view class="content">
+<text class="ctext">· 预订图书可到图书馆预订区直接领取</text>
+<text class="ctext">· 预订图书将收取用户服务费用</text>
+<text class="ctext">· 请在指点时间内到图书馆领书，否者预订图书将过期</text>
+</view>
+</view>
+
+
+
+
+
+<view class="reduce">
+<view class="reducetop"  style="text-align:center;margin-bottom:30rpx;display:flex;">
+<text style="flex:1;border-top:1rpx solid #999;margin-top:25rpx;margin-left:50rpx;margin-right:10rpx;"></text>
+<text style="font-size:35rpx;color:#999" >为您推荐 </text>
+<text style="flex:1;border-top:1rpx solid #999;margin-top:25rpx;margin-left:10rpx;margin-right:50rpx;"></text>
+</view>
+
+<view class="reducecenter"  wx:if="{{referlist.length!=0}}">
+<navigator hover-class="none" wx:for="{{referlist}}"  url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.typeid}}"  class="centermain"><image class="reduceimg" src="{{item.bookimages}}" mode="widthFix"></image>
+<text  class="reducetitle">{{item.booktitle}}</text>
+<text  class="reduceauthor">￥{{item.cash}}</text>
+</navigator>
+</view>
+</view>

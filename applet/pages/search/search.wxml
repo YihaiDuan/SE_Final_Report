@@ -1,0 +1,49 @@
+<form bindsubmit="formSubmit">
+  <view class="section">
+  <picker value="{{index}}" range="{{citys}}" bindchange="bindPickerChanger">
+  <view style="margin-top:24rpx;color:#666;">{{citys[index]}}</view>
+</picker>
+
+  <input placeholder="输入想要的书籍"  auto-focus placeholder-class="placeholder1" class="inputclass"     name="search"   
+  />
+  <button size="mini" form-type="submit" hover-class="buttom-hover" class="button">搜索</button>
+</view>
+</form>
+
+
+
+
+<view class="history"  wx:if="{{hotsearch.length!=0}}"  
+wx:if="{{histroybol}}" >
+<text class="historytext"><text class="iconfont icon-time" style="margin-right:6rpx;"></text>热门搜索</text>
+<view  class="hotmain"  >
+<view wx:for="{{hotsearch}}"  class="hotview"  bindtap="recordsearch" data-recorddata="{{item.booktitle}}">{{item.booktitle}}</view>
+
+</view>
+
+
+</view>
+
+
+
+
+
+<view class="history"  
+wx:if="{{histroybol}}" >
+<text class="historytext"><text class="iconfont icon-time" style="margin-right:6rpx;"></text>历史搜索</text>
+<label class="historybody" wx:for="{{array}}" wx:if="{{history}}">
+ <text class="historytext1"    bindtap="recordsearch"    data-recorddata="{{item}}">
+ {{item}}
+ </text>
+
+</label>
+<text  bindtap="clearstore" class="history2" >清除历史记录</text>
+
+</view>
+
+
+<view  wx:for="{{searchsynlist.searchlist}}" class="searchtitle">
+
+<text  bindtap="recordsearch" style="display:block;"   data-recorddata="{{item.booktitle}}">{{item.booktitle}}</text>
+
+</view>

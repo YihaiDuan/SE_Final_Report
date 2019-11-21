@@ -1,0 +1,38 @@
+<view class="page-header" style="display:flex">
+<text class="page-header-text" style="font-size:32rpx;color:#999;line-height:90rpx;padding-left:30rpx;flex:1;">搜索结果</text><text style="color:#999;font-size:30rpx;margin-right:60rpx;line-height:90rpx;vertical-align:text-bottom;">共检索到<text style="color:blue;font-size:34rpx;padding:0 6rpx;">{{all}}</text>记录</text>
+</view>
+
+<scroll-view class="page-body" scroll-y="true"   bindscrolltolower="onbottom"  style="height:100vh">
+ <navigator  hover-class="none" bindtap="searchcount"  url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.category_id}}" wx:for="{{movies}}"   data-bookid="{{item.bookid}}">
+  <view class="item">
+   <image src="{{item.bookimages}}" class="poster" >
+   </image>
+   <view class="right">
+    <text class="title" style="margin-top:10rpx;">{{item.booktitle}}</text>
+    <text class="tow">{{item.introduce}}</text>
+     <view class="user">
+     <view style="flex:1;width:200rpx;">
+      <text class="username" style="width:200rpx;overflow:hidden; white-space:nowrap;text-overflow:ellipsis;display:block;"><text class="iconfont icon-renwutouxiang" style="font-size:26rpx; margin-right:10rpx;"></text><text style="width:300rpx;">{{item.author}}</text></text>
+      </view>
+
+
+<text style="font-size:26rpx;color:#999;margin-right:20rpx;vertical-align:text-bottom;"   wx:if="{{item.type=='1'}}" >藏书量 {{item.totalnum}}</text>
+
+<view  wx:if="{{item.type=='0'}}">
+ <text style="font-size:26rpx;color:#999;margin-right:10rpx;vertical-align:text-top"   wx:if="{{item.borrowstatus=='0'&&item.orderstatus=='0'}}"  >在库</text>
+
+
+<text style="font-size:26rpx;color:#999;margin-right:90rpx;vertical-align:text-top;"   wx:if="{{item.borrowstatus!='0'||item.orderstatus!='0'}}" >已借</text>
+</view>
+     </view>
+   </view>
+      <view class="rating">
+      <text>
+      {{item.rating.average}}
+      </text>
+      </view>
+  </view>
+ </navigator>
+  <view  class="load" wx:if="{{searchLoading}}">正在加载更多内容</view>
+<view class="load" wx:if="{{searchLoadingComplete}}">已加载完全部内容</view>
+</scroll-view>

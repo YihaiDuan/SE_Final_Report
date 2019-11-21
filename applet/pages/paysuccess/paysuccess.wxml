@@ -1,0 +1,46 @@
+
+<view class="top"  wx:if="{{gradebol}}">
+ <icon type="success" size="80" color="#007bff"/>
+<text  class="textnotice">支付成功，恭喜你成为会员</text>
+</view>
+
+
+<view class="top"  wx:if="{{wallbol}}" >
+ <icon type="success" size="80" color="#007bff"/>
+<text  class="textnotice">支付成功，积分+{{score}}</text>
+</view>
+
+<!-- <view class="top"  wx:if="{{orderbol}}" >
+ <icon type="success" size="80" color="#007bff"/>
+<text  class="textnotice">支付成功，预订单已生成</text>
+</view> -->
+
+<view class="top"  wx:if="{{scorechangebol}}" >
+ <icon type="success" size="80" color="#007bff"/>
+<text  class="textnotice">兑换成功，代金券已经到手</text>
+</view>
+
+
+<!-- <view class="top"  wx:if="{{elebol}}" >
+ <icon type="success" size="80" color="#007bff"/>
+<text  class="textnotice">购买成功，现在可以阅读了</text>
+</view> -->
+
+
+<view class="top"  wx:if="{{borrowpaybol}}" >
+ <icon type="success" size="80" color="#007bff"/>
+<text  class="textnotice">押金支付成功，图书已借得,积分+5</text>
+</view>
+
+
+<view class="top"  wx:if="{{returnpaybol}}" >
+ <icon type="success" size="80" color="#007bff"/>
+<text  class="textnotice">欠费支付成功</text>
+</view>
+
+
+
+<!-- <view class="top"  wx:if="{{tranpaybol}}" >
+ <icon type="success" size="80" color="#007bff"/>
+<text  class="textnotice">转借费用支付成功,图书已借得,积分+5</text>
+</view> -->

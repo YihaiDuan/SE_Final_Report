@@ -1,0 +1,33 @@
+<view>
+<view class="news">
+<view class="userimage" ><image src="{{applydetail.userimages}}" style="width:120rpx;height:120rpx;border-radius:50%;"></image></view>
+<view class="username">{{applydetail.nickname}}</view>
+
+
+</view>
+
+<view wx:if="{{applydetail.status!='0'}}">
+<view class="news"  wx:if="{{applydetail.personQR=='null'}}" >
+<text style="font-size:32rpx;color:#ccc;margin-right:50rpx;margin-left:20rpx;">个人二维码</text>
+<text style="color:#333;font-size:32rpx;">对方拒绝提供个人二维码</text>
+</view>
+
+<view class="news"  wx:if="{{applydetail.personQR!='null'}}" >
+<text style="font-size:32rpx;color:#ccc;margin-right:50rpx;margin-left:20rpx;">二维码</text>
+<image src="http://localhost:8080/BorrowBook/images/{{applydetail.personQR}}"  bindtap="previewimages"   data-url="{{applydetail.personQR}}" style="width:80rpx;height:80rpx;"></image>
+</view>
+</view>
+
+
+
+<view class="news">
+<text style="font-size:32rpx;color:#ccc;margin-right:50rpx;margin-left:20rpx;">来源</text><text style="color:#333;font-size:32rpx;">附近的人</text>
+</view>
+
+<view  wx:if="{{applydetail.status=='0'}}" style="display:block;margin-top:50rpx;font-size:32rpx;text-align:center;color:#ccc;">待同意</view>
+
+
+<view  wx:if="{{applydetail.status=='1'}}" style="display:block;margin-top:50rpx;font-size:32rpx;text-align:center;color:#ccc;">已同意</view>
+
+<view  wx:if="{{applydetail.status=='2'}}" style="display:block;margin-top:50rpx;font-size:32rpx;text-align:center;color:#ccc;">已拒绝</view>
+</view>

@@ -1,0 +1,154 @@
+<view class="top">书籍目录</view>
+<view class="body">
+<view  wx:if="{{bol}}">
+<view   wx:if="{{freestatus==1}}">
+<!--没有购买-->
+<view class="one" wx:if="{{detail.readbol=='false'&&bol}}"   wx:for="{{booklist}}">
+
+<navigator hover-class="none"  wx:if="{{index>=freeindex}}" style="display:flex"url="../elebookpay/elebookpay?bookid={{bookid}}">
+<text class="text" style="flex:1" >{{item.catename}}</text>
+
+<text  class="text"  style="color:#E42A29;">付费</text>
+</navigator>
+
+
+<navigator url="../text1/text1?bookid={{bookid}}&readstatus=0&start={{item.start-1}}&from=catelog" hover-class="none"  wx:if="{{index<freeindex}}"  style="display:flex">
+<text class="text" style="flex:1">{{item.catename}}</text>
+<text  class="text"  style="color:#007bff;">试读</text>
+</navigator>
+</view>
+
+
+<!--已经购买-->
+<view class="one"  wx:if="{{detail.readbol=='true'&&bol}}"   wx:for="{{booklist}}">
+
+<navigator hover-class="none"  style="display:flex"url="../text1/text1?bookid={{bookid}}&readstatus=1&start={{item.start-1}}&from=catelog">
+<text class="text" style="flex:1" >{{item.catename}}</text>
+
+</navigator>
+</view>
+</view>
+
+
+
+<!--免费阅读-->
+<view  wx:if="{{detail.freestatus==0}}">
+<view class="one"    wx:for="{{booklist}}">
+
+<navigator hover-class="none"  wx:if="{{index==0}}"style="display:flex"url="../text1/text1?bookid={{bookid}}&readstatus=1&start={{item.start-1}}&from=catelog">
+<text class="text" style="flex:1" >{{item.catename}}</text>
+</navigator>
+
+<navigator hover-class="none"  wx:if="{{index!=0}}"style="display:flex"url="../text1/text1?bookid={{bookid}}&readstatus=1&start={{item.start}}&from=catelog">
+<text class="text" style="flex:1" >{{item.catename}}</text>
+</navigator>
+
+</view>
+
+
+</view>
+
+
+<!--收费图书  vip不免费-->
+<view  wx:if="{{detail.freestatus==1&&detail.vipfreestatus==0}}">
+
+
+<!--没有购买-->
+<view class="one" wx:if="{{detail.readbol=='false'&&bol}}"   wx:for="{{booklist}}">
+
+<navigator hover-class="none"  wx:if="{{index>=freeindex}}" style="display:flex"url="../elebookpay/elebookpay?bookid={{bookid}}">
+<text class="text" style="flex:1" >{{item.catename}}</text>
+
+<text  class="text"  style="color:#E42A29;">付费</text>
+</navigator>
+
+
+<navigator url="../text1/text1?bookid={{bookid}}&readstatus=0&start={{item.start-1}}&from=catelog" hover-class="none"  wx:if="{{index<freeindex&&index==0}}"  style="display:flex"  >
+<text class="text" style="flex:1">{{item.catename}}</text>
+<text  class="text"  style="color:#007bff;">试读</text>
+</navigator>
+
+<navigator url="../text1/text1?bookid={{bookid}}&readstatus=0&start={{item.start}}&from=catelog" hover-class="none"  wx:if="{{index<freeindex&&index!=0}}"  style="display:flex"  >
+<text class="text" style="flex:1">{{item.catename}}</text>
+<text  class="text"  style="color:#007bff;">试读</text>
+</navigator>
+
+
+</view>
+
+
+<!--已经购买-->
+<view class="one"  wx:if="{{detail.readbol=='true'&&bol}}"   wx:for="{{booklist}}">
+
+<navigator hover-class="none"  wx:if="{{index==0}}"style="display:flex"url="../text1/text1?bookid={{bookid}}&readstatus=1&start={{item.start-1}}&from=catelog">
+<text class="text" style="flex:1" >{{item.catename}}</text>
+</navigator>
+
+<navigator hover-class="none" wx:if="{{index!=0}}" style="display:flex"url="../text1/text1?bookid={{bookid}}&readstatus=1&start={{item.start}}&from=catelog">
+<text class="text" style="flex:1" >{{item.catename}}</text>
+</navigator>
+
+</view>
+
+
+</view>
+
+
+
+<!--vip免费-->
+ <view  wx:if="{{detail.freestatus==1&&detail.vipfreestatus==1}}">
+<!--vip免费-->
+<view  wx:if="{{user.grade==1}}">
+<view class="one"    wx:for="{{booklist}}">
+
+<navigator hover-class="none"  wx:if="{{index==0}}" style="display:flex"url="../text1/text1?bookid={{bookid}}&readstatus=1&start={{item.start-1}}&from=catelog">
+<view class="text" style="flex:1;display:flex;" >
+<text style="flex:1;">{{item.catename}}</text>
+<text style="color:#007bff;">vip免费</text></view>
+</navigator>
+
+<navigator hover-class="none"  wx:if="{{index!=0}}" style="display:flex"url="../text1/text1?bookid={{bookid}}&readstatus=1&start={{item.start}}&from=catelog">
+
+<view class="text" style="flex:1" style="flex:1;display:flex;">
+<text style="flex:1;">{{item.catename}}</text>
+<text style="color:#007bff;">vip免费</text></view>
+</navigator>
+
+
+
+
+</view>
+
+</view>
+
+<view  class="one"  wx:if="{{user.grade==0}}"  wx:for="{{booklist}}">
+
+<view style="display:flex"   bindtap="nograde" >
+<text class="text" style="flex:1" >{{item.catename}}</text>
+</view>
+
+</view>
+
+
+
+<view>
+
+
+
+</view>
+
+
+</view>
+
+
+
+
+</view>
+<!--没有登录-->
+<view class="one"  wx:if="{{!bol}}"   wx:for="{{booklist}}">
+<view style="display:flex"   bindtap="nologin" >
+<text class="text" style="flex:1" >{{item.catename}}</text>
+</view>
+</view>
+
+</view>

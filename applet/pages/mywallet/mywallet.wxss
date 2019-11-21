@@ -1,0 +1,19 @@
+.top{
+  padding:30rpx 0;
+  margin-top:80rpx;
+}
+.balance{
+text-align:center;
+color:#A8A29B;
+font-size:32rpx;
+
+}
+.price{
+text-align:center;
+font-size:80rpx;  
+line-height:120rpx;
+}
+.operation{
+padding:0 40rpx;
+
+}

@@ -1,0 +1,84 @@
+.box{
+  padding:30rpx 0;
+
+}
+.top{
+text-align:center;
+display:flex;
+flex-direction: column;
+
+}
+.champion{
+ width:120rpx;
+ height:120rpx;
+ margin:30rpx auto;
+}
+.news{
+  margin:20rpx 0;
+  color:#999;
+  font-size:36rpx;
+  font-weight:600;
+
+}
+.status{
+  padding:40rpx 0;
+  margin:0 40rpx;
+  border-bottom:1rpx solid #E5E6E0;
+  display:flex;
+  
+
+}
+.left,.content,.right{
+    flex:1;
+    text-align:center;
+    display:flex;
+    flex-direction: column;
+}
+.left{
+  color:#56B256;
+}
+.content{
+  color:#FE8E40;
+}
+.right{
+   color:#25B3FF;
+
+}
+.one{
+   font-size:30rpx;
+}
+.tow{
+   font-size:70rpx;
+   padding:20rpx;
+   font-weight:600;
+   
+}
+.three{
+ font-size:30rpx;
+
+
+}
+.canvas {
+  margin:20rpx auto;
+  width:320px;
+  height:200px;
+  margin-top: 20rpx;
+}
+.canvas1 {
+  margin:20rpx auto;
+  width:320px;
+  height:220px;
+  margin-top: 20rpx;
+}
+.time{
+ margin:30rpx 0;
+ text-align:center;
+ font-size:30rpx;
+ letter-spacing: 2rpx;
+}
+.timenews{
+  background:#007bff;
+  color:#FFF;
+  padding:10rpx 20rpx;
+ 
+}

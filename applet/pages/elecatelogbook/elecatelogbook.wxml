@@ -1,0 +1,11 @@
+<view class="top">书籍目录</view>
+<view class="body">
+
+
+<view class="one"    wx:for="{{booklist}}">
+<view style="display:flex"   bindtap="nologin" >
+<text class="text" style="flex:1" >{{item.catename}}</text>
+</view>
+</view>
+
+</view>

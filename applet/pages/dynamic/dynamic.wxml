@@ -1,0 +1,167 @@
+
+<scroll-view scroll-y="true" class="box" wx:if="{{dynamiclist.length!=0}}"   bindscrolltolower="onbottom" bindscrolltoupper="refresh"    style="height:100vh" >
+ 
+ <view    wx:if="{{hotdynamiclist.length!=0}}">
+<text style="margin-left:20rpx;color:#999;font-size:28rpx;">热门书评<text class="iconfont icon-you" style="color:#999;margin-left:16rpx;font-weight:700;font-size:28rpx;"></text></text>
+ <scroll-view  class="bookbody" scroll-x="true">
+ <view  wx:for="{{hotdynamiclist}}" class="bookn"  >
+  <navigator  bindtap="setIndex"   data-index="{{index}}"    hover-class="none" class="news" url="../dynamicdetail/dynamicdetail?dynamicid={{item.dynamicid}}"  >
+ <image  src="https://www.titwdj.cn/BorrowBook/images/{{item.images}}"class="bookimage"></image>
+
+</navigator>
+ </view>
+ </scroll-view>
+ </view>
+
+
+<view class="news" wx:for="{{dynamiclist}}" >
+<view class="top">
+<navigator   wx:if="{{logs.userid==item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=1"  hover-class="none">
+<image src="{{item.userimages}}" class="topimages"></image>
+</navigator>
+
+<navigator hover-class="none"  wx:if="{{logs.userid!=item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=0"  hover-class="none">
+<image src="{{item.userimages}}" class="topimages"></image>
+</navigator>
+
+<view class="new"  >
+<navigator   wx:if="{{logs.userid!=item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=0"  hover-class="none">
+<view class="name">{{item.nickname}}</view>
+</navigator>
+<navigator   wx:if="{{logs.userid==item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=1"  hover-class="none">
+<view class="name">{{item.nickname}}</view>
+</navigator>
+<navigator bindtap="setIndex"   data-index="{{index}}" hover-class="none" wx:if="{{item.type=='0'}}"  url="../dynamicdetail/dynamicdetail?dynamicid={{item.dynamicid}}">
+<view class="time">{{item.date}}</view>
+</navigator>
+
+<navigator bindtap="setIndex"   data-index="{{index}}" hover-class="none"  wx:if="{{item.type=='1'}}"  url="../bookreview/bookreview?dynamicid={{item.dynamicid}}">
+<view class="time">{{item.date}}</view>
+</navigator>
+
+<navigator   hover-class="none"  wx:if="{{item.type=='2'}}"  url="../sharegroupdetail/sharegroupdetail?groupmainid={{item.groupmainid}}">
+<view class="time">{{item.date}}</view>
+</navigator>
+</view>
+</view>
+
+<view class="center" bindtap="setIndex"   data-index="{{index}}"  wx:if="{{item.type=='0'}}">
+<view class="content">
+<navigator url="../dynamicdetail/dynamicdetail?dynamicid={{item.dynamicid}}"  hover-class="none">
+{{item.describ}}
+</navigator>
+</view>
+
+<view class="cimages" >
+<image bindtap="previewuserimages"  wx:for="{{item.images}}"   wx:if="{{item.img!=0}}"src="https://www.titwdj.cn/BorrowBook/images/{{item.img}}"  data-url="{{item.img}}"  class="cimage" >
+</image>
+</view>
+</view>
+
+<view class="center" bindtap="setIndex"   data-index="{{index}}"  wx:if="{{item.type=='1'}}">
+<navigator url="../bookreview/bookreview?dynamicid={{item.dynamicid}}"  hover-class="none">
+<view class="content">
+{{item.title}}
+</view>
+<view class="subject">
+{{item.describ}}
+</view>
+</navigator>
+</view>
+
+
+<view class="center"   wx:if="{{item.type=='2'}}">
+<navigator url="../sharegroupdetail/sharegroupdetail?groupmainid={{item.groupmainid}}"  hover-class="none">
+<view class="subject">
+{{item.describ}}
+</view>
+</navigator>
+</view>
+
+
+<navigator  hover-class="none"  url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.typeid}}">
+<view style="margin-top:10rpx;background:#E7E9E8;padding:10rpx; margin-left:110rpx;display:flex;">
+<view class="imagebox">
+<image src="{{item.bookimages}}" class="bookimages"></image>
+</view>
+<view class="booknews">
+<view class="bookname">{{item.booktitle}}</view>
+<view class="author">{{item.author}}</view>
+</view>
+</view>
+</navigator>
+
+
+
+<view class="thumbs">
+
+<view  wx:if="{{bol}}">
+<view class="t1"   wx:if="{{item.admirebol=='false'}}">
+<text class="iconfont icon-icon-good" style="margin-right:12rpx;font-size:34rpx;color:#5D5E60"  bindtap="Addadmire" data-admirenum="{{item.admirenum}}" data-index="{{index}}" data-dynamicid="{{item.dynamicid}}"  ></text>{{item.admirenum}}
+</view>
+
+
+<view class="t1"   wx:if="{{item.admirebol=='true'}}">
+<text class="iconfont icon-icon-good" style="margin-right:12rpx;font-size:34rpx;color:#007bff" bindtap="Deleteadmire"  data-dynamicid="{{item.dynamicid}}" data-admirenum="{{item.admirenum}}" data-index="{{index}}" data-dynamicid="{{item.dynamicid}}"></text>{{item.admirenum}}
+</view>
+</view>
+
+<view class="t1"   wx:if="{{!bol}}" bindtap="nologin">
+<text class="iconfont icon-icon-good" style="margin-right:12rpx;font-size:34rpx;color:#5D5E60"></text>{{item.admirenum}}
+</view>
+
+
+<navigator bindtap="setIndex"   data-index="{{index}}"  wx:if="{{item.type=='0'||item.type=='2'}}" url="../dynamicdetail/dynamicdetail?dynamicid={{item.dynamicid}}" hover-class="none">
+<view class="t1"><text class="iconfont icon-pinglun1" style="margin-right:12rpx;font-size:38rpx;color:#5D5E60;font-weight:bold;"></text>{{item.count}}</view>
+</navigator>
+
+<navigator hover-class="none"   bindtap="setIndex"   data-index="{{index}}" wx:if="{{item.type=='1'}}" url="../bookreview/bookreview?dynamicid={{item.dynamicid}}" hover-class="none">
+<view class="t1"><text class="iconfont icon-pinglun1" style="margin-right:12rpx;font-size:38rpx;color:#5D5E60;font-weight:bold;position:relative;top:4rpx;"></text>{{item.count}}</view>
+</navigator>
+
+<view class="t1" style="display:flex;">
+<button bindtap="setButtonId" data-id="{{item.dynamicid}}" type="mini" open-type="share" plain="true"  data-dynamicid="{{item.dynamicid}}"  style="border:0  solid #fff;padding:0;margin-top:-40rpx;">  
+<text class="iconfont icon-wodefenxiang" style="margin-right:12rpx;font-size:34rpx;color:#5D5E60;position:relative;top:16rpx;"></text>
+</button>
+<text>分享</text>
+</view>
+</view>
+</view>
+<view  class="load" wx:if="{{searchLoading}}">正在加载更多内容</view>
+<view class="load" wx:if="{{searchLoadingComplete}}">已加载完全部内容</view>
+
+
+</scroll-view>
+
+
+
+
+<view wx:if="{{scirl}}">  
+  <navigator hover-class="none" url="../bookcomment/bookcomment">
+  <image src="../../images/5.0.png" class="img-style" animation="{{animCollect}}" bindtap="collect"></image></navigator>
+
+
+
+
+  <navigator  hover-class="none" url="../dynamicsend/dynamicsend" ><image src="../../images/6.0.png" class="img-style" animation="{{animInput}}" ></image></navigator>  
+
+
+    <image src="../../images/4.1.png"  wx:if="{{bol}}"class="img-plus-style" animation="{{animPlus}}" bindtap="plus"></image>   
+
+
+
+    <image src="../../images/4.1.png"  wx:if="{{!bol}}"class="img-plus-style" animation="{{animPlus}}" bindtap="nologin"></image>   
+
+</view>  
+
+
+
+
+
+
+
+
+
+
+
+

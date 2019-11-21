@@ -1,0 +1,41 @@
+
+
+
+<view class="box">
+<view class="top">
+<view class="myscorenews">
+<view class="onenews">总积分</view><view class="townews">{{user.score}}</view>
+</view>
+</view>
+<view class="exchange">
+<text style="color:#ccc;">————</text> 积分兑换<text style="color:#ccc;">————</text>
+</view>
+<view>
+<view class="title">图书代金券</view>
+<view class="vouchers"   >
+<view class="vouch"   wx:for="{{discountlist}}">
+<navigator hover-class="none" url="../buydiscount/buydiscount?countid={{item.id}}">
+<view class="coupon" >
+
+<view class="leftcoupon">代金券</view>
+<view class="rightcoupon">
+<view class="ne"><text style="font-size:24rpx;">¥</text>{{item.discount}}
+</view>
+</view>
+</view>
+<view class="couponprice">{{item.typename}}</view>
+<view class="present">
+<view  class="leftpresent" wx:if="{{user.grade==0}}">积分 {{item.discount*100}}</view>
+<view  class="leftpresent" wx:if="{{user.grade==1}}"> vip {{item.discount*100*0.8}}</view>
+</view>
+</navigator>
+
+</view>
+
+</view>
+
+</view>
+
+</view>
+
+

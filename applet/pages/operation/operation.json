@@ -1,0 +1,11 @@
+{
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FE7101",
+    "navigationBarTitleText": "个性图书推荐",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": true
+  }
+
+
+}

@@ -1,0 +1,28 @@
+<!--<view class="top"  >
+<image src="../../images/fenxiang.jpg" class="fenxiangimages"></image>
+<view class="groupsuccess">
+开团成功!
+</view>
+</view>
+<view style="text-align:center;margin-top:50rpx;">
+<text wx:if="{{bol}}"  bindtap="share" style="font-size:50rpx;background:#007bff;color:#fff;display:inline-block;width:140rpx;height:140rpx;line-height:140rpx;border-radius:50%;">分享</text><text wx:if="{{!bol}}"  bindtap="noshare" style="font-size:50rpx;background:#007bff;color:#fff;display:inline-block;width:140rpx;height:140rpx;line-height:140rpx;border-radius:50%;">分享</text>
+</view>
+<view style="text-align:center;font-size:30rpx;color:#333;margin-top:30rpx;">
+<text>快邀请伙伴来参团</text>
+</view>-->
+
+
+<view class="box">
+<view class="top">
+  <icon type="success" size="80" color="#007bff"/>
+ </view>
+ <view class="success">
+ <text>开团成功!</text>
+ </view>
+  <view class="fenxiang" wx:if="{{bol}}">
+  <button style="color:#fff;background:#007bff;font-size:36rpx;" bindtap="share" >分享</button>
+  </view>
+   <view class="fenxiang" wx:if="{{!bol}}">
+  <button bindtap="noshare"  style="color:#fff;background:#007bff; font-size:36rpx;">分享</button>
+  </view>
+</view>

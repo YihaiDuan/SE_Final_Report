@@ -1,0 +1,316 @@
+<scroll-view scroll-y="true" class="box">
+<view class="news"   wx:if="{{dynamicdetail}}" >
+<view class="top">
+<navigator   wx:if="{{logs.userid==dynamicdetail.userid}}"  url="../userinf/userinf?userid={{dynamicdetail.userid}}&bol1=1"  hover-class="none">
+<image src="{{dynamicdetail.userimages}}" class="topimages"></image>
+</navigator>
+
+
+<navigator   wx:if="{{logs.userid!=dynamicdetail.userid}}"  url="../userinf/userinf?userid={{dynamicdetail.userid}}&bol1=0"  hover-class="none">
+<image src="{{dynamicdetail.userimages}}" class="topimages"></image>
+</navigator>
+
+
+<view class="new">
+<navigator   wx:if="{{logs.userid==dynamicdetail.userid}}"  url="../userinf/userinf?userid={{dynamicdetail.userid}}&bol1=1"  hover-class="none">
+<view class="name">{{dynamicdetail.nickname}}</view>
+</navigator>
+<navigator   wx:if="{{logs.userid!=dynamicdetail.userid}}"  url="../userinf/userinf?userid={{dynamicdetail.userid}}&bol1=0"  hover-class="none">
+<view class="name">{{dynamicdetail.nickname}}</view>
+</navigator>
+<view class="time">{{dynamicdetail.date}}</view>
+</view>
+
+<view  style="flex-direction: column">
+
+<view   wx:if="{{bol}}">
+<view  wx:if="{{dynamicdetail.fanbol!='2'}}">
+<view class="follow"   wx:if="{{dynamicdetail.fanbol=='0'}}"  data-otherid="{{dynamicdetail.userid}}"  data-dynamicid="{{dynamicdetail.dynamicid}}" bindtap="AddFan">+关注</view>
+<view class="follow"   wx:if="{{dynamicdetail.fanbol=='1'}}"  data-otherid="{{dynamicdetail.userid}}"  data-dynamicid="{{dynamicdetail.dynamicid}}"  bindtap="DeleteFan">已关注</view>
+</view>
+</view>
+
+<view  wx:if="{{!bol}}">
+<view class="follow" bindtap="nologin" >+关注</view>
+</view>
+
+</view>
+</view>
+
+<view class="center"    >
+
+<view class="content">
+{{dynamicdetail.describ}}
+</view>
+<view class="cimages">
+<image   wx:for="{{dynamicdetail.images}}"  wx:if="{{item.img!=0}}"src="https://www.titwdj.cn/BorrowBook/images/{{item.img}}" class="cimage"  bindtap="previewuserimages" data-url="{{item.img}}"></image>
+
+</view>
+</view>
+
+<navigator hover-class="none" url="../particulars/particulars?bookid={{dynamicdetail.bookid}}&advice={{dynamicdetail.typeid}}">
+<view style="margin-top:10rpx;background:#E7E9E8;padding:10rpx; display:flex;">
+<view class="imagebox">
+<image src="{{dynamicdetail.bookimages}}" class="bookimages"></image>
+</view>
+<view class="booknews">
+<view class="bookname">{{dynamicdetail.booktitle}}</view>
+<view class="author">{{dynamicdetail.author}}</view>
+</view>
+</view>
+</navigator>
+
+
+
+
+<view class="fabulous"  style="flex:1;display:flex;" wx:if="{{dynamicdetail.admirenum!=0}}">
+<view style="display:flex;flex:1;">
+<text style="display:inline-block;margin-top:20rpx;">赞:</text>
+
+<navigator  hover-class="none" url="url"  wx:for="{{admirelist}}">
+<image   src="{{item.userimages}}" class="headimages"></image>
+</navigator>
+</view>
+<view  wx:if="{{bol}}" style="float:right;margin-right:6rpx;margin-top:20rpx;">
+<view class="t1"  style="margin-right:5rpx"  wx:if="{{dynamicdetail.admirebol=='false'}}">
+<text class="iconfont icon-icon-good" style="font-size:36rpx;margin-left:12rpx;  "bindtap="Addadmire"  data-dynamicid="{{dynamicdetail.dynamicid}}" ></text>
+{{dynamicdetail.admirenum}}
+</view>
+
+<view class="t1"   style="margin-right:5rpx" wx:if="{{dynamicdetail.admirebol=='true'}}">
+<text class="iconfont icon-icon-good" style="font-size:36rpx;margin-left:12rpx;color:#007bff"  bindtap="Deleteadmire"  data-dynamicid="{{dynamicdetail.dynamicid}}" ></text>
+{{dynamicdetail.admirenum}}
+</view>
+</view>
+</view>
+
+<!--点赞-->
+
+
+<view class="t1"  style="margin-right:5rpx"  wx:if="{{!bol}}" bindtap="nologin">
+<text class="iconfont icon-icon-good" style="font-size:36rpx;margin-left:12rpx;" ></text>
+{{dynamicdetail.admirenum}}
+</view>
+
+
+
+</view>
+
+<view class="commenttop"  wx:if="{{commentnblist.size!=0}}">
+精彩评论
+</view>
+
+<view class="commentbody" wx:if="{{commentnblist.size!=0}}"  wx:for="{{commentnblist}}" >
+<view class="usernews"   >
+<navigator   wx:if="{{logs.userid==item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=1"  hover-class="none">
+<image src="{{item.userimages}}" class="userimages"></image>
+</navigator>
+<navigator   wx:if="{{logs.userid!=item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=0"  hover-class="none">
+<image src="{{item.userimages}}" class="userimages"></image>
+</navigator>
+
+<view class="username"  wx:if="{{bol}}" data-commentid="{{item.commentid}}"  data-dynamicid="{{item.dynamicid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"  
+bindtap="replyshow">
+<navigator   wx:if="{{logs.userid==item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=1"  hover-class="none">
+<view class="uname">{{item.nickname}}</view>
+</navigator>
+<navigator   wx:if="{{logs.userid!=item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=0"  hover-class="none">
+<view class="uname">{{item.nickname}}</view>
+</navigator>
+<view class="utime">{{item.date}}</view>
+</view>
+
+<view class="username"  wx:if="{{!bol}}"  
+bindtap="nologin">
+<view class="uname">{{item.nickname}}</view>
+<view class="utime">{{item.date}}</view>
+</view>
+<!--互评点赞-->
+<view  wx:if="{{bol}}">
+<view class="give"   wx:if="{{item.admirebol=='true'}}">
+<text class="iconfont icon-icon-good" style="font-size:24rpx;margin-left:12rpx;color:#007bff"   bindtap="DeleteCommentadmire"   data-dynamicid="{{item.dynamicid}}"  data-commentid="{{item.commentid}}"></text>
+{{item.admirenum}}
+</view>
+
+<view class="give"   wx:if="{{item.admirebol=='false'}}">
+<text class="iconfont icon-icon-good" style="font-size:24rpx;margin-left:12rpx;"   bindtap="AddCommentadmire"   data-dynamicid="{{item.dynamicid}}"  data-commentid="{{item.commentid}}"></text>
+{{item.admirenum}}
+</view>
+
+</view>
+
+<view class="give"   wx:if="{{!bol}}"   bindtap="nologin">
+{{item.admirenum}}<text class="iconfont icon-icon-good" style="font-size:24rpx;margin-left:12rpx;"></text>
+</view>
+
+</view>
+
+<view class="commentcontent">
+
+<view  wx:if="{{bol}}" data-commentid="{{item.commentid}}"  data-dynamicid="{{item.dynamicid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"  
+bindtap="replyshow">
+ {{item.describ}}
+ </view>
+ <view  wx:if="{{!bol}}"  bindtap="nologin">
+ {{item.describ}}
+ </view>
+
+
+ <view class="replay"    >
+<view class="replaylist" wx:for="{{item.replylist}}"  wx:if="{{item.size!=0}}">
+
+
+<view class="replaynews"   wx:if="{{bol}}"  data-commentid="{{item.commentid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"   data-dynamicid="{{item.dynamicid}}"
+bindtap="replyshow" >
+<view class="replayname"  >{{item.nickname}}<text style="color:#383A39;margin-left:12rpx;">{{item.describ}}</text></view>
+<view class="replaytime">{{item.date}}</view>
+</view>
+
+<view class="replaynews"   wx:if="{{!bol}}" 
+bindtap="nologin" >
+<view class="replayname"  >{{item.nickname}}<text style="color:#383A39;margin-left:12rpx;">{{item.describ}}</text></view>
+<view class="replaytime">{{item.date}}</view>
+</view>
+
+</view>
+</view>
+</view>
+</view>
+
+
+
+<view class="commenttop"  wx:if="{{commentlist.size!=0}}">
+最新评论
+</view>
+
+
+<view class="commentbody" wx:if="{{commentlist.size!=0}}"  wx:for="{{commentlist}}" >
+<view class="usernews"   >
+<navigator   wx:if="{{logs.userid==item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=1"  hover-class="none">
+<image src="{{item.userimages}}" class="userimages"></image>
+</navigator>
+<navigator   wx:if="{{logs.userid!=item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=0"  hover-class="none">
+<image src="{{item.userimages}}" class="userimages"></image>
+</navigator>
+
+<view class="username"  wx:if="{{bol}}" data-commentid="{{item.commentid}}"  data-dynamicid="{{item.dynamicid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"  
+bindtap="replyshow">
+<navigator   wx:if="{{logs.userid==item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=1"  hover-class="none">
+<view class="uname">{{item.nickname}}</view>
+</navigator>
+<navigator   wx:if="{{logs.userid!=item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=0"  hover-class="none">
+<view class="uname">{{item.nickname}}</view>
+</navigator>
+<view class="utime">{{item.date}}</view>
+</view>
+
+<view class="username"  wx:if="{{!bol}}"  
+bindtap="nologin">
+<view class="uname">{{item.nickname}}</view>
+<view class="utime">{{item.date}}</view>
+</view>
+<!--点赞-->
+<view  wx:if="{{bol}}">
+<view class="give"   wx:if="{{item.admirebol=='true'}}">
+<text class="iconfont icon-icon-good" style="font-size:24rpx;margin-left:12rpx;color:#007bff"   bindtap="DeleteCommentadmire"   data-dynamicid="{{item.dynamicid}}"  data-commentid="{{item.commentid}}"></text>
+{{item.admirenum}}
+</view>
+
+<view class="give"   wx:if="{{item.admirebol=='false'}}">
+<text class="iconfont icon-icon-good" style="font-size:24rpx;margin-left:12rpx;"   bindtap="AddCommentadmire"   data-dynamicid="{{item.dynamicid}}"  data-commentid="{{item.commentid}}"></text>
+{{item.admirenum}}
+</view>
+
+</view>
+
+<view class="give"   wx:if="{{!bol}}"   bindtap="nologin">
+{{item.admirenum}}<text class="iconfont icon-icon-good" style="font-size:24rpx;margin-left:12rpx;"></text>
+</view>
+
+</view>
+
+<view class="commentcontent">
+
+<view  wx:if="{{bol}}" data-commentid="{{item.commentid}}"  data-dynamicid="{{item.dynamicid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"  
+bindtap="replyshow">
+ {{item.describ}}
+ </view>
+ <view  wx:if="{{!bol}}"  bindtap="nologin">
+ {{item.describ}}
+ </view>
+
+
+ <view class="replay"    >
+<view class="replaylist" wx:for="{{item.replylist}}"  wx:if="{{item.size!=0}}">
+
+
+<view class="replaynews"   wx:if="{{bol}}"  data-commentid="{{item.commentid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"   data-dynamicid="{{item.dynamicid}}"
+bindtap="replyshow" >
+<view class="replayname"  >{{item.nickname}}<text style="color:#383A39;margin-left:12rpx;">{{item.describ}}</text></view>
+<view class="replaytime">{{item.date}}</view>
+</view>
+
+<view class="replaynews"   wx:if="{{!bol}}" 
+bindtap="nologin" >
+<view class="replayname"  >{{item.nickname}}<text style="color:#383A39;margin-left:12rpx;">{{item.describ}}</text></view>
+<view class="replaytime">{{item.date}}</view>
+</view>
+
+</view>
+</view>
+</view>
+</view>
+<view style="width:100%;height:110rpx;"></view>
+</scroll-view>
+
+
+ <form   bindsubmit="mainsubmit"    wx:if="{{bol}}">
+     <view  class="picture2" >
+     <view class="pone">
+     <input type="text"  value="{{describ}}" class="bottominput3" placeholder="写评论"   cursor-spacing="20"   name="describ"  maxlength="100"/> 
+      <button  form-type="submit" hover-class="buttom-hover" plain="true"  class="buttonx" size="mini" style="border:1px solid #fff;padding:0;">发送</button>
+      </view>
+</view>
+  </form>
+
+
+<form  bindtap="nologin" wx:if="{{!bol}}">
+     <view  class="picture2" >
+     <view class="pone">
+     <input type="text" auto-focus="true"  value="{{describ}}" class="bottominput3" placeholder="写评论"   cursor-spacing="20"    name="describ"  maxlength="100"/> 
+      <button  bindtap="nologin" hover-class="buttom-hover" plain="true"  class="buttonx" size="mini" style="border:1px solid #fff;padding:0;">发送</button>
+      </view>
+</view>
+  </form>
+
+
+<!--互相回复框-->
+
+ <form   bindsubmit="replysend" wx:if="{{formbol&&bol}}"  >
+     <view  class="picture2" >
+     <view class="pone">
+     <input type="text"  placeholder="{{click}}"   value=""  name="describ"  class="bottominput3"   cursor-spacing="20"   maxlength="100" /> 
+      <button  form-type="submit" hover-class="buttom-hover" plain="true"  class="buttonx" size="mini" style="border:1px solid #fff;padding:0;">发送</button>
+      </view>
+</view>
+  </form>
+
+
+
+ <form   bindtap="nologin" wx:if="{{formbol&&!bol}}"  >
+     <view  class="picture2" >
+     <view class="pone">
+     <input type="text"  placeholder="{{click}}"   value=""  name="describ"  class="bottominput3"   cursor-spacing="20"  maxlength="100" /> 
+      <button   bindtap="nologin"hover-class="buttom-hover" plain="true"  class="buttonx" size="mini" style="border:1px solid #fff;padding:0;">发送</button>
+      </view>
+</view>
+  </form>
+
+
+

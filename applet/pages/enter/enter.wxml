@@ -1,0 +1,52 @@
+<view class="top">用户注册</view>
+<form bindsubmit="formSubmit">
+<view class="username">
+<text class="text1">账号</text>
+ <input placeholder="手机号" placeholder-class="placeholder1" class="inputclass" name="userid"   value=""/>
+ </view>
+
+
+  <view class="password">
+ <text class="text1">密码</text>
+ <input placeholder="请输入密码" placeholder-class="placeholder1" class="inputclass" password   name="password" value=""
+ bindblur="confirepassword"/>
+ </view>
+
+ <view class="password">
+ <text class="text1">确认密码</text>
+ <input placeholder="请再次输入密码" placeholder-class="placeholder1" class="inputclass" password   name="newpassword" value="{{newpassword}}"  
+ bindblur="confirenewpassword"/>
+ </view>
+
+ 
+ <view class="name">
+<text class="text1">昵称</text>
+ <input  placeholder="合法昵称更显修养哦" placeholder-class="placeholder1" class="inputclass"
+ name="nickname" value=""/>
+ </view>
+
+  <view class="username" >
+<text class="text1" >邮箱</text>
+ <input  placeholder="类如：2567383854@qq.com" placeholder-class="placeholder1" class="inputclass"
+ name="e_mail"   value=""/>
+ </view>
+  
+
+
+  <view class="name">
+<text class="text1">性别</text>
+ <radio-group class="radio-group" bindchange="radioChange"   name="sex">
+  <label class="radio" wx:for="{{items}}">
+    <radio value="{{item.name}}" checked="{{item.checked}}"   />{{item.value}}
+  </label>
+</radio-group>
+ </view>
+   <view class="name name2" style="border-bottom:0;">
+   
+
+ </view >
+ 
+
+   <button  form-type="submit" hover-class="buttom-hover" class="button">确 定 </button>
+   
+</form>

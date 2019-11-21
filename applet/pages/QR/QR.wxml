@@ -1,0 +1,15 @@
+
+<view class="list" wx:for="{{showQR}}">
+ <image src="../../images/b1.jpg" class="limage"></image>
+<view class="listright">
+<text class="l1">{{item.booktitle}}</text>
+<text class="l2">{{item.author}}</text>
+
+</view>
+<view class="bottom">
+<navigator url="../qrdata/qrdata?id={{item.id}}">
+<text>查看二维码</text>
+</navigator>
+</view>
+
+</view>

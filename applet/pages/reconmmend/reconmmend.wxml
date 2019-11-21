@@ -1,0 +1,205 @@
+<view class="page"bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start"  >
+
+
+<view wx:if="{{open}}" style="position:fixed;top:0;right:0;width:25%;height:100%;background:#000;opacity:0.5;z-index:2;"></view>
+
+<scroll-view class="page-body" scroll-y="true" bindscrolltoupper="refresh"  bindscrolltolower="onbottom" bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start" class="page-top {{open ? 'c-state1' : ''}}" style="border-top:1rpx solid #f5f6f7;">
+
+<view style="display:flex;margin-top:1rpx;margin-bottom:24rpx;padding:10rpx;">
+</view>
+<view class="top">
+<image src="https://www.titwdj.cn/BorrowBook/findbookimg/hot.jpg" class="topimages" mode="widthFix"></image>
+</view>
+<view  wx:if="{{countbol3}}">
+<view class="reduce"   wx:if="{{bol&&referlist.length!=0}}">
+<view class="reducetop"  style="display:flex">
+ <text class="iconfont icon-icon-good" style="font-size:30rpx;color:#007bff;vertical-align:text-top;margin-left:20rpx;margin-top:10rpx"></text>
+<text class="toptext"  >个性推荐</text>
+<text  class="topchange"   bindtap="ReferChange">换一换</text>
+<text  bindtap="ReferChange" class="iconfont  icon-huanyizu" style="font-size:30rpx;margin-top:5rpx;margin-right:20rpx;color:#007bff"></text>
+</view>
+
+<view class="reducecenter">
+
+<navigator  hover-class="none" url="../particulars/particulars?bookid={{item.bookid}}" wx:for="{{referlist}}" >
+<image class="reduceimg" src="{{item.bookimages}}" mode="widthFix"></image>
+<text  class="reducetitle">{{item.booktitle}}</text>
+<text  class="reduceauthor">{{item.author}}</text>
+</navigator>
+
+</view>
+ <view class="reducebottom">
+
+</view> 
+
+
+</view>
+
+</view>
+<!-- 个性推荐 -->
+<!-- <view class="news">
+    <view class="newstop">
+    <text class="iconfont icon-icon-good" style="font-size:30rpx;color:#007bff;vertical-align:text-top;margin-left:20rpx;margin-top:10rpx"></text>
+    <text style="margin-left:10rpx;font-size:30rpx">推荐阅读</text>
+    </view>
+
+<view class="booknews"      wx:for="{{referlist}}">
+
+<navigator url="../refer/refer"  hover-class="none"   wx:if="{{bol}}"  style="display:flex" >
+    <view>
+    <image src="{{item.bookimages}}"mode="aspectFit"  class="left" ></image>
+    </view>
+
+    <view class="right">
+     <view style="display:flex;">
+    <view style="flex:1;">
+     <text class="one">{{item.booktitle}}</text>
+    </view>
+     </view>
+         <view class="user">
+      <text class="username" style="flex:1;display:block;"><text style="width:480rpx;overflow:hidden;display:inline-block;white-space: nowrap;vertical-align:text-top;">作者：{{item.author}}</text></text>
+     </view>
+     <text class="tow">{{item.bookintroduce}}</text>
+      
+    </view>
+    </navigator>
+</view>
+</view>
+
+
+<navigator hover-class="none" url="../refer/refer">
+<view class="reducebottom">
+<text  class="more">查看全部</text>
+</view>
+</navigator> -->
+
+
+
+
+
+
+
+
+<!-- 热门推荐 -->
+<view   wx:if="{{countbol4}}">
+<view class="news">
+    <view class="newstop">
+   <text class="iconfont icon-icon-good" style="font-size:30rpx;color:#007bff;vertical-align:text-top;margin-left:20rpx;margin-top:10rpx"></text>
+    <text style="margin-left:10rpx;font-size:30rpx">热门推荐</text>
+    </view>
+<view class="booknews"      wx:for="{{booknum}}">
+<navigator url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.category_id}}"
+  style="display:flex"  hover-class="none" >
+    <view>
+    <image src="{{item.bookimages}}" class="left" mode="widthFix" ></image>
+    </view>
+
+    <view class="right">
+    <view style="display:flex;">
+    <view style="flex:1;">
+     <text class="one">{{item.booktitle}}</text>
+    </view>
+    
+     <text style=" color:#A0A19D; font-size:24rpx; vertical-align:text-bottom;display:block;margin-right:10rpx;;color:#007bff">{{item.borrownum}}次借阅</text>
+     </view>
+       <view class="user">
+      <text class="username" style="flex:1;display:block;"><text style="width:480rpx;overflow:hidden;display:inline-block;white-space: nowrap;vertical-align:text-top;">作者：{{item.author}}</text></text>
+     </view>
+     <text class="tow">{{item.bookintroduce}}</text>
+ 
+    </view>
+   </navigator>
+</view>
+</view>
+<navigator  hover-class="none" url="../chosenbooknum/chosenbooknum">
+<view class="reducebottom">
+
+<text  class="more">查看全部</text>
+
+</view>
+</navigator>
+<!-- 高评推荐 -->
+<view class="news">
+    <view class="newstop">
+    <text class="iconfont icon-icon-good" style="font-size:30rpx;color:#007bff;vertical-align:text-top;margin-left:20rpx;margin-top:10rpx"></text>
+    <text style="margin-left:10rpx;font-size:30rpx">高评推荐</text>
+    </view>
+<view class="booknews"      wx:for="{{goodlist}}">
+<navigator url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.category_id}}"
+  style="display:flex"  hover-class="none" >
+    <view>
+    <image src="{{item.bookimages}}" class="left" mode="aspectFit" mode="widthFix"></image>
+    </view>
+
+    <view class="right">
+    <view style="display:flex;">
+    <view style="flex:1;">
+     <text class="one">{{item.booktitle}}</text>
+    </view>
+    
+     <text style=" color:#A0A19D; font-size:24rpx; vertical-align:text-bottom;display:block;margin-right:10rpx;color:#007bff">{{item.score}} 分</text>
+     </view>
+       <view class="user">
+      <text class="username" style="flex:1;display:block;"><text style="width:480rpx;overflow:hidden;display:inline-block;white-space: nowrap;vertical-align:text-top;">作者：{{item.author}}</text></text>
+     </view>
+     <text class="tow">{{item.bookintroduce}}</text>
+ 
+    </view>
+   </navigator>
+</view>
+</view>
+<navigator hover-class="none"  url="../allgood/allgood">
+<view class="reducebottom">
+
+<text  class="more">查看全部</text>
+
+</view>
+</navigator>
+
+
+
+<view class="news">
+    <view class="newstop">
+    <text class="iconfont icon-icon-good" style="font-size:30rpx;color:#007bff;vertical-align:text-top;margin-left:20rpx;margin-top:10rpx"></text>
+    <text style="margin-left:10rpx;font-size:30rpx">最新推荐</text>
+    </view>
+
+<view class="booknews"      wx:for="{{booknew}}">
+
+<navigator url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.category_id}}"  style="display:flex"   hover-class="none">
+    <view>
+    <image src="{{item.bookimages}}"mode="aspectFit"  class="left" ></image>
+    </view>
+
+
+    <view class="right">
+     <view style="display:flex;">
+    <view style="flex:1;">
+     <text class="one">{{item.booktitle}}</text>
+    </view>
+     </view>
+         <view class="user">
+      <text class="username" style="flex:1;display:block;"><text style="width:480rpx;overflow:hidden;display:inline-block;white-space: nowrap;vertical-align:text-top;">作者：{{item.author}}</text></text>
+     </view>
+     <text class="tow">{{item.bookintroduce}}</text>
+      
+    </view>
+    </navigator>
+</view>
+</view>
+
+
+<navigator hover-class="none" url="../chosennew/chosennew">
+<view class="reducebottom">
+<text  class="more">查看全部</text>
+</view>
+</navigator>
+
+
+
+
+</view>
+<view  class="load" wx:if="{{showload}}">正在加载更多内容</view>
+<view class="load" wx:if="{{showloadall}}">已加载完全部内容</view>
+ </scroll-view>
+</view> 

@@ -1,0 +1,196 @@
+<view   wx:if="{{grade==1}}">
+<view style="padding-top:80rpx;text-align:center;">
+<icon type="success" size="80" color="#007bff" />
+</view>
+<view style="text-align:center;line-height:80rpx;font-size:38rpx;letter-spacing:3rpx;">
+你已经是会员
+</view>
+</view>
+
+
+<view  wx:if="{{grade==0}}">
+
+
+ <view class="payPass"   wx:if="{{payboard}}">
+        <view class="pas-title"   style="text-align:center">
+       
+          <text>请输入支付密码</text>
+        </view>
+        <view class="pas-num">
+          <text>微信支付</text>
+          <text style="font-size:70rpx;line-height:100rpx;font-weight:350;">￥{{paymoney}}</text>
+        </view>
+        <view class="yinhang"><image src="../../imgs/yinhang.png" class="yinhangimages"></image><text style="line-height:40rpx;">建设银行储蓄卡(0259)</text></view>
+        <view class="pas-box">
+          <view class="box-six">
+
+            <input class="pas-input" type="digit" maxlength="6" focus="true" bindinput="bindHideKeyboard"  name="password"></input>
+
+            <view class="six">
+              <text class="i {{len==0?'active':''}}">
+                <text class="b" wx:if="{{len>0}}" style="width:30rpx;height:30rpx;background:#000;border-radius:50%;"></text>
+              </text>
+
+              <text class="i {{len==1?'active':''}}">
+                <text class="b" wx:if="{{len>1}}" style="width:30rpx;height:30rpx;background:#000;border-radius:50%;"></text>
+              </text>
+
+              <text class="i {{len==2?'active':''}}">
+                <text class="b" wx:if="{{len>2}}" style="width:30rpx;height:30rpx;background:#000;border-radius:50%;"></text>
+              </text>
+              <text class="i {{len==3?'active':''}}">
+                <text class="b" wx:if="{{len>3}}" style="width:30rpx;height:30rpx;background:#000;border-radius:50%;"></text>
+              </text>
+
+              <text class="i {{len==4?'active':''}}">
+                <text class="b" wx:if="{{len>4}}" style="width:30rpx;height:30rpx;background:#000;border-radius:50%;"></text>
+              </text>
+
+              <text class="i {{len==5?'active':''}}">
+                <text class="b" wx:if="{{len>5}}" style="width:30rpx;height:30rpx;background:#000;border-radius:50%;"></text>
+              </text>
+              
+            </view>
+          </view>
+</view>
+  </view>
+
+   <view  bindtap="hidden" class="paybg" wx:if="{{paybgbol}}"></view>
+
+<view class="package">
+<view class="title">VIP专享</view>
+<scroll-view scroll-x="true"  >
+
+<view style="display:flex;flex-wrap:wrap;">
+<view class="privilege">
+<text class="iconfont icon-vip" style="font-size:60rpx;color:#007bff;"></text>
+<view style="text-align:center;font-size:30rpx; color:#333;line-height:40rpx;">服务费优惠</view>
+<view style="text-align:center;font-size:28rpx;color:red;">最高7.5折</view>
+</view>
+
+
+<!-- <view class="privilege">
+<text class="iconfont icon-vip" style="font-size:60rpx;color:#007bff;"></text>
+<view style="text-align:center;font-size:30rpx; color:#333;line-height:40rpx;">电子书畅读</view>
+<view style="text-align:center;font-size:28rpx;color:#ccc;">万本免费</view>
+</view> -->
+
+
+<view class="privilege">
+<text class="iconfont icon-vip" style="font-size:60rpx;color:#007bff;"></text>
+<view style="text-align:center;font-size:30rpx; color:#333;line-height:40rpx;">会员专属券</view>
+<view style="text-align:center;font-size:28rpx;color:red;">免费领券</view>
+</view>
+
+
+<view class="privilege">
+<text class="iconfont icon-vip" style="font-size:60rpx;color:#007bff;"></text>
+<view style="text-align:center;font-size:30rpx; color:#333;line-height:40rpx;">积分兑券优惠</view>
+<view style="text-align:center;font-size:28rpx;color:red;">最高8折</view>
+</view>
+
+
+<!-- <view class="privilege">
+<text class="iconfont icon-vip" style="font-size:60rpx;color:#007bff;"></text>
+<view style="text-align:center;font-size:30rpx; color:#333;line-height:40rpx;">会员专属电子书</view>
+<view style="text-align:center;font-size:28rpx;color:#ccc;">万本专属</view>
+</view> -->
+
+
+
+</view>
+
+</scroll-view>
+</view>
+</view>
+
+
+<view class="box">
+<!-- <image src="../../images/vip.jpg" class="topimage" mode="aspectFill"></image> -->
+<view class="package">
+<view class="title">
+VIP套餐
+</view>
+<view class="content">
+
+
+<view class="details">
+
+<view class="leftdetails">
+1个月
+</view>
+<view class="rightdetails">
+<view class="leftnews">
+<text style="font-size:32rpx;color:#007bff;'">￥15<text style="margin-left:24rpx;font-size:28rpx;color:#999;text-decoration:line-through;">原价￥20</text></text>
+<text style="margin-top:10rpx;font-size:28rpx;color:#F25011;">立省5元</text>
+</view>
+
+<view class="rightnews">
+<text class="open"    data-paymoney="{{15}}" bindtap="pay"   data-month="{{1}}">开通</text>
+</view>
+</view>
+</view>
+
+
+<view class="details">
+<view class="leftdetails">
+3个月
+</view>
+<view class="rightdetails">
+<view class="leftnews">
+<text style="font-size:32rpx;color:#007bff;'">￥40<text style="margin-left:24rpx;font-size:28rpx;color:#999;text-decoration:line-through;">原价￥60</text></text>
+<text style="margin-top:10rpx;font-size:28rpx;color:#F25011;">立省20元</text>
+</view>
+
+<view class="rightnews">
+<text class="open"     data-paymoney="{{40}}" bindtap="pay"   data-month="{{3}}">开通</text>
+</view>
+</view>
+</view>
+
+<view class="details">
+
+<view class="leftdetails">
+6个月
+</view>
+<view class="rightdetails">
+<view class="leftnews">
+<text style="font-size:32rpx;color:#007bff;'">￥80<text style="margin-left:24rpx;font-size:28rpx;color:#999;text-decoration:line-through;">原价￥120</text></text>
+<text style="margin-top:10rpx;font-size:28rpx;color:#F25011;">立省40元</text>
+</view>
+
+<view class="rightnews">
+<text class="open"     data-paymoney="{{80}}" bindtap="pay"   data-month="{{6}}">开通</text>
+</view>
+</view>
+</view>
+
+
+
+<view class="details">
+
+<view class="leftdetails">
+12个月
+</view>
+<view class="rightdetails">
+<view class="leftnews">
+<text style="font-size:32rpx;color:#007bff;'">￥160<text style="margin-left:24rpx;font-size:28rpx;color:#999;text-decoration:line-through;">原价￥240</text></text>
+<text style="margin-top:10rpx;font-size:28rpx;color:#F25011;">立省80元</text>
+</view>
+
+<view class="rightnews">
+<text class="open"   data-paymoney="{{160}}" bindtap="pay"   data-month="{{12}}">开通</text>
+</view>
+</view>
+</view>
+
+
+
+
+</view>
+</view>
+
+
+
+
+</view>

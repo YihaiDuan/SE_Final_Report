@@ -1,0 +1,49 @@
+
+
+ <view    wx:if="{{bol1}}">
+<view  class="recommend"  style="margin-top:30rpx;"  >
+<text class="retext">如何借阅图书</text>
+</view>
+
+<view   class="recommend2"  >
+
+<text class="retext"   style="color:#bbb;font-size:30rpx;text-indent:2em">图书上贴有二维码，用户在图书馆可以使用应用的扫码功能将书放入借书栏。一个用户一次可借2本书。
+用户出图书馆前出示自己的借书二维码给图书馆管理员。管理员通过自己的管理app的扫码功能扫描用户出示的二维码调出用户的借书单，并与事物进行比较。用户通过微信支付手段的方式提交押金。</text>
+</view>
+</view>
+
+
+<view    wx:if="{{bol2}}">
+<view  class="recommend"  style="margin-top:30rpx;"  >
+<text class="retext">如何预订图书</text>
+</view>
+
+<view   class="recommend2"  >
+
+<text class="retext"   style="color:#bbb;font-size:30rpx;text-indent:2em">注册用户可以在线预订书籍。指定具体时间去图书馆取书。如果不巧暂时没有藏书，用户可以选择当有用户归还书籍后系统自动给他推送信息提醒。</text>
+</view>
+</view>
+
+
+<view    wx:if="{{bol3}}">
+<view  class="recommend"  style="margin-top:30rpx;"  >
+<text class="retext">如何分享图书</text>
+</view>
+
+<view   class="recommend2"  >
+
+<text class="retext"   style="color:#bbb;font-size:30rpx;text-indent:2em">用户通过扫描书的ISBN，可将自己私有的书分享，其他用户可以在分享圈看到，如果感兴趣，可与分享者进行线下交换。</text>
+</view>
+</view>
+
+
+<view    wx:if="{{bol4}}">
+<view  class="recommend"  style="margin-top:30rpx;"  >
+<text class="retext">如何转借图书</text>
+</view>
+
+<view   class="recommend2"  >
+
+<text class="retext"   style="color:#bbb;font-size:30rpx;text-indent:2em">用户可直接向其他用户借书，相当于将图书“过户”。一人未还，一人想借，借书者可扫描未还者的“转借”二维码借书成功，还书者也可以顺利还书成功。这样不必到图书馆借书、取书，为用户节约了时间和精力，有更好的用户体验。</text>
+</view>
+</view>

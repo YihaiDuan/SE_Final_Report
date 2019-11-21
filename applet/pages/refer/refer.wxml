@@ -1,0 +1,43 @@
+<scroll-view scroll-y="true" class="page-body">
+ 
+<view class="news">
+    <view class="newstop"><text>推荐阅读</text>
+    </view>
+
+
+<view class="booknews"      wx:for="{{referlist}}">
+<view style="width:300rpx;margin:20rpx auto;">
+<view class="time">{{item.date}}</view>
+</view>
+<view bindlongtap="deleterefer"  data-referid="{{item.id}}" style="display:flex;flex-direction: column;background:#fff;padding:20rpx">
+    
+    <view class="image">
+
+<image src="{{item.bookimages}}" class="left"></image>
+    </view>
+    <view class="right">
+
+     <text class="one">{{item.booktitle}}</text>
+     <text class="tow">{{item.bookintroduce}}</text>
+     
+    
+</view>
+<view class="right right1" style="border-bottom:0;position:relative;">
+
+   <text  data-bookid="{{item.bookid}}" data-advice="{{item.category_id}}" bindtap="clickrefer"  data-referid="{{item.id}}"  class="three">查看详情</text>
+
+
+   <text wx:if="{{item.status=='0'}}" class="iconfont icon-xiaohongdianx" style="color:#D00000;font-size:40rpx;position:absolute;top:32%;right:140rpx;" ></text>
+
+
+
+</view>
+</view>
+
+
+
+
+
+</view>
+</view>
+</scroll-view>

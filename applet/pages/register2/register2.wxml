@@ -1,0 +1,10 @@
+<view class="top">用户注册</view>
+<form bindsubmit="formSubmit">
+<view class="username">
+<text class="text1">账号</text>
+ <input placeholder="手机号" placeholder-class="placeholder1" class="inputclass" name="userid"   value="18434369427"/>
+ </view>
+ 
+   <button  form-type="submit" hover-class="buttom-hover" class="button">确 定 </button>
+   
+</form>

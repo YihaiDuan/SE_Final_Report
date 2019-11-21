@@ -1,0 +1,120 @@
+/**index.wxss**/
+.item{
+  display:flex;
+  padding:20rpx 40rpx;
+  border:2rpx solid #eee;
+}
+.item .poster{
+  width:176rpx;
+  height:186rpx;
+  margin-right:20rpx;
+}
+.item .meta{
+    flex:1;
+}
+.item .title,.item .sub-title{
+  display:block;
+  margin-bottom:14rpx;
+}
+.item .title{
+   font-size:32rpx;
+
+
+}
+.sub-title
+{
+  font-size:22rpx;
+  color:#c0c0c0;
+
+}
+.item .artists{
+    font-size:26rpx;
+    color:#999;
+
+
+}
+.item .rating{
+   font-size:28rpx;
+   font-weight:bold;
+   color:red;
+
+
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.tow{
+  font-size:26rpx;
+  color:#999;
+  width:450rpx;
+   overflow:hidden;
+   line-height:35rpx;
+   height:70rpx;
+}
+.right{
+   display:flex;
+   flex-direction: column;
+}
+.user{
+ display:flex;
+ margin-top:30rpx;
+}
+.username{
+  font-size:26rpx;
+  color:#999;
+}
+.title{
+width:450rpx;
+overflow:hidden;
+  white-space:nowrap;  
+  text-overflow:ellipsis;  
+}
+
+
+
+.loading{  
+  padding: 10rpx;  
+  text-align: center;  
+}  
+.loading:before{  
+  display: inline-block;  
+  margin-right: 5rpx;  
+  vertical-align: middle;  
+  content: '';  
+  width: 40rpx;  
+  height: 40rpx;  
+  background: url(../index/images/icon-loading.png) no-repeat;  
+  background-size: contain;  
+  animation: rotate 1s linear infinite;  
+}  
+.loading.complete:before{  
+  display: none;  
+}  
+
+
+.load{
+text-align: center;
+margin-top:20rpx;
+margin-bottom:20rpx;
+color:#999;
+font-size:30rpx;
+
+
+}

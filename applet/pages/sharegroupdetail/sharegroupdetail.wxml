@@ -1,0 +1,78 @@
+<view class="box"      wx:if="{{groupbol}}">
+   <view class="top">
+   <view class="leftimages">
+   <image src="{{group.bookimages}}" class="bookimage" mode="widthFix"></image>
+   </view>
+   <view class="booknews">
+   <view class="booktitle" style="display:flex;">
+   <text style="flex:1;">{{group.booktitle}}</text>
+   <text style="margin-right:20rpx;color:#E02E24;font-size:34rpx;">{{group.discount}}折</text>
+   </view>
+   <view class="pile">
+   <text class="price">￥{{group.cash}}</text>
+   <text>{{group.groupnum}}人拼单</text></view>
+   <view class="time">活动日期: {{group.createdate}}-{{group.deadline}}</view>
+  
+   </view>
+   </view>
+   <view class="usernews">
+
+   <image wx:for="{{group.userlist}}"   src="{{item.userimages}}" class="userimages" mode="widthFix"></image>
+   <text>剩余{{group.remainnum}}人</text>
+
+   </view>
+   <view class="opengroup">
+
+<view  wx:if="{{bol}}">
+   <button class="openbutton" plain="true" wx:if="{{openbol=='true'}}"style="border-color:#007bff;background:#007bff;color:#fff;font-size:36rpx;letter-spacing:4rpx;">在团中</button>
+
+<navigator hover-class="none"  wx:if="{{openbol=='false'}}" url="../joingroup/joingroup?bookid={{group.bookid}}&groupmainid={{groupmainid}}">
+<button class="openbutton" plain="true" style="border-color:#007bff;background:#007bff;color:#fff;font-size:36rpx;letter-spacing:4rpx;">一键参团</button>
+</navigator>
+</view>
+
+<button class="openbutton" bindtap="nologin"  plain="true"  wx:if="{{!bol}}" style="border-color:#007bff;background:#007bff;color:#fff;font-size:36rpx;letter-spacing:4rpx;">一键参团</button>
+
+
+
+   </view>
+
+
+</view>
+
+
+<view  class="one" wx:if="{{groupfinalybol}}">
+<view style="margin:30rpx 0;text-align:center;margin-top:60rpx; ">
+<icon type="success" size="80" color="#007bff"/>
+</view>
+<text style="font-size:40rpx;letter-spacing:8rpx;">团已经完成</text>
+</view>
+
+<view   class="one"  wx:if="{{groupfailbol}}"> 
+<icon type="clear" size="80" color="#007bff"/>
+<text style="font-size:40rpx;letter-spacing:8rpx;">团已经过期</text>
+</view>
+
+
+
+
+
+<!--<view   wx:if="{{groupbol}}">
+<text>{{group.bookid}}</text>
+<text>{{group.booktitle}}</text>
+<view  wx:for="{{group.userlist}}">
+<image src="{{item.userimages}}"></image>
+</view>
+
+<navigator wx:if="{{openbol=='false'}}" url="../joingroup/joingroup?bookid={{group.bookid}}&groupmainid={{groupmainid}}">
+<view>一键参团</view>
+</navigator>
+
+
+<view    wx:if="{{openbol=='true'}}">
+<view>在团中</view>
+</view>
+
+</view>
+
+-->

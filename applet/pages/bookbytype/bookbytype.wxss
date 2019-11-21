@@ -1,0 +1,78 @@
+page{
+   background:#f6f7f8;
+   color:#333;
+}
+.page-body{
+   display:flex;
+   flex-direction: column;
+}
+.text
+{
+display: flex;
+  /*横向居中对齐*/
+  justify-content: center;
+  padding:20rpx;
+}
+.searchtext{
+  padding:18rpx;
+  border:2rpx solid #FE7101;
+  width:600rpx;
+  border-radius: 20rpx;
+  text-align:center;
+  font-size:32rpx;
+  color:#999;
+  background:#fff;
+}
+.pinsearch{
+    color:#fff;
+    background:#FE7101;
+}
+.news{
+  background:#fff;
+
+}
+.newstop{
+    padding:30rpx 30rpx;
+    padding-bottom:10rpx;
+    font-size:40rpx;
+}
+.booknews{
+   display:flex;
+   padding:20rpx 30rpx;
+  border-bottom:2rpx solid #eee; 
+}
+.left{
+  width:186rpx;
+height:186rpx;
+   margin-right:30rpx;
+  
+}
+.right{
+   display:flex;
+   flex-direction: column;
+}
+.one{
+  margin-bottom:20rpx;  
+}
+.tow{
+  font-size:26rpx;
+  color:#ccc;
+
+}
+.user{
+ display:flex;
+ margin-top:30rpx;
+}
+.uimage{
+  width:32rpx;
+  height:32rpx;
+ margin-right:10rpx;
+ margin-top:3rpx;
+}
+.username{
+  font-size:26rpx;
+  color:#ccc;
+
+
+
+}

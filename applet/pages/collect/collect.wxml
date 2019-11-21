@@ -1,0 +1,85 @@
+
+<view class="page">  
+  <!--顶部导航栏-->  
+  <view class="swiper-tab">  
+    <!-- <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">图书馆</view>   -->
+    <!-- <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">分享圈</view>   -->
+
+     
+  </view>  
+  <!--内容主体-->  
+  <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange" style="height:{{clicentheight}}px;">  
+    <swiper-item>  
+    <scroll-view scroll-y="true" style="height:{{clicentheight}}px" >
+ 
+   
+<view class="booknews"       wx:for="{{collectlist}}">
+
+<navigator url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.category_id}}"  style="display:flex"   hover-class="none">
+    <view>
+    <image src="{{item.bookimages}}" mode="widthFix"  class="left" ></image>
+    </view>
+
+
+    <view class="right">
+     <view style="display:flex;">
+     <text class="one">{{item.booktitle}}</text>
+     </view>
+         <view class="user">
+      <text class="username" style="flex:1;display:block;"><text style="width:480rpx;overflow:hidden;display:inline-block;white-space: nowrap;vertical-align:text-top;line-height:48rpx;">作者：{{item.author}}</text></text>
+     </view>
+     <text class="tow" >{{item.introduce}}</text>
+      
+    </view>
+    </navigator>
+</view>
+    </scroll-view>
+    </swiper-item>  
+
+
+    <swiper-item>  
+    <scroll-view scroll-y="true" style="height:{{clicentheight}}px">
+    
+ 
+
+ <view class="booknews"      wx:for="{{collectsharelist}}">
+
+<navigator hover-class="none"  url="../details/details?shareid={{item.shareid}}&distance={{item.distance}}"   bindtap="clickrefer"  data-referid="{{item.id}}"
+style="display:flex;"   data-id="{{item.id}}">
+<image src="{{item.bookimages}}" mode="widthFix"  class="left"></image>
+
+
+<view class="right" bindlongtap="deleteshare"  data-id="{{item.id}}" >
+
+     <text class="one">{{item.booktitle}}</text>
+     <text class="tow" style="margin-top:10rpx;">{{item.show}}</text>
+     <view class="user" style="margin-top:20rpx;">
+      <text class="username" style="flex:1;">
+
+    
+      <text  style="width:240rpx;display:inline-block;overflow:hidden">{{item.booknum}}</text>
+      </text>
+     
+     
+      <text class="username" ><text class="iconfont icon-dingwei" style="font-size:26rpx; vertical-align:text-top;margin-right:10rpx;margin-left:20rpx;color:#007bff;"></text>
+      <text  wx:if="{{item.distance=='距离未知'}}">{{item.distance}}</text>
+
+      <text  wx:if="{{item.distance!='距离未知'}}">{{item.distance}}m</text>
+      
+      </text>
+
+     </view>
+     
+</view>
+</navigator>
+
+
+</view>
+
+  
+    </scroll-view>
+    </swiper-item>  
+  </swiper>  
+</view>  
+
+

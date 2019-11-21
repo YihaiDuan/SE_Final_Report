@@ -1,0 +1,30 @@
+
+page{
+  background:#ebebeb;
+  display:flex;
+  flex-direction: column;
+}
+
+.recommend{
+    
+    background:#fff;
+    padding:20rpx;
+    padding-left:40rpx;
+    display:flex;
+    border-bottom:2rpx solid #ddd;
+}
+
+.recommend2{
+    
+    background:#fff;
+    padding:20rpx;
+    padding-left:40rpx;
+    display:flex;
+    border-bottom:2rpx solid #ddd;
+}
+
+.retext{
+      font-size:35rpx;
+      flex:1;
+      line-height:60rpx;
+}

@@ -1,0 +1,48 @@
+.news{
+display:flex;
+padding:20rpx;
+border-bottom:2rpx solid #eee;
+}
+.username{
+font-size:32rpx;
+color:#999;
+flex:1;
+margin-left:20rpx;
+}
+.qr{
+  margin-right:20rpx;
+  width:120rpx;
+  height:120rpx;
+}
+.read{
+  color:#999;
+  margin-top:40rpx;
+  font-size:32rpx;
+  text-align: center;
+}
+.idea{
+  display:flex;
+  margin-top:30rpx;
+
+}
+.a1{
+  flex:1;
+  display:block;
+  text-align: center;
+  background:#fff;
+  color:#999;
+  margin:10rpx 20rpx;
+  padding:15rpx 0;
+  border:2rpx solid #eee;
+  border-radius: 8rpx;
+}
+.a2{
+  flex:1;
+  display:block;
+  text-align: center;
+  background:#007bff;
+  color:#fff;
+    margin:10rpx 20rpx;
+  padding:15rpx 0;
+   border-radius: 8rpx;
+}

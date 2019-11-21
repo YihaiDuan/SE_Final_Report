@@ -1,0 +1,63 @@
+
+<view class="box">
+<view class="content">
+<view class="booknews">
+<image src="{{borrowdetail.bookimages}}" class="bookimages" mode="widthFix"></image>
+<view class="bookname">
+<view class="bone">{{borrowdetail.booktitle}}</view>
+<view class="btow">借单号:  594d0c15ac5021ca{{borrowdetail.id}}</view>
+
+<view class="btow">图书号:  {{borrowdetail.booksonid}}</view>
+
+<view class="btow">押金: <text style="color:#007bff;font-size:28rpx"> ￥{{borrowdetail.cash}}</text></view>
+
+<view class="price1"   wx:if="{{borrowdetail.deadstatus=='1'}}" ><text class="btow">状 态:</text><text style="color:#FE7101;">已过期</text>
+</view>
+<view class="price1"   wx:if="{{borrowdetail.deadstatus=='0'}}"   ><text class="btow">状 态:</text><text style="color:#FE7101;"> 未过期</text>
+</view>
+
+</view>
+
+</view>
+</view>
+
+</view>
+
+
+
+
+<view class="tishi">
+<view class="title">借书时间：{{borrowdetail.borrowdate}} </view>
+<view class="title">到期时间：{{borrowdetail.deadborrow}}</view>
+</view>
+
+
+
+
+
+<view class="tishi">
+<view class="title">温馨提示</view>
+<view class="content">
+<text class="ctext">· 借书栏的图书需要在3小时内找管理员确认借书</text>
+<text class="ctext">· 否者借单将会失效用户需要重新扫描</text>
+
+</view>
+</view>
+
+
+
+
+<view class="reduce">
+<view class="reducetop"  style="text-align:center;margin-bottom:30rpx;display:flex;">
+<text style="flex:1;border-top:1rpx solid #999;margin-top:25rpx;margin-left:50rpx;margin-right:10rpx;"></text>
+<text style="font-size:35rpx;color:#999" >为您推荐 </text>
+<text style="flex:1;border-top:1rpx solid #999;margin-top:25rpx;margin-left:10rpx;margin-right:50rpx;"></text>
+</view>
+
+<view class="reducecenter"  wx:if="{{referlist.length!=0}}">
+<navigator hover-class="none" wx:for="{{referlist}}"  url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.typeid}}"  class="centermain"><image class="reduceimg" src="{{item.bookimages}}" mode="widthFix"></image>
+<text  class="reducetitle">{{item.booktitle}}</text>
+<!-- <text  class="reduceauthor">￥{{item.cash}}</text> -->
+</navigator>
+</view>
+</view>

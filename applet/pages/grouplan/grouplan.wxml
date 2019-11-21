@@ -1,0 +1,18 @@
+
+<text   wx:if="{{!showbol}}" class="one"  wx:if="{{BorrowQR==0}}">你还没有团</text>
+
+
+<view      wx:if="{{showbol}}">
+<view class="top"  >
+
+<text class="one"  wx:if="{{BorrowQR!=0}}">请将拼团二维码给管理员扫描，进行确认</text>
+</view>
+
+<view class="news"   wx:if="{{BorrowQR!=0}}">
+<image src="http://localhost:8080/BorrowBook/images/{{BorrowQR.BorrowQR}}" class="image"></image>
+<view class="classname"></view>
+
+</view>
+
+
+</view>

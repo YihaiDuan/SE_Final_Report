@@ -1,0 +1,31 @@
+/**index.wxss**/
+.star-image{
+  position: absolute;
+  top: 0rpx;
+  width: 50rpx;
+  height: 50rpx;
+  src: "../../images/normal.png";
+}
+.item{
+  position: absolute;
+  top: 0rpx;
+  width: 25rpx;
+  height: 50rpx;
+}
+.top{
+ display:flex;
+ padding:40rpx 30rpx;
+ border-bottom:1rpx solid #F5F6F0;
+ 
+ position:relative;
+}
+
+.nickname
+{
+font-size:30rpx;
+margin-left:20rpx;
+
+
+
+
+}

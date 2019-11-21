@@ -1,0 +1,169 @@
+  <!--顶部导航栏-->  
+  <view class="page">
+  <view class="swiper-tab">  
+    <view class="tab-item {{currentTab=='0' ? 'on' : ''}} " data-current="0" bindtap="swichNav">动态消息<view  wx:if="{{mesbol.bol2=='true'||mesbol.bol3=='true'}}"style="background-color:#D00000;width:20rpx;height:20rpx; border-radius:50%;margin-top:-20px;margin-left:85px" ></view></view>  
+    <view class="tab-item {{currentTab=='1' ? 'on' : ''}}" data-current="1" bindtap="swichNav">评论消息<view  wx:if="{{mesbol.bol1=='true'}}"style="background-color:#D00000;width:20rpx;height:20rpx; border-radius:50%;margin-top:-20px;margin-left:85px" ></view></view>  
+    <view class="tab-item {{currentTab=='2' ? 'on' : ''}}" data-current="2" bindtap="swichNav">通知</view>  
+  </view>  
+
+  
+  <!--内容主体-->  
+  <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange" style="height:1200px;">  
+    <swiper-item>  
+    <scroll-view scroll-y="true" >
+
+    <view class="booknews"  wx:for="{{dynamiclist}}" >
+<view class="commentbody" >
+<view class="usernews"   >
+
+<navigator   wx:if="{{logs.userid==item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=1"  hover-class="none">
+<image src="{{item.userimages}}" class="userimages"></image>
+</navigator>
+
+<navigator   wx:if="{{logs.userid!=item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=0"  hover-class="none">
+<image src="{{item.userimages}}" class="userimages"></image>
+</navigator>
+
+<view class="username"  data-commentid="{{item.commentid}}"  data-dynamicid="{{item.dynamicid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"  
+bindtap="replyshow">
+<view class="uname">{{item.nickname}}</view>
+<view class="utime">{{item.date}}</view>
+</view>
+</view>
+
+<!--被回复的内容为-->
+<view class="commentcontent">
+<view   data-commentid="{{item.commentid}}"  data-dynamicid="{{item.dynamicid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"  
+bindtap="replyshow"  style="font-size:30rpx;color:#333">
+ {{item.describ}}
+ </view>
+ <!--来自动态圈-->
+<view  class="from"  wx:if="{{item.typestatus==0}}">
+<navigator  hover-class="none" url="../dynamicdetail/dynamicdetail?dynamicid={{item.dynamicid}}">
+我分享图书:<text>{{item.booktitle}}</text>
+</navigator>
+</view>
+<!--来自动评论-->
+<view class="from" wx:if="{{item.typestatus==1}}">
+<navigator hover-class="none" url="../dynamicdetail/dynamicdetail?dynamicid={{item.dynamicid}}">
+来自评论：<text>{{item.replydescrib}}</text>
+</navigator>
+</view>
+</view>
+
+
+
+</view>
+</view>
+
+
+
+ <form   bindsubmit="replysend" wx:if="{{formbol}}"  >
+     <view  class="picture2" >
+     <view class="pone">
+     <input type="text"  placeholder="{{click}}"   value=""  name="describ"  class="bottominput3"   cursor-spacing="20" auto-focus="true"  maxlength="100" /> 
+      <button  form-type="submit" hover-class="buttom-hover" plain="true"  class="buttonx" size="mini" style="border:1px solid #fff;padding:0;">发送</button>
+      </view>
+</view>
+  </form>
+  </scroll-view>
+  </swiper-item>  
+
+
+
+
+
+
+    <swiper-item>  
+    <scroll-view scroll-y="true">
+
+     <view class="booknews"  wx:for="{{replylist}}" >
+<view class="commentbody" >
+<view class="usernews"   >
+<image src="{{item.userimages}}" class="userimages"></image>
+
+<view class="username"  data-commentid="{{item.commentid}}"  data-bookid="{{item.bookid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"  
+bindtap="evaluatereplyshow">
+<view class="uname">{{item.nickname}}</view>
+<view class="utime">{{item.date}}</view>
+</view>
+</view>
+
+<!--被回复的内容为-->
+<view class="commentcontent">
+<view   data-commentid="{{item.commentid}}"  data-bookid="{{item.bookid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"  
+bindtap="evaluatereplyshow">
+ {{item.content}}
+ </view>
+
+ <!--来自动评论-->
+<view class="from" >
+<navigator url="../comment/comment?bookid={{item.bookid}}">
+来自评论：<text>{{item.maincontent}}</text>
+</navigator>
+</view>
+</view>
+
+</view>
+</view>
+
+
+<form  bindsubmit="evaluatereplysend" wx:if="{{evaluateformbol}}"  >
+     <view  class="picture2" >
+     <view class="pone">
+     <input type="text"  placeholder="{{click}}"   value=""  name="content"  class="bottominput3"   cursor-spacing="20" auto-focus="true"  maxlength="100"  /> 
+      <button  form-type="submit" hover-class="buttom-hover" plain="true"  class="buttonx" size="mini" style="border:1px solid #fff;padding:0;">发送</button>
+      </view>
+</view>
+  </form>
+
+  
+    </scroll-view>
+    </swiper-item>  
+
+
+
+
+    <swiper-item>  
+   <scroll-view scroll-y="true" >
+   
+
+<view class="booknews"   wx:if="{{noticelist.length!=0}}"  wx:for="{{noticelist}}" >
+<view class="commentbody" >
+<view class="usernews"    >
+
+
+<image src="../../images/book1.jpg" class="userimages"></image>
+
+
+<view class="username" >
+<view class="uname">系统通知</view>
+<view class="utime">{{item.date}}</view>
+</view>
+</view>
+
+
+ <!--来自动态圈-->
+<view  class="from"  style="margin-left:90rpx;padding:20rpx 20rpx" >
+<text  style="letter-spacing:1rpx">{{item.content}}</text>
+</view>
+
+
+
+</view>
+</view>
+
+
+
+    </scroll-view>
+    </swiper-item>  
+  </swiper>  
+</view>
+
+
+
+

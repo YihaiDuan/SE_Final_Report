@@ -1,0 +1,67 @@
+<view >
+<view class="box"  >
+<view class="content">
+<view class="booknews">
+<image src="{{bookdetail.bookimages}}" class="bookimages" mode="widthFix"></image>
+<view class="bookname">
+<view class="bone">{{bookdetail.booktitle}}</view>
+<view class="btow">作者：{{bookdetail.author}}</view>
+<view class="price1">价格: <text style="color:#007bff;">{{bookdetail.eleprice}}</text>
+</view>
+</view>
+
+</view>
+</view>
+
+<view class="integral">
+<text style="flex:1;font-size:34rpx;">借阅币剩余: {{money}}(1借阅币可以抵押1元)</text>
+</view>
+</view>
+
+<!--
+<view class="payable"  style="color:#ef7101" wx:if="{{discountlist.length!=0&&showselect}}">
+<view  bindtap="getdiscount">优惠券选择</view>
+
+</view>
+-->
+
+<navigator  hover-class="none"     wx:if="{{showdiscount=='true'}}"url="../userdiscount2/userdiscount2?totalpay={{yuanpay}}">
+<view style="border-bottom:10rpx solid #F4F4F4;display:flex;padding:10rpx 40rpx;line-height:60rpx;font-size:32rpx;color:#007bff">
+<text style="flex:1;">选择优惠</text>
+<text style="margin-right:10rpx;">></text>
+</view>
+</navigator>
+
+<view  wx:if="{{showdiscount=='false'}}" >
+<navigator  hover-class="none"    url="../userdiscount2/userdiscount2?totalpay={{yuanpay}}">
+<view style="border-bottom:10rpx solid #F4F4F4;display:flex;padding:10rpx 40rpx;line-height:60rpx;font-size:32rpx;color:#007bff">
+<text style="flex:1;"></text>
+<text wx:if="{{typestatus==0}}" style="margin-right:10rpx;">打{{discount*10}}折</text>
+<text wx:if="{{typestatus==1}}" style="margin-right:10rpx;">抵扣￥{{discount}}</text>
+</view>
+</navigator>
+</view>
+
+
+
+<view class="payable">需支付:<text style="margin-left:16rpx;font-size:38rpx;color:#007bff;">{{totalpay}}元</text></view>
+
+
+<view style="text-align:center;">
+<form  bindsubmit="pay"  report-submit="true"  wx:if="{{combol}}">
+<button  plain="true"  form-type="submit" size="mini" style="color:#fff;background:#007bff;border-color:#007bff;padding:0 280rpx;">确认支付</button>
+</form>
+
+<navigator hover-class="none" url="../recharge/recharge"  wx:if="{{!combol}}">
+<button  plain="true"   size="mini" style="color:#fff;background:#007bff;border-color:#007bff;padding:0 280rpx;">立即充值</button>
+</navigator>
+
+</view>
+
+<view class="tishi">
+<view class="title">温馨提示</view>
+<view class="content">
+<text class="ctext">· 成为VIP可享受免费阅读,更加优惠</text>
+</view>
+</view>
+</view>

@@ -1,0 +1,93 @@
+
+
+<!--收藏的显示和搜索后的显示-->
+<view   class="search"  >
+
+<form bindsubmit="formSubmit">
+  <view class="section">
+  <picker value="{{index}}" range="{{citys}}" bindchange="bindPickerChanger">
+  <view style="margin-top:24rpx;color:#666;">{{citys[index]}}</view>
+</picker>
+
+  <input placeholder="输入想要的书籍"  auto-focus placeholder-class="placeholder1" class="inputclass"     name="search"  bindinput="bindKeyInput"  
+  />
+  <button size="mini" form-type="submit" hover-class="buttom-hover" class="button">搜索</button>
+</view>
+</form>
+
+<view class="page-header" wx:if="{{searchbol2}}" style="display:flex">
+<text class="page-header-text" style="line-height:90rpx;font-size:30rpx;color:red;padding-left:30rpx;flex:1;">没有搜索到相关信息</text>
+</view>
+
+
+ <view class="news1" wx:if="{{searchbol1}}" >
+ <view class="page-header" style="display:flex">
+<text class="page-header-text" style="line-height:90rpx;font-size:30rpx;color:#999;padding-left:30rpx;flex:1;">搜索结果</text><text style="color:#999;font-size:30rpx;margin-right:60rpx;line-height:90rpx;vertical-align:text-bottom;">共检索到<text style="color:red;font-size:34rpx;padding:0 6rpx;">{{searchlist.size}}</text>记录</text>
+</view>
+<view class="booknews1"    wx:for="{{searchlist.searchlist}}">
+<view  style="display:flex" data-bookid="{{item.bookid}}"  data-booktitle="{{item.booktitle}}" 
+data-typeid="{{item.category_id}}" 
+data-bookimages="{{item.bookimages}}"  
+data-author="{{item.author}}"  bindtap="selectbook">
+    <view>
+    <image src="{{item.bookimages}}" class="left" mode="aspectFit" ></image>
+    </view>
+    <view class="right1">
+    <view style="display:flex;">
+    <view style="flex:1;">
+     <text class="one1">{{item.booktitle}}</text>
+    </view>
+     </view>
+       <view >
+      <text class="author1" style="flex:1;display:block;">作者：{{item.author}}</text>
+       <text class="introduce1" style="flex:1;display:block;">{{item.introduce}}</text>
+     </view>
+
+ 
+    </view>
+ </view>
+ 
+</view>
+   <view class="load" wx:if="{{true}}">已加载完全部内容</view>
+</view>
+
+<!--我的收藏-->
+
+
+
+
+ <view class="news1"  wx:if="{{collectlist.length!=0}}" >
+<view style="margin-bottom:10rpx;font-size:30rpx;color:#333;background:#f9f9f9;margin-top:5rpx"  ><text  style="margin-left:30rpx;">我的收藏</text></view>
+<view class="booknews1"    wx:for="{{collectlist}}">
+<view   style="display:flex" data-bookid="{{item.bookid}}"  data-booktitle="{{item.booktitle}}" 
+data-typeid="{{item.category_id}}" 
+data-bookimages="{{item.bookimages}}"  
+data-author="{{item.author}}"  bindtap="selectbook">
+    <view>
+    <image src="{{item.bookimages}}" class="left" mode="aspectFit" ></image>
+    </view>
+    <view class="right1">
+    <view style="display:flex;">
+    <view style="flex:1;">
+     <text class="one1">{{item.booktitle}}</text>
+    </view>
+     </view>
+       <view >
+      <text class="author1" style="flex:1;display:block;">作者：{{item.author}}</text>
+       <text class="introduce1" style="flex:1;display:block;">{{item.introduce}}</text>
+     </view>
+       
+ 
+    </view>
+ 
+ </view>
+
+</view>
+</view>
+<!--我的收藏-->
+
+
+
+
+
+</view>

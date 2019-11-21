@@ -1,0 +1,54 @@
+<view class="box">
+<view class="content">
+<view class="booknews">
+<image src="{{detail.bookimages}}" class="bookimages" mode="widthFix"></image>
+<view class="bookname">
+<view class="bone">{{detail.booktitle}}</view>
+<view class="btow">作者：{{detail.author}}</view>
+<!-- <view class="price1">押金: <text style="color:#007bff;">{{detail.cash}}</text>
+</view> -->
+</view>
+
+</view>
+</view>
+<view class="time">
+<view class="section" style="width:100%;">
+   <picker mode="date" value="{{date}}" start="{{current}}" end="{{endtime}}" bindchange="bindDateChange"   style="display:inline-block;">
+    <view class="picker"style="display:flex;" >
+     <text style="display:block;flex:1;"> 选择取书时间: </text> <text style="display:block;color:#007bff;font-size:32rpx;margin-left:20rpx;"> {{orderdate}}</text>
+<text  style="display:block;margin-left:100rpx">0.5元/天</text>
+    </view>
+  </picker>
+</view>
+</view>
+
+<view class="integral">
+<text style="flex:1;font-size:34rpx;">借阅币剩余: {{money}}(1借阅币可以抵押1元)</text>
+
+</view>
+</view>
+
+
+
+<view class="payable">需支付:<text style="margin-left:16rpx;font-size:38rpx;color:#007bff;">{{cash}}元</text></view>
+
+
+<view style="text-align:center;">
+<form  bindsubmit="pay"  report-submit="true"  wx:if="{{paybol}}">
+<button  plain="true"  form-type="submit" size="mini" style="color:#fff;background:#007bff;border-color:#007bff;padding:0 280rpx;font-size:34rpx">确认支付</button>
+</form>
+
+<navigator hover-class="none" url="../recharge/recharge"  wx:if="{{!paybol}}">
+<button  plain="true"   size="mini" style="color:#fff;background:#007bff;border-color:#007bff;padding:0 280rpx;font-size:34rpx">立即充值</button>
+</navigator>
+
+</view>
+
+<view class="tishi">
+<view class="title">温馨提示</view>
+<view class="content">
+<text class="ctext">· 请在您选定的时间内取书，逾期系统将释放该图书</text>
+<!-- <text class="ctext">· 您预订的图书将为您放置在图书馆"预订区"</text> -->
+<text class="ctext">· 服务费用按照取书时间长短收取</text>
+</view>
+</view>

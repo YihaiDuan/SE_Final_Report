@@ -1,0 +1,18 @@
+.news{
+display:flex;
+padding:20rpx;
+border-bottom:2rpx solid #eee;
+}
+.username{
+font-size:32rpx;
+color:#333;
+flex:1;
+margin-left:20rpx;
+}
+.qr{
+  margin-right:20rpx;
+  width:120rpx;
+  height:120rpx;
+
+
+}

@@ -1,0 +1,28 @@
+<scroll-view scroll-y="true" class="page-body">
+  <navigator url="../search/search" class="text" hover-class="none">
+ <view class="searchtext" hover-class="pinsearch">请输入搜索内容</view>
+ </navigator>
+<view class="news">
+    <view class="newstop"><text>{{typename}}</text></view>
+
+<view class="booknews" wx:for="{{array}}">
+<navigator url="../particular/particular?advice={{item.category_id}}&bookid={{item.bookid}}">
+    <view>
+    
+    <image src="{{item.bookimages}}" class="left" ></image>
+    
+    </view>
+     </navigator>
+    <view class="right">
+     <text class="one">{{item.booktitle}}</text>
+     <text class="tow">{{item.introduce}}</text>
+     <view class="user">
+     
+     <text class="username">深水大鲨鱼</text>
+     </view>
+    </view>
+   
+</view>
+</view>
+
+</scroll-view>

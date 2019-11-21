@@ -1,0 +1,78 @@
+/* pages/myself/myself.wxss */
+page{
+  background:#ebebeb;
+  display:flex;
+  flex-direction: column;
+}
+.mynews{
+    flex: 1;
+    background:#fff;
+    margin:30rpx 0;
+    padding:20rpx;
+    display: flex;
+    padding-left:30rpx;
+}
+.userimage{
+  width:140rpx;
+  height:120rpx;
+
+}
+.user{
+   flex:1;
+   display:flex;
+   flex-direction: column;
+   padding-top:24rpx;
+   padding-left:30rpx;
+}
+.name{
+   font-size:30rpx;
+    padding-bottom:10rpx;
+}
+.usernom{
+   font-size:26rpx;
+   color:#999;
+
+}
+.recommend{
+    flex:1;
+    background:#fff;
+    padding:20rpx;
+    padding-left:40rpx;
+    display:flex;
+    margin-bottom:30rpx;
+    position: relative;
+    
+}
+.recommend1{
+    flex:1;
+    background:#fff;
+    padding:20rpx;
+    padding-left:40rpx;
+    display:flex;
+    border-bottom:2rpx solid #ddd;
+    position:relatve;
+}
+.reimage{
+    width:50rpx;
+    height:50rpx;
+   padding-right:20rpx;
+   
+}
+.retext{
+      font-size:35rpx;
+      flex:1;
+      line-height:60rpx;
+}
+.radio-group{
+   font-size:30rpx;
+}
+.radio-text {
+     font-size:35rpx;
+    padding-right:30rpx;
+    flex:1;
+
+
+}
+
+
+

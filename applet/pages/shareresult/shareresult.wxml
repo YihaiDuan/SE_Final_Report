@@ -1,0 +1,32 @@
+<scroll-view scroll-y="true" class="page-body">
+ 
+<view class="searchresoult">搜索结果 <text  style="color:#999;font-size:30rpx;margin-left:300rpx;">共搜索到 <text  style="color:red;font-size:34rpx">{{sharelist.size}} </text>条记录</text></view>
+
+
+
+<view class="news">
+<view class="booknews"  wx:for="{{sharelist.searchlist}}" >
+
+<navigator url="../details/details?shareid={{item.shareid}}&distance={{item.distance}}">
+    <view>
+    <image src="{{item.bookimages}}" class="left" ></image>
+    </view>
+     </navigator>
+    <view class="right">
+     <text class="one">{{item.booktitle}}</text>
+     <text class="tow">{{item.show}}</text>
+     <view class="user">
+     <text class="username">分享者:{{item.nickname}}</text>
+     <text class="iconfont icon-dingwei" style="font-size:26rpx; vertical-align:text-top;margin-right:10rpx;margin-left:20rpx;color:#007bff;"></text>
+
+     <text class="username"   wx:if="{{item.distance=='距离未知'}}">{{item.distance}}</text>
+
+ <text class="username"   wx:if="{{item.distance!='距离未知'}}">{{item.distance}}km</text>
+
+     </view>
+    </view>
+   
+</view>
+</view>
+</scroll-view>
+

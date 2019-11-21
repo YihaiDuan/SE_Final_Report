@@ -1,0 +1,45 @@
+<view class="page">  
+
+ 
+    <scroll-view scroll-y="true">
+     <view class="price" style="border-bottom:0;">图书优惠劵</view>
+
+     <view class="pricebody" wx:for="{{discountlist}}">
+     <view class="pleft"  >
+     
+     <view style="font-size:32rpx;padding:20rpx;display:flex;" wx:if="{{item.typestatus==1}}"  >
+     <view style="flex:1;">
+     ￥<text style="font-size:60rpx;font-weight:500;">{{item.discount}}</text><text style="font-size:36rpx;display:inline-block;margin-left:20rpx;">代金券</text>
+     </view>
+     <view style="font-size:36rpx;color:#fff;margin-top:20rpx;" wx:if="{{item.grade==1}}">VIP</view>
+</view>
+     <view style="font-size:32rpx;padding:20rpx;display:flex;" wx:if="{{item.typestatus==0}}">
+      <view style="flex:1;">
+     <text style="font-size:60rpx;font-weight:500;">{{item.discount*10}}折</text><text style="font-size:36rpx;display:inline-block;margin-left:20rpx;">打折券</text>
+     </view>
+      <view style="font-size:36rpx;color:#fff;margin-top:20rpx;" wx:if="{{item.grade==1}}">VIP</view>
+     </view>
+    
+
+     <view style="font-size:24rpx;margin-bottom:20rpx;margin-left:20rpx;">{{item.createdate}}-{{item.deadline}}
+     </view>
+     </view>
+
+  <view class="pright"   wx:if="{{bol}}">
+      <text  wx:if="{{item.discountbol=='false'}}"  bindtap="getCount"  data-grade="{{item.grade}}" style="font-size:28rpx;text-align:center;display:block;margin-top:60rpx;" data-id="{{item.id}}" >立即领取</text>
+
+
+ <text  wx:if="{{item.discountbol=='true'}}"  style="font-size:28rpx;text-align:center;display:block;margin-top:60rpx;"  >已领取</text>
+
+     </view>
+
+<view class="pright"   wx:if="{{!bol}}">
+      <text bindtap="nologin"   style="font-size:28rpx;text-align:center;display:block;margin-top:60rpx;"  >立即领取</text>
+     </view>
+
+     </view>
+
+  
+    </scroll-view>
+    
+</view>  

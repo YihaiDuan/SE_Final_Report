@@ -1,0 +1,122 @@
+.box{
+padding:20rpx;
+box-sizing: border-box;
+}
+.bookimages{
+  width:135rpx;
+  height:135rpx;
+  margin-top:-6rpx;
+  margin-left:-12rpx;
+
+}
+.imagebox{
+  width:90rpx;
+  height:135rpx;
+  overflow:hidden;
+
+}
+.booknews{
+flex:1;
+margin-left:16rpx;
+}
+.bookname{
+ color:#383A39;
+ font-size:28rpx;
+margin-left: 20rpx;
+
+}
+.author{
+    margin-left: 20rpx;
+    margin-top:6rpx;
+color:#7D7F7E;
+font-size:24rpx;
+
+}
+
+.headimages{
+width:80rpx;
+height:80rpx;
+border-radius: 50%;
+margin-right:8rpx;
+}
+.user{
+    flex:1;
+}
+.username{
+ margin-top:6rpx;
+ font-size:26rpx;
+ color:#333;
+ margin-bottom:6rpx;
+}
+.usertime{
+font-size:24rpx;
+color:#999;
+
+
+}
+.follow{
+ color:#E42A29;
+ font-size:30rpx;
+ margin-top:20rpx;
+ margin-right:40rpx;
+}
+.paragraph{
+font-size:32rpx;
+color:#333;
+letter-spacing: 4rpx;
+line-height:40rpx;
+text-indent:2em;
+margin:10rpx 0;
+width:100%;
+box-sizing: border-box;
+}
+.thumbs{
+width:100%;
+position:fixed;
+left:0;
+bottom:0;
+display:flex;
+background:#fff;
+border-top:1rpx solid #F4F4F4;
+}
+.t1{
+    flex:1;
+color:#909193;
+text-align:center;
+font-size:32rpx;
+padding:20rpx 0;
+margin-bottom:-30rpx;
+}
+.booknews{
+display:flex;
+
+
+}
+
+.book{
+margin-bottom:80rpx;
+border-top:1rpx solid #f4f4f4;
+padding-top:20rpx;
+
+}
+.booktap{
+ font-size:36rpx;
+color:#333;
+margin-bottom:20rpx;
+border-left:8rpx solid #007bff;
+padding-left:10rpx;
+}
+.bookna{
+flex:1;
+margin-left:10rpx;
+}
+.booktitle{
+ font-size:34rpx;
+ margin-top:10rpx;
+ margin-bottom:16rpx;
+}
+.bookauthor{
+ font-size:30rpx;
+ color:#999;
+
+}

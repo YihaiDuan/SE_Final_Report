@@ -1,0 +1,9 @@
+<view class="top">书籍目录</view>
+<view class="body">
+
+<view class="one"   wx:for="{{booklist}}">
+<text class="text">{{item}}</text>
+</view>
+
+
+</view>

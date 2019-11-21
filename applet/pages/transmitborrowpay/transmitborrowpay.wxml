@@ -1,0 +1,54 @@
+
+
+
+
+
+
+
+
+<view class="box">
+<view class="content">
+<view class="booknews">
+<image src="{{borrowdetail.bookimages}}" class="bookimages"></image>
+<view class="bookname">
+<view class="bone">{{borrowdetail.booktitle}}</view>
+<view class="btow">作者：{{borrowdetail.author}}</view>
+<!-- <view class="price1">押金: <text style="color:#007BFF;">{{borrowdetail.cash}}</text>
+</view> -->
+</view>
+
+</view>
+</view>
+
+<view class="integral">
+<text style="flex:1;font-size:34rpx;">借阅币剩余: {{money}}(1借阅币可以抵押1元)</text>
+
+</view>
+</view>
+
+
+
+<view class="payable">需支付:<text style="margin-left:16rpx;font-size:38rpx;color:#007BFF;">{{borrowdetail.cash}}元</text></view>
+
+
+<view style="text-align:center;">
+<form  bindsubmit="pay"  report-submit="true"  wx:if="{{combol}}">
+<button  plain="true"  form-type="submit"  data-borrowid="{{borrowdetail.id}}" form-type="submit" size="mini" style="color:#fff;background:#007BFF;border-color:#007BFF;padding:0 280rpx;">确认支付</button>
+</form>
+
+<navigator hover-class="none" url="../recharge/recharge"  wx:if="{{!combol}}">
+<button  plain="true"   size="mini" style="color:#fff;background:#007BFF;font-size:34rpx;border-color:#007BFF;padding:0 280rpx;">立即充值</button>
+</navigator>
+
+</view>
+
+<view class="tishi">
+<view class="title">温馨提示</view>
+<view class="content">
+<text class="ctext">· 图书转借需要支付图书押金</text>
+<text class="ctext">· 不需要到图书馆即可借书</text>
+
+</view>
+</view>
+
+

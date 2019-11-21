@@ -1,0 +1,12 @@
+<view class="top">
+<text class="one">请将转借二维码给用户进行扫描</text>
+</view>
+
+
+<view class="news"  >
+<image src="http://localhost:8080/BorrowBook/images/{{BorrowQR.imagesQR}}" class="image"></image>
+
+
+</view>
+
+

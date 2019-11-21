@@ -1,0 +1,288 @@
+.box2{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  opacity: 0.2;
+}
+.box1{
+ 
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  opacity: 0.2;
+}
+.tishi{
+  position:absolute;
+  top:300rpx;
+  left:50%;
+   margin-left:-325rpx;
+   width:650rpx;
+   height:300rpx;
+   background:#fff;
+   z-index:1000;
+}
+.top{
+    padding:20rpx 40rpx;
+    background:#007bff;
+    display:flex;
+    justify-content: space-around;
+}
+
+
+
+
+.left,.center,.right{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+}
+
+
+
+
+.topimage{
+  width:100rpx;
+  height:100rpx;
+  margin-bottom:20rpx;
+}
+.toptext{
+   font-size:32rpx;
+   color:#fff;
+}
+.scan,.borrow,.return,.histroyclass{
+   
+    padding:24rpx;
+    
+}
+.bodyimage{
+   width:46rpx;
+   height:46rpx;
+   margin-right:10rpx;
+}
+
+.text{
+   flex:1;
+   line-height:66rpx;
+
+}
+.detail{
+  
+   display:flex;
+   flex-direction: column;
+}
+.news{
+   padding:16rpx;
+   padding-left:30rpx;
+   border-bottom:2rpx solid #f6f7f8;
+}
+.news1{
+   padding:16rpx;
+   padding-left:30rpx;
+   border-bottom:2rpx solid #f6f7f8;
+   flex:1;
+}
+.newsimage{
+    width:133rpx;
+    height:133rpx;
+    margin-right:20rpx;
+}
+.rightnews{
+   flex:1;
+   display:flex;
+   flex-direction: column;
+   width:300rpx;
+}
+.rightone{
+  width:140rpx;
+  overflow:hidden;
+  white-space:nowrap;  
+   font-size:32rpx;
+   margin-bottom:6rpx;
+   display:block;
+   flex:1;
+   color:#7D7D7A;
+   letter-spacing:2rpx;
+   text-overflow:ellipsis;  
+}
+.rightone1{
+  width:420rpx;
+  overflow:hidden;
+  white-space:nowrap;  
+  text-overflow:ellipsis;
+   font-size:32rpx;
+   margin-bottom:6rpx;
+   display:block;
+   color:#7D7D7A;
+   letter-spacing:2rpx;
+}
+.righttow{
+  font-size:26rpx;
+  color:#A8A9A3;
+  width:520rpx;
+  white-space: nowrap;  
+  text-overflow: ellipsis;
+  flex:1;
+ 
+  overflow:hidden;
+  letter-spacing:2rpx;
+
+}
+.delete{
+   width:50rpx;
+   height:50rpx;
+   margin-top:40rpx;
+  margin-right:10rpx;
+
+}
+.book{
+    width:50rpx;
+   height:50rpx;
+  margin-top:16rpx;
+margin-right:70rpx;
+
+}
+.data{
+    margin-right:40rpx;
+    line-height: 120rpx;
+    color:#ff0000;
+
+}
+.somebook{
+  border:4rpx solid #eee;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx #f5f5f5;
+  background:#FAFAFC;
+  width:620rpx;
+  height:300rpx;
+  position:fixed;
+  top:420rpx;
+  left:50%;
+  margin-left:-310rpx;
+}
+.button{
+ 
+  color:#999;
+  font-size:38rpx;
+  line-height:90rpx;
+}
+.picker{
+  padding:20rpx;
+ line-height:200rpx;
+ text-align:center;
+ word-wrap:break-all;
+}
+.picker2
+{
+   text-align:center;
+   display:block;
+   line-height:40rpx;
+   padding:60rpx 20rpx;
+}
+.buttonbackground{
+  display:flex;
+
+}
+.sure{
+  padding:0 120rpx;
+}
+.line{
+  width:620rpx;
+   display:flex;
+   position:absolute;
+   left:0;
+   bottom:0;
+}
+.leftline{
+  flex:1;
+
+}
+.rightline{
+  flex:1;
+
+}
+.button{
+  background:#f5f5f5;
+  color:#999;
+  font-size:34rpx;
+  line-height:80rpx;
+}
+.time{
+ font-size:26rpx;
+ line-height:48rpx;
+ color:#999;
+}
+.user{
+ display:flex;
+ margin-top:6rpx;
+ letter-spacing:2rpx;
+}
+.uimage{
+  width:32rpx;
+  height:32rpx;
+ margin-right:10rpx;
+ margin-top:3rpx;
+}
+.username{
+  font-size:26rpx;
+  color:#999;
+}
+.viewmore{
+    background:#fff;
+    line-height:90rpx;
+    text-align:center;
+    border-bottom:20rpx solid #EFEFF5;
+    color:007bff;
+}
+.prompt{
+ text-align: center;
+ margin:20rpx 0;
+ font-size:30rpx;
+ color:#999;
+
+}
+.rightthree{
+  width:480rpx;
+   overflow:hidden;
+   white-space:nowrap;  
+  text-overflow:ellipsis;  
+ font-size:26rpx;
+  color:#999;
+
+}
+.righttow1{
+   font-size:26rpx;
+  color:red;
+  margin-right:30rpx;
+}
+.swiper-tab {  
+  display: flex;  
+  flex-direction: row;  
+  line-height: 42rpx;  
+  border-bottom:1rpx solid #eee;
+}  
+  
+.tab-item {  
+  width: 33.3%;  
+  text-align: center;  
+  font-size: 32rpx;  
+  white-space:nowrap;
+  align-content: center;
+}  
+.on {  
+  color:#007bff;  
+  border-bottom: 5rpx solid #007bff;  
+}
+.lajitong{
+width:50rpx;
+height:50rpx;
+margin-top:25rpx;
+margin-left:20rpx;
+
+}

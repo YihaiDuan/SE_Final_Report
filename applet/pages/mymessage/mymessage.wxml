@@ -1,0 +1,36 @@
+<view   wx:for="{{messagelist}}" class="news">
+<navigator url="../messagedetail/messagedetail?id={{item.id}}"  style="display:flex;flex:1;"   hover-class="none">
+<image   class="bookimage" src="{{item.userimages}}">
+</image>
+
+
+<view class="usernews">
+<text>{{item.nickname}}</text>
+<text class="title"   style="width:420rpx;overflow:hidden; white-space:nowrap; text-overflow:ellipsis;margin-bottom:10rpx">借阅: {{item.booktitle}}</text>
+<text  style=" font-size:30rpx; color:#999;">来自: 附近的人</text>
+</view>
+
+</navigator>
+
+<view  wx:if="{{logs.personQR=='null'}}" >
+<view  wx:if="{{item.status=='0'}}" bindtap="noshare"  class="read1">同意</view>
+</view>
+
+<view  wx:if="{{logs.personQR!='null'}}">
+<view   wx:if="{{item.status=='0'}}"  bindtap="agreeapply"   data-id="{{item.id}}" class="read1">同意</view>
+</view>
+
+
+
+
+
+<view   wx:if="{{item.status=='1'}}"  class="read">已同意</view>
+
+<view   wx:if="{{item.status=='2'}}" class="read">已拒绝</view>
+
+<view  wx:if="{{item.readstatus=='0'}}">
+<text class="iconfont icon-xiaohongdianx" style="color:#D00000;font-size:60rpx;position:absolute;top:65rpx;right:20rpx;" >
+</text>
+</view>
+
+</view>

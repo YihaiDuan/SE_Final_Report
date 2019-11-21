@@ -1,0 +1,110 @@
+page{
+font-size:17px;
+height:100%;
+}
+.chaptertop
+{
+margin-top:10px;
+font-size: 14px;
+color:#999;
+letter-spacing: 1rpx;
+
+display: block;
+}
+
+
+.box{
+  padding:0 20px;
+width:100%;
+overflow:hidden;
+box-sizing: border-box;
+
+}
+
+.content{
+width:100%;
+height:100%;
+overflow:hidden;
+letter-spacing: 1px;
+line-height:21px;
+}
+.jumppage{
+    padding:0 20px;
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+background:#fff;
+overflow:hidden;
+box-sizing: border-box;
+}
+.jumppage .active{
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+background:#fff;
+overflow:hidden;
+
+}
+@keyframes run{
+				0%{
+					
+					
+				}
+                50%{
+                left:-900px;
+
+                }
+				100%{
+                 left:-900px;
+					
+				}
+			}
+
+@keyframes returnrun{
+      0%{
+         
+
+      }   
+      50%{
+       left:900px;
+
+      }
+  100%{
+       left:900px;
+
+      }
+
+}            
+.presssbar{
+ position:fixed;
+ bottom:0;
+ left:0;
+ width:100%;
+ background:#fff;
+display:flex;
+font-size:32rpx;
+
+}
+
+.box1{
+ 
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  opacity: 0.2;
+}
+.tishi{
+  position:absolute;
+  top:300rpx;
+  left:50%;
+   margin-left:-325rpx;
+   width:650rpx;
+   height:300rpx;
+   background:#fff;
+   z-index:1000;
+}

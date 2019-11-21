@@ -1,0 +1,17 @@
+<view class="top">
+
+<image   class="image1"  src="../../images/logo.png"></image>
+
+
+
+<text class="one">个性图书推荐是一款用户面向图书馆推荐小程序，旨在整合图书馆和用户资源，让借书不再麻烦，畅快读书。</text>
+</view>
+
+
+<image src="../../images/xiao.jpg" class="image"  bindtap="previewimage"   data-url="xiao.jpg"></image>
+<view class="classname">{{QRbyid.BorrowQR}}</view>
+
+
+<text  style="margin-top:40rpx;text-align:center;font-size:25rpx">Copyright@ 2016-2017 findbook.com All rights reserved</text>
+
+

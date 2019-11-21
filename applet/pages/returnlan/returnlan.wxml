@@ -1,0 +1,166 @@
+
+<view  wx:if="{{!nodate}}" style="text-align:center;">
+<text style=" margin:30rpx 0;flex:1;font-size:30rpx;display:inline-block;">您没有应还图书</text>
+</view>
+
+
+
+
+<view  wx:if="{{nodate}}" >
+
+<view  >
+
+<form  bindsubmit="submit"   >
+
+<view style="border-top:2rpx solid #F5F5F5;">
+
+<checkbox-group name="checks"   bindchange="checkboxChange"  >
+
+  <label  wx:for="{{lists}}" style="display:block;position:relative;height:300rpx;border-bottom:12rpx solid #F4F4F4;" >
+   <view   class=" inner txt" >
+   <view style="display:flex;width:100%;border-bottom:1rpx solid #F5F6F0;padding:10rpx 0">
+    <checkbox  class="checkbox" value="{{item.id}}" checked="{{item.selected=='true'}}"/>
+    <view  style="display:flex;width:100%;">
+    <image  class="bookimages"  src="{{item.bookimages}}"></image>
+
+    <view style="margin-left:10rpx;">
+     <view  class="righttext" style="font-size:32rpx;margin-top:6px;">{{item.booktitle}}</view>
+      <!-- <view  class="righttext">押金:<text  style="color:#007bff;font-size:25rpx;">￥{{item.price}} </text></view> -->
+        <view  class="righttext">租金:<text  style="color:#007bff;font-size:25rpx;">￥{{item.newprice}}/天</text></view> 
+<view  class="righttext">到期时间:{{item.deadline}}</view>
+</view>
+
+</view>
+
+  </view>
+  <view  style="display:block;margin-top:10rpx;">
+
+  
+ 
+  <view style="display:flex;margin-right:20rpx;    flex-direction: column-reverse;">
+    <view  class="righttext1"   wx:if="{{item.groupbol=='false'}}">租金费:<text  style="color:#007bff">￥{{item.server}}</text></view>
+
+
+
+ 
+ <view  class="righttext1"  wx:if="{{item.groupbol=='true'}}"> 
+
+ <!-- <text  style="margin-right:150rpx">开团活动打<text  style="color:#d00000;font-size:28rpx">{{item.count}}折</text>
+ </text> -->
+
+ <text style="color:#333;text-decoration: line-through;">￥{{item.server}}</text>
+ 现租金费:<text style="margin-left:10rpx;color:#007bff;">￥{{item.groupcount}}</text>
+
+ </view>
+
+
+  <view  class="righttext1"   wx:if="{{item.beyondbol=='true'}}">逾期费:<text  style="color:#ef7101;">￥{{item.fine}}</text></view>
+</view>
+
+</view>
+</view>
+
+  <view class="four inner del"  data-id="{{item.id}}" data-index="{{index}}"bindtap="deleteborrowlan" wx:if="{{show}}">删除</view>
+  </label>
+
+</checkbox-group>
+
+<view class="total" style="border-bottom:10rpx solid #F4F4F4;">
+<!-- <view class="totalmanoy">
+<text class="lefttotal">总押金</text>
+<text>￥{{totalcase}}</text>
+</view> -->
+<view class="totalmanoy">
+<text class="lefttotal">应付租金</text>
+<text>￥-{{totalserver}}</text>
+</view>
+<view class="totalmanoy">
+<text class="lefttotal">应付逾期费</text>
+<text>￥-{{totalfine}}</text>
+</view>
+<view wx:if="{{user.grade==0}}"  class="totalmanoy">
+<text class="lefttotal">总应付</text>
+<text>￥{{totalpay}}</text>
+</view>
+
+<view wx:if="{{user.grade==1}}"  class="totalmanoy">
+<text class="lefttotal">总应付</text>
+
+<text><text  style="color:#007bff;font-size:28rpx">VIP享受8折优惠</text> ￥{{totalpay}}</text>
+</view>
+<!--wx:if="{{totalcase!=0&&showdiscount=='true'}}"-->
+
+<navigator  hover-class="none"      url="../userdiscount/userdiscount?totalpay={{yuanpay}}">
+<view style="border-bottom:10rpx solid #F4F4F4;display:flex;padding:10rpx 40rpx;line-height:60rpx;font-size:32rpx;color:#007bff">
+<text style="flex:1;">选择优惠</text>
+<text style="margin-right:10rpx;">></text>
+
+</view>
+</navigator>
+
+<view  wx:if="{{showdiscount=='false'}}"     >
+<navigator hover-class="none" url="../userdiscount/userdiscount?totalpay={{yuanpay}}">
+<view style="border-bottom:10rpx solid #F4F4F4;display:flex;padding:10rpx 40rpx;line-height:60rpx;font-size:32rpx;color:#007bff">
+<text style="flex:1;"></text>
+<text wx:if="{{typestatus==0}}" style="margin-right:10rpx;">打{{discount*10}}折</text>
+<text wx:if="{{typestatus==1}}" style="margin-right:10rpx;">抵扣￥{{discount}}</text>
+</view>
+</navigator>
+
+</view>
+</view>
+</view>
+
+
+
+
+<view class="bottom">
+<view class="qr" >
+<radio-group class="radio-group group"  name="sex" style="margin-top:16rpx;margin-left:36rpx;"  bindtap="bindSelectAll" >
+<label  wx:if="{{selectedAllStatus}}" >
+    <radio value=""   checked/>
+</label>
+<label  wx:if="{{!selectedAllStatus}}">
+<radio value="" />
+</label>
+</radio-group>
+<view class="whole">全选</view>
+<!--
+总押金{{totalcase}}
+总服务费{{totalserver}}
+总逾期费用{{totalfine}}
+总消费{{totalpay}}-->
+
+<view  wx:if="{{totalcase-totalpay>=0}}"  style="margin-right:16rpx;font-size:34rpx;margin-top:20rpx;text-align:right;flex:1;">应退:<text style="color:blue;margin-left:6rpx;">{{(totalcase-totalpay)}}</text></view>
+
+<view  wx:if="{{totalcase-totalpay<0}}"  style="margin-right:16rpx;font-size:34rpx;margin-top:20rpx;text-align:right;flex:1;">应退:<text style="color:blue;margin-left:6rpx;">{{-(totalcase-totalpay)}}</text></view>
+</view>
+
+
+
+
+
+<view class="pay"  wx:if="{{totalcase!=0}}"  ><button  form-type="submit" plain="true" style="color:#fff;background:#007bff;border-color:#007bff;font-size:38rpx;padding:0 50rpx;">确认</button></view>
+
+
+
+
+<view class="pay"  wx:if="{{totalcase==0}}"   ><button  bindtap="warn" plain="true" style="color:#fff;background:#007bff;border-color:#007bff;font-size:38rpx;padding:0 50rpx;">确认</button></view>
+</view>
+
+
+
+
+
+</form>
+
+</view>
+
+</view>
+<!--
+<view wx:for="{{discountlist}}">
+<view bindtap="selectdiscount" data-typestatus="{{item.typestatus}}" data-discount="{{item.discount}}"  data-id="{{item.id}}">{{item.typename}}
+</view>
+</view>
+-->
+

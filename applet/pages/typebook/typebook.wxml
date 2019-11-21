@@ -1,0 +1,117 @@
+  <view class="page">   
+  <!--顶部导航栏-->  
+  <view class="swiper-tab">  
+    <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">热门推荐</view>  
+    <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">好评推荐</view>  
+
+     <!-- <view  wx:if="{{pricebol=='0'}}" class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">价格 ---</view> 
+
+    <view  wx:if="{{pricebol=='1'}}" class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">价格 低-高</view>  
+
+    <view   wx:if="{{pricebol=='2'}}" class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">价格 高-低</view>   -->
+  </view>  
+  <!--内容主体style="height:{{clientheight}}px" -->  
+  <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange"   style="height:{{clientheight}}px">  
+  <swiper-item>
+ 
+   <scroll-view scroll-y="true"   style="height:{{clientheight}}px" bindscrolltolower="onbottom" >
+<view class="booknews"    wx:for="{{booklist}}">
+
+<navigator url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.category_id}}"  style="display:flex"   hover-class="none">
+    <view>
+    <image src="{{item.bookimages}}"mode="aspectFit"  class="left" ></image>
+    </view>
+
+
+    <view class="right">
+     <view style="display:flex;">
+    <view style="flex:1;">
+     <text class="one">{{item.booktitle}}</text>
+    </view>
+    
+     <text style=" color:#A0A19D; font-size:24rpx; vertical-align:text-bottom;display:block;margin-right:10rpx;color:#007bff">{{item.borrownum}}次借阅</text>
+     </view>
+         <view class="user">
+      <text class="username" style="flex:1;display:block;"><text style="width:480rpx;overflow:hidden;display:inline-block;white-space: nowrap;vertical-align:text-top;">作者：{{item.author}}</text></text>
+     </view>
+     <text class="tow">{{item.introduce}}</text>
+      
+    </view>
+    </navigator>
+   
+</view>
+
+<view  class="load" wx:if="{{searchLoading}}">正在加载更多内容</view>
+<view class="load" wx:if="{{searchLoadingComplete}}">已加载完全部内容</view>
+    </scroll-view>
+    </swiper-item>  
+
+
+    <swiper-item>  
+    <scroll-view  scroll-y="true" style="height:{{clientheight}}px;"   bindscrolltolower="onbottom">
+    
+ 
+<view class="booknews"      wx:for="{{booklist}}">
+
+<navigator url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.category_id}}"  style="display:flex"   hover-class="none">
+    <view>
+    <image src="{{item.bookimages}}"mode="aspectFit"  class="left" ></image>
+    </view>
+
+
+    <view class="right">
+     <view style="display:flex;">
+    <view style="flex:1;">
+     <text class="one">{{item.booktitle}}</text>
+    </view>
+    
+     <text style=" color:#A0A19D; font-size:24rpx; vertical-align:text-bottom;display:block;margin-right:10rpx;color:#007bff">{{item.evaluate}}分</text>
+     </view>
+         <view class="user">
+      <text class="username" style="flex:1;display:block;"><text style="width:480rpx;overflow:hidden;display:inline-block;white-space: nowrap;vertical-align:text-top;">作者：{{item.author}}</text></text>
+     </view>
+     <text class="tow">{{item.introduce}}</text>
+      
+    </view>
+    </navigator>
+</view>
+
+ <view  class="load" wx:if="{{searchLoading}}">正在加载更多内容</view>
+<view class="load" wx:if="{{searchLoadingComplete}}">已加载完全部内容</view>
+  </scroll-view>
+    </swiper-item>  
+
+
+    <swiper-item>  
+   <scroll-view scroll-y="true" style="height:{{clientheight}}px;"    bindscrolltolower="onbottom"  >
+    
+<view class="booknews"      wx:for="{{booklist}}">
+
+<navigator url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.category_id}}"  style="display:flex"   hover-class="none">
+    <view>
+    <image src="{{item.bookimages}}"mode="aspectFit"  class="left" ></image>
+    </view>
+
+
+    <view class="right">
+     <view style="display:flex;">
+    <view style="flex:1;">
+     <text class="one">{{item.booktitle}}</text>
+    </view>
+    
+     <text style=" color:#A0A19D; font-size:24rpx; vertical-align:text-bottom;display:block;margin-right:10rpx;color:#007bff">￥{{item.cash}}</text>
+     </view>
+         <view class="user">
+      <text class="username" style="flex:1;display:block;"><text style="width:480rpx;overflow:hidden;display:inline-block;white-space: nowrap;vertical-align:text-top;">作者：{{item.author}}</text></text>
+     </view>
+     <text class="tow">{{item.introduce}}</text>
+      
+    </view>
+    </navigator>
+</view>
+    <view  class="load" wx:if="{{searchLoading}}">正在加载更多内容</view>
+<view class="load" wx:if="{{searchLoadingComplete}}">已加载完全部内容</view>
+    </scroll-view>
+    </swiper-item>  
+  </swiper>  
+</view>   

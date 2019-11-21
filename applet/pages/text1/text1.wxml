@@ -1,0 +1,58 @@
+
+<view class="box" style="height:{{height}}">
+<text  class="chaptertop">{{showtitle}}</text>
+<text class="content" style="height:{{height}}" >
+{{content}}
+</text>
+</view>
+
+<view class="jumppage" style="height:{{height}};opacity:{{opacity}};left:{{left}};box-shadow:{{shadow}};{{transation}}" bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" bindlongtap="progressbar">
+<text   class="chaptertop">{{showtitle}}</text>
+<text  class="content" style="height:{{height}}" >
+{{content1}}
+</text>
+</view>
+
+
+
+
+
+<view class="presssbar" wx:if="{{showbar&&all}}">
+ <slider  bindchange="slider4change" min="{{1}}" max="{{pagemax}}" show-value style="flex:1;margin-right:0;" value="{{newvalue}}"  bindchange="listenerSlider"/>
+
+ <text style="margin-top:12px;margin-right:30rpx;color:#666;">/{{pagemax}}
+ </text>
+</view>
+
+<view class="presssbar" wx:if="{{showbar&&noall}}">
+ <slider  bindchange="slider4change" min="{{1}}" max="{{newpagemax}}" show-value style="flex:1;margin-right:0;" value="{{newvalue}}"  bindchange="listenerSlider"/>
+
+ <text style="margin-top:12px;margin-right:30rpx;color:#666;">/{{newpagemax}}
+ </text>
+</view>
+
+
+
+<view     wx:if="{{warnbol}}"
+style="width:100%;height:100%;background:#000;opacity:0.6;position:absolute;top:0;left:0;z-index:10">
+</view>
+
+<veiw class="box1"  wx:if="{{warnbol}}" >
+</veiw>
+
+<view class="tishi"  style="z-index:1000"  wx:if="{{warnbol}}">
+<view style="line-height:110rpx;text-align:center;font-size:42rpx;">
+提示
+</view>
+
+<view  style="line-height:60rpx;margin-bottom:50rpx;text-align:center;color:#999;">
+试读到此，是否购买！
+</view>
+
+
+<veiw style="display:flex;">
+<veiw style="flex:1;text-align:center;border:2rpx solid  #f4f4f4;line-height:80rpx;border-bottom:0;"
+bindtap="cancel">取消</veiw>
+<veiw style="flex:1;text-align:center;border:2rpx solid  #f4f4f4;line-height:80rpx;border-bottom:0;color:#3cc51f;" bindtap="confire">确定</veiw>
+</veiw>
+</view>

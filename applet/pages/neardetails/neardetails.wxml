@@ -1,0 +1,32 @@
+<scroll-view scroll-y="true" class="page-body">
+ <view class="text">
+ <image src="{{sharedetail.userimages}}" class="userimage"></image>
+ <view class="usernews" style="flex:1;margin-left:30rpx;">
+   <view class="user">
+     <text class="username2">{{sharedetail.nickname}}</text>
+     <view class="deat">
+      <text class="iconfont icon-dingwei" style="font-size:26rpx; vertical-align:text-top;margin-right:10rpx;color:#007bff;margin-top:6rpx;"></text>
+     <text class="username2"  wx:if="{{distance!='距离未知'}}">{{distance}}m</text>
+<text class="username2"  wx:if="{{distance=='距离未知'}}">{{distance}}</text>
+</view>
+     </view>
+ </view>
+ </view>
+
+<view class="bookdata"  style="font-size:33rpx">书名：{{sharedetail.booktitle}}</view>
+<view class="bookdata"  style="font-size:30rpx">作者：{{sharedetail.author}}</view>
+<view class="bookdata"  style="font-size:30rpx">时间：剩余 {{sharedetail.day}}天</view>
+
+<view  data-borrowid="{{sharedetail.borrowid}}"         data-otherid="{{sharedetail.userid}}" bindtap="apply"   wx:if="{{sharedetail.applybol=='false'}}"><button style="margin:30rpx 16rpx;margin-top:60rpx;color:#fff;background:#007bff;font-size:36rpx;">申请</button>
+</view>
+
+<view  data-borrowid="{{sharedetail.borrowid}}"         data-otherid="{{sharedetail.userid}}"  wx:if="{{sharedetail.applybol=='true'}}"><button style="margin:30rpx 16rpx;margin-top:60rpx;color:#fff;background:#007bff;font-size:36rpx;">已经申请</button>
+</view>
+
+
+</scroll-view>
+
+
+
+
+

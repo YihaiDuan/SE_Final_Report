@@ -1,0 +1,91 @@
+
+<view class="recommend"    wx:if="{{bol}}">
+<text class="iconfont icon-tuijian2" style="font-size:34rpx;margin-right:20rpx;color:#007bff;margin-top:12rpx"></text>
+<text class="retext">推荐提醒</text>  
+
+<switch  bindchange="switch1Change" wx:if="{{bolstatus.referstatus=='1'}}" class="reswith" checked />
+
+<switch  bindchange="switch1Change" wx:if="{{bolstatus.referstatus=='0'}}" class="reswith"  />
+
+</view>
+
+
+<view class="recommend"    wx:if="{{!bol}}"  bindtap="nologin">
+<text class="iconfont icon-tuijian2" style="font-size:34rpx;margin-right:20rpx;color:#007bff;margin-top:12rpx"></text>
+<text class="retext">推荐提醒</text>  
+<switch     class="reswith"  />
+</view>
+
+
+<view class="recommend" wx:if="{{display1}}">
+<text class="radio-text">提醒频率</text>
+
+<radio-group class="radio-group" >
+
+  <label class="radio" wx:for="{{items}}">
+
+<label     wx:if="{{item.name==bolstatus.p}}">
+<radio value="{{item.name}}" bindtap="submit" data-value="{{item.name}}" checked/>{{item.value}}
+</label>
+
+<label     wx:if="{{item.name!=bolstatus.p}}">
+<radio value="{{item.name}}" bindtap="submit" 
+data-value="{{item.name}}"/>{{item.value}}
+</label>
+
+  </label>
+
+</radio-group>
+
+</view>
+
+
+
+
+
+
+
+
+
+<view class="recommend"   wx:if="{{bol}}">
+
+<text class="iconfont icon-guihuan" style="font-size:37rpx;margin-right:20rpx;color:#007bff;margin-top:12rpx"></text>
+<text class="retext">还书提醒</text> 
+
+
+ <switch   class="reswith"    bindchange="switch2Change" wx:if="{{bolstatus.borrowwarnstatus=='1'}}"   checked/>
+
+<switch   class="reswith"    bindchange="switch2Change" wx:if="{{bolstatus.borrowwarnstatus=='0'}}"  />
+
+
+</view>
+
+
+
+<view class="recommend"   wx:if="{{!bol}}"    bindtap="nologin">
+<text class="iconfont icon-guihuan" style="font-size:37rpx;margin-right:20rpx;color:#007bff;margin-top:12rpx"></text>
+<text class="retext">还书提醒</text> 
+ <switch   class="reswith"  />
+
+</view>
+
+<navigator url="../help/help"    hover-class="none">
+<view class="recommend"    >
+<text class="iconfont icon-bangzhu" style="font-size:37rpx;margin-right:20rpx;color:#007bff;margin-top:12rpx"></text>
+<text class="retext">帮助</text>
+</view>
+</navigator>
+
+
+<navigator url="../about/about"   hover-class="none">
+<view class="recommend"    >
+<text class="iconfont icon-guanyu" style="font-size:37rpx;margin-right:20rpx;line-height:60rpx;color:#007bff;margin-top:12rpx"></text><text class="retext" style="margin-top:10rpx">个性图书推荐</text>
+</view>
+</navigator>
+
+<view class="recommend"    >
+<text class="iconfont icon-loginout" style="font-size:37rpx;margin-right:20rpx;color:#007bff;margin-top:12rpx"></text>
+<text class="retext"  bindtap="exit" >退出</text>
+</view>
+
+

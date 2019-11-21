@@ -1,0 +1,55 @@
+.news{
+display:flex;
+border-bottom:2rpx solid #eee;
+padding:10rpx 20rpx;
+position:relative;
+}
+.bookimage{
+
+margin-right:20rpx;
+width:186rpx;
+height:186rpx;
+
+}
+.usernews{
+  flex:1;
+ display:flex;
+ flex-direction: column;
+ color:#333;
+   width:400rpx;
+   overflow:hidden;
+   white-space:nowrap;  
+  text-overflow:ellipsis;
+}
+.title{
+ font-size:32rpx;
+ color:#ccc;
+ margin-top:10rpx;
+}
+.read{
+  color:#999;
+  font-size:36rpx;
+  line-height:186rpx;
+  margin-right:40rpx;
+}
+.read1{
+font-size:36rpx;
+line-height:186rpx;
+margin-right:40rpx;
+color:#fff;
+background:#007bff;
+display:inline-block;
+padding:6rpx 10rpx;
+}
+.nonews{
+display:flex;
+margin:160rpx 50rpx;
+font-size:32rpx;
+color:#999;
+}
+.hengxian{
+flex:1;
+border-top:1rpx solid #D6D8D0;
+margin-top:20rpx;
+
+}

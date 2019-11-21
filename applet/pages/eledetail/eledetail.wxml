@@ -1,0 +1,295 @@
+<scroll-view class="page-body" scroll-y="true">
+<view class="top">
+<image src="{{detail.bookimages}}" class="timages" mode="widthFix"/>
+<view class="zhebox">
+</view>
+<view class="booknews">
+<view class="bookone">
+<view class="bookimages">
+<image src="{{detail.bookimages}}" style="width:310rpx;height:290rpx;margin-left:-55rpx;margin-top:-13rpx;" ></image>
+</view>
+<view class="bn">
+<view class="bone">{{detail.booktitle}}</view>
+<navigator  hover-class="none" url="../searchauthor/searchauthor?author={{detail.author}}">
+<view class="btow">作者：<text style="color:#54BB5F;">{{detail.author}}</text></view>
+</navigator>
+<view class="bthree">
+<image class="star"  src="https://localhost:8080/BorrowBook/findbookimg/{{starimg}}"></image>
+<text style="margin-right:16rpx;display:inline-block;">{{detail.score}}分</text><text style="margin-right:16rpx;display:inline-block;">{{detail.getborrownum}}人借阅</text></view>
+<view class="bfour">藏书量：{{detail.totalnum}}本</view>
+<view class="bfour">位置：{{detail.position}}<text style="display:inline-block;margin-left:20rpx;">索书号: {{detail.bookid}}</text></view>
+<view class="bfour" >价格：<text  style="color:#007bff; font-weight:bold;font-size:28rpx">￥{{detail.eleprice}}</text></view>
+</view>
+
+
+</view>
+</view>
+
+<view class="bookthree">
+
+<view class="b1"  wx:if="{{bol}}" bindtap="collecting" wx:if="{{detail.collectbol=='false'}}">   
+ <text class="iconfont icon-11" style="margin-right:12rpx;font-size:28rpx;color:#fff"></text>收藏
+ </view>
+
+ <view class="b1"  wx:if="{{bol}}"  bindtap="collectingwarn" wx:if="{{detail.collectbol=='true'}}">    
+ <text class="iconfont icon-11" style="margin-right:12rpx;font-size:28rpx;color:#007bff"></text>已收藏
+ </view>
+
+
+<view class="b1"   bindtap="nologin" wx:if="{{!bol}}">   
+ <text class="iconfont icon-11" style="margin-right:12rpx;font-size:28rpx;color:#fff"></text>收藏
+ </view>
+
+<view class="b2" bindtap="share"  wx:if="{{bol}}">
+<text  class="iconfont icon-feiji" style="margin-right:12rpx;font-size:32rpx;color:#fff"></text>发动态
+</view>
+<view class="b2"  bindtap="nologin" wx:if="{{!bol}}">
+<text  class="iconfont icon-feiji" style="margin-right:12rpx;font-size:32rpx;color:#fff"></text>发动态
+</view>
+
+<view class="b3">
+<navigator url="../comment/comment?bookid={{detail.bookid}}">
+<text class="iconfont icon-pinglun1" style="margin-right:12rpx;font-size:32rpx;color:#fff;font-weight:bold;margin-top:4rpx;"></text>评论 {{comment.num}}
+</navigator>
+</view>
+
+</view>
+</view>
+
+
+<navigator   hover-class="none"  class="textmain" url="../particulars/particulars?bookid={{detail.bookid}}&advice={{detail.advice}}">
+<text class="jianjie"  style="flex:1">查看对应纸质图书</text>
+
+  <text  class="textright"  >￥{{detail.cash}}</text>
+  </navigator>
+
+
+
+
+
+
+    <view style="border-top:20rpx solid #F5F5F5;">
+  <view class="synopsis">
+   <view class="imagetop" style="width:100%;height:">
+   </view>
+  </view>
+
+    <view class="abstractbody">
+<text class="jianjie">图书导读</text>
+ <text class="jianjiebody  {{currentTab[0] ? 'on' : ''}}">
+  <text class="text1">{{detail.guidreading}}</text>
+ </text>
+ <view style="width:100%;text-align:center;">
+  <text style="display:inline-block;padding:8rpx 28rpx;border-radius:30rpx;text-align:center;color:#007bff;font-size:28rpx;border:2rpx solid #007bff;margin:0 auto;" bindtap="t2" wx:if="{{currentTab[0]}}" data-current="0" bindtap="swichNav">查看更多</text>
+  <text style="display:inline-block;padding:8rpx 28rpx;border-radius:30rpx;text-align:center;color:#007bff;font-size:28rpx;border:2rpx solid #007bff;margin:0 auto;" bindtap="t2" wx:if="{{!currentTab[0]}}" data-current="0" bindtap="swichNav">收起内容</text>
+ </view>
+</view>
+</view>
+   <view style="border-top:20rpx solid #F5F5F5;">
+  <view class="synopsis">
+   <view class="imagetop" style="width:100%;height:">
+   </view>
+  </view>
+
+ <view class="abstractbody">
+<text class="jianjie">内容简介</text>
+ <text class="jianjiebody {{currentTab[1] ? 'on' : ''}}">
+  <text class="text1">{{detail.introduce}}</text>
+ </text>
+ <view style="width:100%;text-align:center;">
+  <text style="display:inline-block;padding:8rpx 28rpx;border-radius:30rpx;text-align:center;color:#007bff;font-size:28rpx;border:2rpx solid #007bff;margin:0 auto;" bindtap="t2" wx:if="{{currentTab[1]}}" data-current="1" bindtap="swichNav">查看更多</text>
+  <text style="display:inline-block;padding:8rpx 28rpx;border-radius:30rpx;text-align:center;color:#007bff;font-size:28rpx;border:2rpx solid #007bff;margin:0 auto;" bindtap="t2" wx:if="{{!currentTab[1]}}" data-current="1" bindtap="swichNav">收起内容</text>
+ </view>
+</view>
+</view>
+   <view style="border-top:20rpx solid #F5F5F5;">
+  <view class="synopsis">
+   <view class="imagetop" style="width:100%;height:">
+   </view>
+  </view>
+
+
+    <view class="abstractbody">
+<text class="jianjie">作者简介</text>
+ <text class="jianjiebody {{currentTab[2] ? 'on' : ''}}">
+  <text class="text1">{{detail.review}}</text>
+
+ </text>
+ <view style="width:100%;text-align:center;">
+  <text style="display:inline-block;padding:8rpx 28rpx;border-radius:30rpx;text-align:center;color:#007bff;font-size:28rpx;border:2rpx solid #007bff;margin:0 auto;" bindtap="t2" wx:if="{{currentTab[1]}}" data-current="2" bindtap="swichNav">查看更多</text>
+  <text style="display:inline-block;padding:8rpx 28rpx;border-radius:30rpx;text-align:center;color:#007bff;font-size:28rpx;border:2rpx solid #007bff;margin:0 auto;" bindtap="t2" wx:if="{{!currentTab[1]}}" data-current="1" bindtap="swichNav">收起内容</text>
+ </view>
+</view>
+
+
+
+<!--<navigator hover-class="none" url="../elecatelog/elecatelog?bookid={{detail.bookid}}">
+<view class="catalog">查看目录</view>
+</navigator>-->
+
+</view>
+  <view style="border-top:20rpx solid #F5F5F5;">
+  <view class="synopsis">
+   <view class="imagetop" style="width:100%;height:">
+   </view>
+  </view>
+</view>
+
+
+
+
+ 
+
+
+
+ <navigator  hover-class="none" wx:if="{{detail.elestatus!='0'}}"   url="../elecatelog/elecatelog?bookid={{detail.bookid}}">
+<view class="look">
+查看目录
+</view>
+</navigator>
+
+
+ <view style="border-top:20rpx solid #F5F5F5;">
+  <view class="synopsis">
+   <view class="imagetop" style="width:100%;height:">
+   </view>
+  </view>
+    <view class="abstractbody"  style="margin-bottom:100rpx">
+<text class="jianjie" style="margin-bottom:20rpx;">图书信息</text>
+
+  <view class="bnews">出版社<text style="margin-left:20rpx;">{{detail.publish}}</text></view>
+  <view class="bnews">ISBN<text style="margin-left:40rpx;">{{detail.publishnumber}}</text></view>
+  <view class="bnews">类别<text style="margin-left:50rpx;">{{detail.typename}}</text></view>
+</view>
+</view>
+ 
+
+
+</scroll-view>
+
+
+<view  wx:if="{{bol}}">
+
+<!--免费阅读-->
+<view class="bottombar"   style="border-top:1rpx solid #ccc" wx:if="{{detail.freestatus==0}}">
+
+<view   class="bottomleft"  wx:if="{{bol}}"  wx:if="{{detail.myelebol=='true'}}">
+ 已在书架
+</view>
+<view   class="bottomleft" wx:if="{{bol}}"  bindtap="addmyele"wx:if="{{detail.myelebol=='false'}}">
+加入书架
+</view>
+<view  wx:if="{{!bol}}" class="bottomleft" bindtap="nologin">
+加入书架
+</view>
+
+
+
+
+
+<view class="bottomright"  wx:if="{{bol}}" >
+<navigator style="color:#fff"  hover-class="none" url="../text1/text1?bookid={{detail.bookid}}&readstatus=1">
+免费读全本
+</navigator>
+</view>
+
+<view class="bottomright"  wx:if="{{!bol}}" bindtap="nologin"  style="color:#fff;" >
+免费读全本
+</view>
+
+</view>
+
+
+<!--收费图书  vip不免费-->
+<view class="bottombar"  style="border-top:1rpx solid #ccc"  wx:if="{{detail.freestatus==1&&detail.vipfreestatus==0}}">
+
+<view   class="bottomleft"  wx:if="{{bol}}"  wx:if="{{detail.myelebol=='true'}}">
+ 已在书架
+</view>
+<view   class="bottomleft" wx:if="{{bol}}"  bindtap="addmyele"wx:if="{{detail.myelebol=='false'}}">
+加入书架
+</view>
+<view  wx:if="{{!bol}}" class="bottomleft" bindtap="nologin">
+加入书架
+</view>
+
+<view class="bottomright" wx:if="{{bol}}" wx:if="{{detail.readbol=='false'}}">
+<navigator  hover-class="none" url="../elebookpay/elebookpay?bookid={{detail.bookid}}">
+购买
+</navigator>
+</view>
+
+<view class="bottomright"  wx:if="{{bol}}" wx:if="{{detail.readbol=='true'}}">
+已购买
+</view>
+
+<view class="bottomright"  wx:if="{{!bol}}"  bindtap="nologin">
+购买
+</view>
+
+<view  class="bottomleft"  wx:if="{{bol&&detail.readbol=='false'}}" >
+<navigator style="color:#007bff" hover-class="none" url="../text1/text1?bookid={{detail.bookid}}&readstatus=0&typeid={{advice}}">
+试读
+</navigator>
+</view>
+
+<view  class="bottomleft"  wx:if="{{bol&&detail.readbol=='true'}}" >
+<navigator  hover-class="none" url="../text1/text1?bookid={{detail.bookid}}&readstatus=1" style="color:#007bff">
+开始阅读
+</navigator>
+</view>
+
+<view style="color:#007bff" class="bottomleft"  wx:if="{{!bol}}" bindtap="nologin">
+试读
+</view>
+
+</view>
+
+<!--收费图书   vip免费-->
+<view class="bottombar"   style="border-top:1rpx solid #ccc"  wx:if="{{detail.freestatus==1&&detail.vipfreestatus==1}}">
+
+<view   class="bottomleft"  wx:if="{{bol}}"  wx:if="{{detail.myelebol=='true'}}">
+ 已在书架
+</view>
+<view   class="bottomleft" wx:if="{{bol}}"  bindtap="addmyele"wx:if="{{detail.myelebol=='false'}}">
+加入书架
+</view>
+<view  wx:if="{{!bol}}" class="bottomleft" bindtap="nologin">
+加入书架
+</view>
+
+
+<view style="color:#fff" class="bottomright" bindtap="readinvip"  wx:if="{{bol}}" >
+VIP免费读全本
+</view>
+
+<view style="color:fff" class="bottomright" bindtap="nologin"  wx:if="{{!bol}}" >
+VIP免费读全本
+</view>
+
+</view>
+
+</view>
+
+
+
+<view class="bottombar" wx:if="{{!bol}}"  bindtap="nologin" style="border-top:1rpx solid #ccc"  >
+<view style="display:flex;width:100%;" >
+
+<view   class="bottomleft" >
+加入书架
+</view>
+
+
+<view class="bottomright"  >
+已购买
+</view>
+
+<view  class="bottomleft" style="color:#007bff"  >
+
+试读
+
+</view>
+
+</view>
+</view>

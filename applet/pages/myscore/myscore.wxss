@@ -1,0 +1,109 @@
+.top{
+ background:#007bff;
+ color:#fff;
+ text-align:center;
+ padding:60rpx 0;
+}
+.myscorenews{
+display:inline-block;
+ padding:40rpx 70rpx;
+ border-radius: 50%;
+ border:2rpx solid #FFF;
+ background:rgba(255,255,255,0.3);
+}
+.onenews{
+ display:block;
+ font-size:28rpx;
+ margin-top:10rpx;
+}
+.townews{
+display:block;
+font-size:70rpx;
+margin-top:-5rpx;
+}
+.exchange{
+  text-align:center;
+  color:#B7B8B2;
+   font-size:32rpx;
+   padding:20rpx 0;
+
+}
+.title{
+margin:20rpx 30rpx;
+color:#333;
+font-size:40rpx;
+padding-left:10rpx;
+border-left:8rpx solid #007bff;
+line-height:40rpx;
+margin-bottom:40rpx;
+}
+.vouchers
+{
+    
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+  
+}
+.vouch{
+ width:33%;
+ padding:20rpx 30rpx;
+ border-right:1rpx solid #ccc;
+ box-sizing: border-box;
+align-content: center;
+ text-align:center;
+border: 1rpx solid #F6F7F0;
+}
+.coupon{
+background:#007bff;
+color:#fff;
+width:80%;
+margin-left:10%;
+display:flex;
+}
+.leftcoupon{
+ padding:16rpx 6rpx;
+ width:30%;
+ font-size:24rpx;
+ line-height:24rpx;
+ border-right:1rpx dotted #FFF;
+ border-left:1rpx dotted #FFF;
+ box-sizing: border-box;
+}
+.rightcoupon{
+width:70%;
+box-sizing: border-box;
+border-right:1rpx dotted #FFF;
+display:flex;
+color:#fff;
+font-size:48rpx;
+vertical-align:bottom;
+position:relative;
+}
+.ne{
+position:absolute;
+right:12rpx;
+bottom:8rpx;
+}
+.couponprice{
+font-size:34rpx;
+line-height:60rpx;
+text-align:center;
+color:#777;
+}
+.present{
+ display:flex;
+ font-size:26rpx;
+}
+.leftpresent{
+color:#999;
+flex:1;
+text-align: left;
+margin-left:16rpx;
+}
+.rightpresent{
+    color:#999;
+margin-right:20rpx;
+text-decoration: line-through;
+
+}

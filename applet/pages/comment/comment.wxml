@@ -1,0 +1,241 @@
+
+<scroll-view scroll-y="true" class="box"  wx:if="{{comment.size!=0}}"   >
+
+
+<view class="commenttop"  wx:if="{{showtopbol=='true'}}">
+精彩评论
+</view>
+
+<view class="commentbody" wx:if="{{showtopbol=='true'}}"  wx:for="{{topcomment}}" >
+<view class="usernews"   >
+<image src="{{item.userimages}}" class="userimages"></image>
+
+<view class="username"  wx:if="{{bol}}" data-commentid="{{item.commentid}}"  data-bookid="{{item.id}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"  
+bindtap="replyshow">
+<view class="uname">{{item.nickname}}</view>
+<view class="utime">{{item.commentdate}}</view>
+</view>
+
+<view class="username"  wx:if="{{!bol}}"  
+bindtap="nologin">
+<view class="uname">{{item.nickname}}</view>
+<view class="utime">{{item.commentdate}}</view>
+</view>
+
+<view    wx:if="{{item.Evaluatestatus=='1'}}">
+<text>{{item.evaluate}}</text>
+</view>
+
+<view    wx:if="{{item.Evaluatestatus=='0'}}">
+<text></text>
+</view>
+
+<view  wx:if="{{bol}}">
+<view class="give"   wx:if="{{item.admirebol=='true'}}">
+<text class="iconfont icon-icon-good" style="font-size:24rpx;margin-left:12rpx;color:#007bff"   bindtap="Deleteadmire"   data-dynamicid="{{item.dynamicid}}"  data-commentid="{{item.commentid}}"></text>
+{{item.admirenum}}
+</view>
+
+<view class="give"   wx:if="{{item.admirebol=='false'}}">
+<text class="iconfont icon-icon-good" style="font-size:24rpx;margin-left:12rpx;"   bindtap="Addadmire"   data-commentid="{{item.commentid}}"></text>
+{{item.admirenum}}
+</view>
+
+</view>
+
+<view class="give"   wx:if="{{!bol}}"   bindtap="nologin">
+{{item.admirenum}}<text class="iconfont icon-icon-good" style="font-size:24rpx;margin-left:12rpx;"></text>
+</view>
+
+</view>
+
+<view class="commentcontent">
+
+<view  wx:if="{{bol}}" data-commentid="{{item.commentid}}"  data-bookid="{{item.bookid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"  
+bindtap="replyshow">
+ {{item.content}}
+ </view>
+ <view  wx:if="{{!bol}}"  bindtap="nologin">
+ {{item.content}}
+ </view>
+
+
+ <view class="replay"    >
+<view class="replaylist" wx:for="{{item.replylist}}"  wx:if="{{item.size!=0}}">
+
+
+<view class="replaynews"   wx:if="{{bol}}"  data-commentid="{{item.commentid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"   data-bookid="{{item.bookid}}"
+bindtap="replyshow" >
+<view class="replayname"  >{{item.nickname}}<text style="color:#383A39;margin-left:12rpx;">{{item.replycontent}}</text></view>
+<view class="replaytime">{{item.date}}</view>
+</view>
+
+<view class="replaynews"   wx:if="{{!bol}}" 
+bindtap="nologin" >
+<view class="replayname"  >{{item.nickname}}<text style="color:#383A39;margin-left:12rpx;">{{item.replycontent}}</text></view>
+<view class="replaytime">{{item.date}}
+</view>
+</view>
+
+</view>
+</view>
+</view>
+</view>
+
+
+
+
+<view class="commenttop"  wx:if="{{comment.size!=0}}">
+最新评论({{commentnum.num}})
+</view>
+
+
+
+
+<view class="commentbody" wx:if="{{comment.size!=0}}"  wx:for="{{comment}}" >
+<view class="usernews"   >
+<image src="{{item.userimages}}" class="userimages"></image>
+
+<view class="username"  wx:if="{{bol}}" data-commentid="{{item.commentid}}"  data-bookid="{{item.id}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"  
+bindtap="replyshow">
+<view class="uname"  style="display:flex">{{item.nickname}}
+<view    wx:if="{{item.Evaluatestatus=='1'}}">
+
+
+<image  wx:if="{{item.evaluate/2==0}}" class="star"src="http/0.png"></image>
+<image  wx:if="{{item.evaluate/2>0&&item.evaluate/2<=0.5}}" class="star"src="https://www.xunjia.net.cn/BorrowBook/findbookimg/1.png"></image>
+<image  wx:if="{{item.evaluate/2>0.5&&item.evaluate/2<=1}}" class="star"src="https://www.xunjia.net.cn/BorrowBook/findbookimg/2.png"></image>
+<image  wx:if="{{item.evaluate/2>1&&item.evaluate/2<=1.5}}" class="star"src="https://www.xunjia.net.cn/BorrowBook/findbookimg/3.png"></image>
+
+<image  wx:if="{{item.evaluate/2>1.5&&item.evaluate/2<=2}}" class="star"src="https://www.xunjia.net.cn/BorrowBook/findbookimg/4.png"></image>
+
+<image  wx:if="{{item.evaluate/2>2&&item.evaluate/2<=2.5}}" class="star"src="https://www.xunjia.net.cn/BorrowBook/findbookimg/5.png"></image>
+<image  wx:if="{{item.evaluate/2>2.5&&item.evaluate/2<=3}}" class="star"src="https://www.xunjia.net.cn/BorrowBook/findbookimg/6.png"></image>
+<image  wx:if="{{item.evaluate/2>3&&item.evaluate/2<=3.5}}" class="star"src="https://www.xunjia.net.cn/BorrowBook/findbookimg/7.png"></image>
+<image  wx:if="{{item.evaluate/2>3.5&&item.evaluate/2<=4}}" class="star"src="https://www.xunjia.net.cn/BorrowBook/findbookimg/8.png"></image>
+<image  wx:if="{{item.evaluate/2>4&&item.evaluate/2<=4.5}}" class="star"src="https://www.xunjia.net.cn/BorrowBook/findbookimg/9.png"></image>
+<image  wx:if="{{item.evaluate/2==5}}" class="star"src="https://www.xunjia.net.cn/BorrowBook/findbookimg/10.png"></image>
+
+</view>
+
+</view>
+
+<view class="utime">{{item.commentdate}}</view>
+</view>
+
+<view class="username"  wx:if="{{!bol}}"  
+bindtap="nologin">
+<view class="uname">{{item.nickname}}
+</view>
+
+<view class="utime">{{item.commentdate}}</view>
+</view>
+
+
+
+<view  wx:if="{{bol}}">
+<view class="give"   wx:if="{{item.admirebol=='true'}}">
+<text class="iconfont icon-icon-good" style="font-size:24rpx;margin-left:12rpx;color:#007bff"   bindtap="Deleteadmire"   data-dynamicid="{{item.dynamicid}}"  data-commentid="{{item.commentid}}"></text>
+{{item.admirenum}}
+</view>
+
+<view class="give"   wx:if="{{item.admirebol=='false'}}">
+<text class="iconfont icon-icon-good" style="font-size:24rpx;margin-left:12rpx;"   bindtap="Addadmire"   data-commentid="{{item.commentid}}"></text>
+{{item.admirenum}}
+</view>
+
+</view>
+
+<view class="give"   wx:if="{{!bol}}"   bindtap="nologin">
+{{item.admirenum}}<text class="iconfont icon-icon-good" style="font-size:24rpx;margin-left:12rpx;"></text>
+</view>
+
+</view>
+
+<view class="commentcontent">
+
+<view  wx:if="{{bol}}" data-commentid="{{item.commentid}}"  data-bookid="{{item.bookid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"  
+bindtap="replyshow">
+ {{item.content}}
+ </view>
+ <view  wx:if="{{!bol}}"  bindtap="nologin">
+ {{item.content}}
+ </view>
+
+
+ <view class="replay"    >
+<view class="replaylist" wx:for="{{item.replylist}}"  wx:if="{{item.size!=0}}">
+
+
+<view class="replaynews"   wx:if="{{bol}}"  data-commentid="{{item.commentid}}"
+data-otherid="{{item.userid}}" data-nickname="{{item.nickname}}"   data-bookid="{{item.bookid}}"
+bindtap="replyshow" >
+<view class="replayname"  >{{item.nickname}}<text style="color:#383A39;margin-left:12rpx;">{{item.replycontent}}</text></view>
+<view class="replaytime">{{item.date}}</view>
+</view>
+
+<view class="replaynews"   wx:if="{{!bol}}" 
+bindtap="nologin" >
+<view class="replayname"  >{{item.nickname}}<text style="color:#383A39;margin-left:12rpx;">{{item.replycontent}}</text></view>
+<view class="replaytime">{{item.date}}
+</view>
+</view>
+
+</view>
+</view>
+</view>
+</view>
+
+</scroll-view>
+
+
+ <form   bindsubmit="CommentSubmit"  wx:if="{{bol}}"  >
+     <view  class="picture2" >
+     <view class="pone">
+     <input type="text" auto-focus="true"  value="" class="bottominput3" placeholder="写评论"   cursor-spacing="20" auto-focus="true"   name="content"   maxlength="100"/> 
+      <button  form-type="submit" hover-class="buttom-hover" plain="true"  class="buttonx" size="mini" style="border:1px solid #fff;padding:0;">发送</button>
+      </view>
+</view>
+  </form>
+
+
+
+ <form   bindtap="nologin"  wx:if="{{!bol}}"  >
+     <view  class="picture2" >
+     <view class="pone">
+     <input type="text" auto-focus="true"  value="" class="bottominput3" placeholder="写评论"   cursor-spacing="20" auto-focus="true"   name="content"   maxlength="100"/> 
+      <button  hover-class="buttom-hover" plain="true"  class="buttonx" size="mini" style="border:1px solid #fff;padding:0;">发送</button>
+      </view>
+</view>
+  </form>
+
+
+<!--互相回复框-->
+
+ <form   bindsubmit="replysend" wx:if="{{bol&&formbol}}"   >
+     <view  class="picture2" >
+     <view class="pone">
+     <input type="text"  placeholder="{{click}}"   value=""  name="content"  class="bottominput3"   cursor-spacing="20" auto-focus="true"  maxlength="100" /> 
+      <button  form-type="submit" hover-class="buttom-hover" plain="true"  class="buttonx" size="mini" style="border:1px solid #fff;padding:0;">发送</button>
+      </view>
+</view>
+  </form>
+
+
+ <form   bindtap="nologin"  wx:if="{{formbol&&!bol}}"  >
+     <view  class="picture2" >
+     <view class="pone">
+     <input type="text"  placeholder="{{click}}"   value=""  name="content"  class="bottominput3"   cursor-spacing="20" auto-focus="true"  maxlength="100" /> 
+      <button  hover-class="buttom-hover" plain="true"  class="buttonx" size="mini" style="border:1px solid #fff;padding:0;">发送</button>
+      </view>
+</view>
+  </form>
+
+
+
+

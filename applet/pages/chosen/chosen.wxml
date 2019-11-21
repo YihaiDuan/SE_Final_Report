@@ -1,0 +1,80 @@
+<scroll-view scroll-y="true" class="page-body">
+  <navigator url="../search/search" class="text" hover-class="none">
+ <view class="searchtext" hover-class="pinsearch">
+ <text class="iconfont icon-sousuo-sousuo" style="color:#007bff;font-size:32rpx;margin-right:6rpx;"></text>请输入搜索内容</view>
+ </navigator>
+
+
+<view class="news">
+    <view class="newstop"><text>图书精选-人气排行</text>
+    </view>
+
+
+
+<view class="booknews"      wx:for="{{booknum}}">
+<navigator url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.category_id}}"
+  style="display:flex"  hover-class="none">
+
+    <view>
+    <image src="{{item.bookimages}}" class="left" ></image>
+    </view>
+
+    <view class="right">
+     <text class="one">{{item.booktitle}}</text>
+     <text class="tow">{{item.bookintroduce}}</text>
+     <view class="user">
+      <text class="username" style="flex:1;display:block;"><text class="iconfont icon-renwutouxiang" style="font-size:26rpx; margin-right:10rpx;vertical-align:text-top;"></text><text style="width:180rpx;overflow:hidden;display:inline-block;white-space: nowrap;vertical-align:text-top;">{{item.author}}</text></text>
+       <text class="username" style="font-size:26rpx;margin:0;padding:0;vertical-align:top;">{{item.typename}}</text>
+     <text class="username"><text class="iconfont icon-renqi" style="font-size:32rpx; vertical-align:top;margin-right:10rpx;margin-left:20rpx;color:#007bff;"></text><text style="vertical-align:text-top;">{{item.booknum}}</text></text>
+    
+     </view>
+    </view>
+   </navigator>
+</view>
+</view>
+<navigator url="../chosenbooknum/chosenbooknum">
+<view class="viewmore">
+<text>查看更多</text>
+</view>
+</navigator>
+
+<view class="news">
+    <view class="newstop"><text>图书精选-最新上架</text>
+    </view>
+
+<view class="booknews"      wx:for="{{booknew}}">
+
+<navigator url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.category_id}}"  style="display:flex"   hover-class="none">
+    <view>
+    <image src="{{item.bookimages}}" class="left" ></image>
+    </view>
+
+
+    <view class="right">
+     <text class="one">{{item.booktitle}}</text>
+     <text class="tow">{{item.bookintroduce}}</text>
+      <view class="user">
+      <text class="username" style="flex:1;"><text class="iconfont icon-renwutouxiang" style="font-size:26rpx; margin-right:10rpx;vertical-align:text-top;"></text><text style="width:180rpx;overflow:hidden;display:inline-block;white-space: nowrap;vertical-align:text-top;">{{item.author}}</text></text>
+       <text class="username" style="font-size:26rpx;margin:0;padding:0;vertical-align:text-top;">{{item.typename}}</text>
+     <text class="username"><text class="iconfont icon-renqi" style="font-size:32rpx; vertical-align:top;margin-right:10rpx;margin-left:20rpx;color:#007bff;"></text><text style="vertical-align:text-top;">{{item.booknum}}</text></text>
+    
+
+    
+     </view>
+     
+    </view>
+    </navigator>
+</view>
+</view>
+
+
+<navigator url="../chosennew/chosennew">
+<view class="viewmore2">
+<text>查看更多</text>
+</view>
+</navigator>
+
+
+
+
+</scroll-view>

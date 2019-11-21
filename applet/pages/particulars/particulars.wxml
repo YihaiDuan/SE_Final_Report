@@ -1,0 +1,401 @@
+<scroll-view class="page-body" scroll-y="true">
+<view class="top">
+<image src="{{detail.bookimages}}" class="timages" mode="widthFix"/>
+<view class="zhebox">
+</view>
+<view class="booknews">
+<view class="bookone">
+<view class="bookimages">
+<image src="{{detail.bookimages}}" style="width:310rpx;height:320rpx;margin-left:-55rpx;margin-top:-6rpx;" ></image>
+</view>
+<view class="bn">
+<view class="bone">{{detail.booktitle}}</view>
+<navigator  hover-class="none" url="../searchauthor/searchauthor?author={{detail.author}}">
+<view class="btow">作者：<text style="color:#54BB5F;">{{detail.author}}</text></view>
+</navigator>
+<view class="bthree">
+
+<image class="star"  src="https://www.titwdj.cn/BorrowBook/findbookimg/{{starimg}}"></image>
+
+<text style="margin-right:16rpx;display:inline-block;">{{detail.score}}分</text>
+
+
+<text style="margin-right:16rpx;display:inline-block;">{{detail.getborrownum}}人借阅</text></view>
+<view class="bfour">藏书量：{{detail.totalnum}}本</view>
+<view class="bfour">位置：{{detail.position}}</view>
+<view class="bfour">索书号: {{detail.bookid}}</view>
+<view class="bfour">押金: {{detail.cash}}￥</view>
+</view>
+</view>
+
+</view>
+<view class="booktow">
+<!-- <view class="left">
+押金：<text style="color:#007bff;font-weight:bold;font-size:35rpx">￥{{detail.cash}}</text>
+</view> -->
+
+<!-- <view class="right">
+租金：<text style="color:#007bff;font-weight:bold;font-size:35rpx">￥{{detail.newprice}}/天</text>
+<text style="font-size:28rpx;text-decoration:line-through;margin-left:10rpx"  wx:if="{{detail.cutbol=='true'}}">￥{{detail.oldprice}}/天</text>
+</view> -->
+
+</view>
+<view class="bookthree">
+
+<view class="b1"  wx:if="{{bol}}" bindtap="collecting" wx:if="{{detail.collectbol=='false'}}">   
+ <text class="iconfont icon-11" style="margin-right:12rpx;font-size:28rpx;color:#fff"></text>收藏
+ </view>
+
+ <view class="b1"  wx:if="{{bol}}"  bindtap="collectingwarn" wx:if="{{detail.collectbol=='true'}}">    
+ <text class="iconfont icon-11" style="margin-right:12rpx;font-size:28rpx;color:#007bff"></text>已收藏
+ </view>
+
+
+<view class="b1"   bindtap="nologin" wx:if="{{!bol}}">   
+ <text class="iconfont icon-11" style="margin-right:12rpx;font-size:28rpx;color:#fff"></text>收藏
+ </view>
+
+<view class="b2" bindtap="share"  wx:if="{{bol}}">
+<text  class="iconfont icon-feiji" style="margin-right:12rpx;font-size:35rpx;color:#fff"></text>发动态
+</view>
+<view class="b2"  bindtap="nologin" wx:if="{{!bol}}">
+<text  class="iconfont icon-feiji" style="margin-right:12rpx;font-size:34rpx;color:#fff"></text>发动态
+</view>
+
+<view class="b3">
+<navigator hover-class="none"  url="../comment/comment?bookid={{detail.bookid}}">
+<text class="iconfont icon-pinglun1" style="margin-right:12rpx;font-size:32rpx;color:#fff;font-weight:bold;"></text>评论 {{comment.num}}
+</navigator>
+</view>
+
+</view>
+</view>
+
+<!--没有图书提交表单框   -->
+<view class="somebook"  wx:if="{{warnbol}}" style="z-index:1000" >
+<form    bindsubmit="warnsubmit" report-submit="true" >
+
+
+<text class="picker2">暂时没有此藏书,是否进行有书提醒</text>
+
+<view class="line">
+<view class="leftline">
+<button   class="button" bindtap="corslore" >取消</button>
+</view>
+<view class="rightline">
+<button  form-type="submit" class="button" style="color:green;"
+
+>确定</button>
+</view>
+</view>
+</form>
+</view>
+
+
+<!-- <navigator hover-class="none" class="textmain"   wx:if="{{detail.elestatus==1}}"url="../eledetail/eledetail?bookid={{detail.bookid}}&advice={{advice}}">
+<text class="jianjie"  style="flex:1">查看对应电子书</text>
+ <text  class="textright"   wx:if="{{detail.freestatus==0}}">免费</text>
+  <text  class="textright"   wx:if="{{detail.freestatus==1}}">￥{{detail.eleprice}}</text>
+  </navigator> -->
+
+
+
+<!-- <view class="groups"   wx:if="{{detail.groupbol=='true'}}" >
+<view class="g1">拼团</view>
+<view style="display:flex;">
+<view class="g2" style="height:60rpx;">
+<text style="color:#999;font-size:28rpx;flex:1;line-height:32rpx;margin-top:18rpx;">活动日期：{{detail.createdate}} 至 {{detail.deadline}}</text><view class="participate" style="margin-top:10rpx;"><text 
+style="line-height:32rpx;padding:6rpx 20rpx;color:#999;">{{detail.groupnum}}人团</text></view>
+</view>
+</view>
+
+<view style="display:flex;"  wx:if="{{detail.groupbol=='true'}}"   wx:for="{{grouplist}}">
+
+
+<view class="g2"   >
+<image src="{{item.userimages}}" class="bimages"></image>
+<view class="btime">
+<view class="t1">
+{{item.nickname}}
+</view>
+<view class="t2">
+还差{{item.remainnum}}人
+</view>
+</view>
+
+<view class="participate"  wx:if="{{detail.opengroupbol=='false'}}" >
+
+<view   wx:if="{{detail.borrownum!='0'}}">
+<navigator hover-class="none"  url="../joingroup/joingroup?bookid={{detail.bookid}}&groupmainid={{item.id}}">
+<text 
+style="line-height:32rpx;padding:6rpx 20rpx;border:1rpx solid #E42A29;">去参团
+</text>
+</navigator>
+</view>
+
+<view   wx:if="{{detail.borrownum=='0'}}">
+<view   bindtap="nobook">
+<text 
+style="line-height:32rpx;padding:6rpx 20rpx;border:1rpx solid #E42A29;">去参团
+</text>
+</view>
+</view>
+
+
+</view>
+
+<view class="participate" style="color:#fff;"  wx:if="{{detail.opengroupbol=='true'}}">
+<text 
+style="line-height:32rpx;padding:6rpx 20rpx;border:1rpx solid #ccc;background:#ccc;">已在团</text>
+</view>
+
+
+</view>
+</view>
+</view>
+
+<view  wx:if="{{detail.groupbol=='true'}}">
+<view  wx:if="{{bol}}">
+
+<view  wx:if="{{detail.opengroupbol=='false'}}">
+
+<view  wx:if="{{detail.borrownum!='0'}}">
+
+
+<navigator hover-class="none"  class="openview"   wx:if="{{maxgroupbol=='false'}}"url="../grouppay/grouppay?bookid={{detail.bookid}}"    >
+  <text class="textgroup" >开团享受<text class="textcolor">{{detail.discount}}</text>折优惠</text>
+  <text size="mini" plain="true"     class="openbutton"  >我要开团</text>
+</navigator>
+
+
+
+<view    class="openview"  wx:if="{{maxgroupbol=='true'}}">
+  <text class="textgroup" >开团享受<text class="textcolor">{{detail.discount}}</text>折优惠</text>
+  <text size="mini" plain="true"     class="openbutton" bindtap="maxwarn" >我要开团</text>
+</view>
+
+</view>
+</view>
+
+
+<view   class="openview"    wx:if="{{detail.borrownum=='0'&&detail.opengroupbol=='false'}}">   
+  <text class="textgroup" >开团享受<text class="textcolor">{{detail.discount}}</text>折优惠</text>
+  <text size="mini" plain="true"     class="openbutton"  bindtap="nobook" >我要开团</text>
+</view>
+
+
+<view  class="openview"   wx:if="{{detail.opengroupbol=='true'}}">
+  <text class="textgroup" >开团享受<text class="textcolor">{{detail.discount}}</text>折优惠</text>
+  <text size="mini" plain="true"     class="openbutton"  >已在团中</text>
+</view>
+</view>
+
+
+
+
+
+<view  class="openview"    wx:if="{{!bol}}">
+  <text class="textgroup" >开团享受<text class="textcolor">{{detail.discount}}</text>折优惠</text>
+  <text size="mini" plain="true"     class="openbutton" bindtap="nologin"  >我要开团</text>
+</view>
+</view> -->
+
+
+
+    <view style="border-top:20rpx solid #F5F5F5;">
+  <view class="synopsis">
+   <view class="imagetop" style="width:100%;height:">
+   </view>
+  </view>
+
+    <view class="abstractbody "  wx:if="{{detail.guidreading!='未知'&&detail.guidreading!='0'}}" >
+<text class="jianjie">图书导读</text>
+ <text class="jianjiebody {{currentTab[0] ? 'on' : ''}}" >
+  <text class="text1">{{detail.guidreading}}</text>
+ </text>
+ <view style="width:100%;text-align:center;">
+ <text style="display:inline-block;padding:8rpx 28rpx;border-radius:30rpx;text-align:center;color:#007bff;font-size:28rpx;border:2rpx solid #007bff;margin:0 auto;" bindtap="t2" wx:if="{{currentTab[0]}}" data-current="0" bindtap="swichNav">查看更多</text>
+  <text style="display:inline-block;padding:8rpx 28rpx;border-radius:30rpx;text-align:center;color:#007bff;font-size:28rpx;border:2rpx solid #007bff;margin:0 auto;" bindtap="t2" wx:if="{{!currentTab[0]}}" data-current="0" bindtap="swichNav">收起内容</text>
+ </view>
+</view>
+</view>
+   <view style="border-top:20rpx solid #F5F5F5;">
+  <view class="synopsis">
+   <view class="imagetop" style="width:100%;height:">
+   </view>
+  </view>
+
+ <view class="abstractbody"   wx:if="{{detail.introduce!='未知'&&detail.introduce!='0'}}">
+<text class="jianjie">内容简介</text>
+ <text class="jianjiebody {{currentTab[1] ? 'on' : ''}}">
+  <text class="text1">{{detail.introduce}}</text>
+ </text>
+ <view style="width:100%;text-align:center;">
+ <text style="display:inline-block;padding:8rpx 28rpx;border-radius:30rpx;text-align:center;color:#007bff;font-size:28rpx;border:2rpx solid #007bff;margin:0 auto;" bindtap="t2" wx:if="{{currentTab[1]}}" data-current="1" bindtap="swichNav">查看更多</text>
+<text style="display:inline-block;padding:8rpx 28rpx;border-radius:30rpx;text-align:center;color:#007bff;font-size:28rpx;border:2rpx solid #007bff;margin:0 auto;" bindtap="t2" wx:if="{{!currentTab[1]}}" data-current="1" bindtap="swichNav">收起内容</text>
+ </view>
+</view>
+</view>
+   <view style="border-top:20rpx solid #F5F5F5;">
+  <view class="synopsis">
+   <view class="imagetop" style="width:100%;height:">
+   </view>
+  </view>
+
+
+    <view class="abstractbody" wx:if="{{detail.review!='未知'&&detail.review!='0'}}">
+<text class="jianjie">作者简介</text>
+ <text class="jianjiebody {{currentTab[2] ? 'on' : ''}}" >
+  <text class="text1">{{detail.review}}</text>
+ </text>
+    <view style="width:100%;text-align:center;">
+ <text style="display:inline-block;padding:8rpx 28rpx;border-radius:30rpx;text-align:center;color:#007bff;font-size:28rpx;border:2rpx solid #007bff;margin:0 auto;" bindtap="t2" wx:if="{{currentTab[2]}}" data-current="2" bindtap="swichNav">查看更多</text>
+<text style="display:inline-block;padding:8rpx 28rpx;border-radius:30rpx;text-align:center;color:#007bff;font-size:28rpx;border:2rpx solid #007bff;margin:0 auto;" bindtap="t2" wx:if="{{!currentTab[2]}}" data-current="2" bindtap="swichNav">收起内容</text>
+ </view>
+</view>
+</view>
+
+  <view style="border-top:20rpx solid #F5F5F5;">
+  <view class="synopsis">
+   <view class="imagetop" style="width:100%;height:">
+   </view>
+  </view>
+ <view class="abstractbody2"  wx:if="{{detail.list!='未填'&&detail.list!='0'}}">
+<text class="jianjie">目录</text>
+ <text class="jianjiebody">
+  <text class="text2">
+  <text class="catalognews"  wx:for="{{detail.strlist}}">{{item.list}}</text>
+  
+  </text>
+ </text>
+
+
+ <view style="width:100%;text-align:center;">
+ 
+
+ <navigator  hover-class="none"   url="../catalogue/catalogue?bookid={{detail.bookid}}">
+ <text style="display:inline-block;padding:8rpx 28rpx;border-radius:30rpx;text-align:center;color:#007bff;font-size:28rpx;border:2rpx solid #007bff;margin:0 auto;">查看目录</text>
+ </navigator>
+
+ </view>
+
+</view>
+</view>
+   <view style="border-top:20rpx solid #F5F5F5;">
+  <view class="synopsis">
+   <view class="imagetop" style="width:100%;height:">
+   </view>
+  </view>
+
+
+
+
+
+
+
+
+    <view class="abstractbody"  wx:if="{{advice2.length!=0}}">
+<text class="jianjie">相关推荐</text>
+
+<view class="bookbody1" >
+ <view class="bookn"  wx:for="{{advice2}}"  >
+  <navigator url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.category_id}}"  hover-class="none"   class="news">
+ <image src="{{item.bookimages}}" class="bookimage"></image>
+  <view class="bookname">{{item.booktitle}}</view>
+</navigator>
+ </view>
+ </view>
+</view>
+</view>
+
+ <!-- <view style="border-top:20rpx solid #F5F5F5;">
+  <view class="synopsis">
+   <view class="imagetop" style="width:100%;height:">
+   </view>
+  </view>
+
+    <view class="abstractbody"   wx:if="{{comparelist.length!=0}}">
+    <view   style="display:flex">
+<text style="flex:1" class="jianjie">比价推荐</text>
+<text style="font-size:28rpx;line-height:40rpx;">(长按可复制商家链接)</text>
+</view>
+ <scroll-view class="bookbody" scroll-x="true">
+ <view class="bookn" wx:for="{{comparelist}}"  >
+
+ <view   style="display:flex;width:100%;" data-link="{{item.link}}" bindlongtap="copy">
+  <view   class="compare"><image src="{{item.images}}" style="width:170rpx;height:60rpx;" ></image></view>
+
+  <view  class="compare">{{item.from}}</view>
+  <view  class="compare">￥{{item.price}}</view>
+  <view  class="compare"><text  wx:if="{{item.status==1}}">多￥{{item.dis}}</text><text  wx:if="{{item.status==0}}">少￥{{-item.dis}}</text></view>
+
+  </view>
+
+ </view>
+ </scroll-view>
+</view>
+</view> -->
+
+
+ <view style="border-top:20rpx solid #F5F5F5;">
+  <view class="synopsis">
+   <view class="imagetop" style="width:100%;height:">
+   </view>
+  </view>
+    <view class="abstractbody"   style="margin-bottom:100rpx">
+<text class="jianjie" style="margin-bottom:20rpx;">图书信息</text>
+
+  <view class="bnews">出版社<text style="margin-left:20rpx;">{{detail.publish}}</text></view>
+  <view class="bnews">ISBN<text style="margin-left:40rpx;">{{detail.publishnumber}}</text></view>
+  <view class="bnews">类别<text style="margin-left:50rpx;">{{detail.typename}}</text></view>
+</view>
+</view>
+ 
+
+
+</scroll-view>
+
+<view class="bottombar"   style="border-top:1rpx solid #ccc">
+
+<!-- <view   wx:if="{{bol}}" class="bottomleft">
+ <view   bindtap="order"  wx:if="{{detail.warnboolean=='false'&&detail.outorder=='false'}}">
+预定
+</view> 
+
+ <view   bindtap="outorder"  wx:if="{{detail.warnboolean=='false'&&detail.outorder=='true'}}">
+预定
+</view> 
+
+
+<view   bindtap="warn"  wx:if="{{detail.warnboolean=='true'}}">
+提醒
+</view>
+</view> -->
+
+<!-- <view class="bottomleft" wx:if="{{!bol}}"  bindtap="nologin"  >
+预定
+</view> -->
+
+<view class="bottomright"    wx:if="{{detail.borrownum!='0'}}"   >
+可借 {{detail.borrownum}}
+</view>
+
+<view class="bottomright"    wx:if="{{detail.borrownum=='0'}}"   >
+借完
+</view>
+
+<view wx:if="{{bol}}" class="bottomleft" bindtap="AddBorrowLan" >
+<form   bindsubmit="bindsubmit"   report-submit="true" >
+<button  form-type="submit"  plain="true"  class="button" style="color:#007bff; border-color:#fff;font-size:34rpx">加入借书栏</button>
+</form>
+</view>
+
+
+
+
+<view  class="bottomleft"  wx:if="{{!bol}}" bindtap="nologin" >
+加入借书栏
+</view>
+
+
+</view>

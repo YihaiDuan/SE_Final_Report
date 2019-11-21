@@ -1,0 +1,46 @@
+page{
+   background:#f9f9f9;
+     font-size:32rpx;
+}
+.mynews{
+    margin-top:40rpx;
+   padding:0 20rpx;
+   background:#fff;
+   display:flex;
+   flex-direction: column;
+ 
+}
+.news{
+    display:flex;
+   padding:20rpx 10rpx;
+border-bottom:1px solid #eee;
+   
+}
+.news1{
+
+  display:flex;
+   padding:20rpx 10rpx;
+  border-bottom:2rpx solid #eee;
+
+}
+.newstext{
+   flex:1;
+ 
+}
+.newsimages{
+   width:120rpx;
+   height:120rpx;
+
+
+}
+.detial{
+  color:#ccc;
+font-size:30rpx;
+}
+.qrimages{
+   width:60rpx;
+   height:60rpx;
+
+
+
+}

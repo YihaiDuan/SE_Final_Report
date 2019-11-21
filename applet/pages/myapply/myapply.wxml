@@ -1,0 +1,35 @@
+<view  wx:if="{{messagelist.length==0}}"   >
+<text class="hengxian" style="margin-right:20rpx;"></text>
+<text>暂无消息</text>
+<text class="hengxian" style="margin-left:20rpx;"></text>
+</view>
+<view  wx:if="{{messagelist.length!=0}}"   wx:for="{{messagelist}}"  class="news">
+
+<navigator url="../myapplydetail/myapplydetail?id={{item.id}}"  hover-class="none"  style="display:flex;flex:1;">
+
+<image   class="bookimage" src="{{item.bookimages}}">
+</image>
+
+<view class="usernews">
+<text style="font-size:34rpx;color:#999;">{{item.booktitle}}</text>
+<text style="font-size:30rpx;color:#999;margin-top:16rpx;margin-bottom:16rpx;width:350rpx;overflow:hidden;">{{item.introduce}}</text>
+<text style="color:#999;font-size:28rpx;">{{item.date}}</text>
+
+</view>
+
+<view   wx:if="{{item.status=='0'}}"  style="font-size:32rpx;margin-top:60rpx;margin-right:44rpx;" >待同意</view>
+
+<view   wx:if="{{item.status=='1'}}"  style="font-size:32rpx;margin-top:60rpx;margin-right:44rpx;" >已同意</view>
+
+<view   wx:if="{{item.status=='2'}}"
+style="font-size:32rpx;margin-top:60rpx;margin-right:44rpx;">已拒绝</view>
+</navigator>
+
+<view  wx:if="{{item.dostatus=='1'}}">
+<text class="iconfont icon-xiaohongdianx" style="color:#D00000;font-size:60rpx;position:absolute;top:78rpx;right:20rpx;" >
+</text>
+<text>{{item.index}}</text>
+</view>
+
+
+</view>

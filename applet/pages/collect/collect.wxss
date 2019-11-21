@@ -1,0 +1,110 @@
+
+.page {  
+  margin-left: 10rpx;  
+  margin-right: 10rpx;  
+}  
+.swiper-tab {  
+  display: flex;  
+  flex-direction: row;  
+  line-height: 80rpx;
+  border-bottom:1rpx solid #F5F5F5;  
+}  
+.tab-item {  
+  width: 50%;  
+  text-align: center;  
+  font-size:32rpx;  
+  color: #6D6D6D;  
+}  
+
+.on {  
+  color: #007bff;  
+  border-bottom: 5rpx solid #007bff;  
+}  
+.page-body{
+   display:flex;
+   flex-direction: column;
+}
+.text
+{
+display: flex;
+  /*横向居中对齐*/
+  justify-content: center;
+  padding:20rpx;
+}
+.searchtext{
+  padding:10rpx;
+  border:2rpx solid #007bff;
+  width:600rpx;
+  border-radius: 20rpx;
+  text-align:center;
+  font-size:30rpx;
+  background:#fff;
+  color:#999;
+}
+.pinsearch{
+    color:#fff;
+    background:#007bff;
+}
+.news{
+  background:#fff;
+
+}
+.newstop{
+    font-size:40rpx;
+    display:flex;
+}
+.newsone,.newstow{
+  flex:1;
+  text-align:center;
+}
+.newsone{
+  padding:20rpx 0;
+
+}
+.booknews{
+   display:flex;
+   padding:20rpx 30rpx;
+  border-bottom:2rpx solid #eee; 
+}
+.left{
+  width:180rpx;
+height:180rpx;
+margin-right:20rpx;
+}
+.right{
+   display:flex;
+   flex-direction: column;
+}
+.one{
+  line-height:46rpx;  
+  width:480rpx;
+   overflow:hidden;
+   white-space:nowrap;  
+  text-overflow:ellipsis;  
+  font-size:32rpx;
+}
+.tow{
+  font-size:26rpx;
+  color:#ccc;
+  width:480rpx;
+   overflow:hidden;
+   line-height:40rpx;
+   height:80rpx;
+}
+.user{
+ display:flex;
+
+}
+.uimage{
+  width:32rpx;
+  height:32rpx;
+ margin-right:10rpx;
+ margin-top:3rpx;
+}
+.username{
+  font-size:26rpx;
+  color:#ccc;
+
+
+
+}

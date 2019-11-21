@@ -1,0 +1,140 @@
+<view class="balance">当前余额：{{money}}<text style="color:#A5A6A1;">借阅币</text></view>
+
+<view >
+<view class="pay">
+        <text class="pay-title" style="text-align:left;padding-left:30rpx;font-size:28rpx;color:#A4A4A4;">请选择金额</text>
+        <view class="pay-ul">
+          <view class="pay-li {{checkhb==true?'check':''}}">
+            <view class="hb" data-id="1" bindtap="tapCheck">
+         
+              <text class="hb-title">20借阅币</text>
+              
+              <icon wx:if="{{checkhb}}" class="icon" type="success" size="20" color="blue" />
+            </view>
+          </view>
+
+
+
+          <view class="pay-li {{checkwx==true?'check':''}}">
+            <view class="hb" data-id="2" bindtap="tapCheck">
+            
+              <text class="hb-title">50借阅币</text>
+         
+              <icon wx:if="{{checkwx}}" class="icon" type="success" size="20" color="blue" />
+            </view>
+          </view>
+
+
+          <view class="pay-li {{checkqb==true?'check':''}}">
+            <view class="hb" data-id="3" bindtap="tapCheck">
+             
+              <text class="hb-title">100借阅币</text>
+            
+              <icon wx:if="{{checkqb}}" class="icon" type="success" size="20" color="blue" />
+            </view>
+          </view>
+
+
+            <view class="pay-li {{check4==true?'check':''}}">
+            <view class="hb" data-id="4" bindtap="tapCheck">
+            
+              <text class="hb-title">150借阅币</text>
+ 
+              <icon wx:if="{{check4}}" class="icon" type="success" size="20" color="blue" />
+            </view>
+          </view>
+
+
+
+            <view class="pay-li {{check5==true?'check':''}}">
+            <view class="hb" data-id="5" bindtap="tapCheck">
+             
+              <text class="hb-title">200借阅币</text>
+          
+              <icon wx:if="{{check5}}" class="icon" type="success" size="20" color="blue" />
+            </view>
+          </view>
+
+
+            <view class="pay-li {{check6==true?'check':''}}">
+            <view class="hb" data-id="6" bindtap="tapCheck">
+              
+              <text class="hb-title">248借阅币</text>
+  
+              <icon wx:if="{{check6}}" class="icon" type="success" size="20" color="blue" />
+            </view>
+          </view>
+        </view>
+      </view>
+
+
+<view class="payable">需支付:<text style="margin-left:16rpx;font-size:38rpx;color:#007bff;">{{totalmoney}}元</text></view>
+
+<view style="text-align:center;">
+<button  data-totalmoney="{{totalmoney}}" bindtap="pay" plain="true" size="mini" style="color:#fff;background:#007bff;border-color:#007bff;padding:0 280rpx;font-size:35rpx">确认支付</button>
+</view>
+<view class="tishi">
+<view class="title">温馨提示</view>
+<view class="content">
+<text class="ctext">· 1元=1借阅币</text>
+<text class="ctext">· 借阅币可以直接进行支付</text>
+
+</view>
+</view>
+
+
+
+
+
+
+ <view class="payPass"   wx:if="{{payboard}}">
+        <view class="pas-title"   style="text-align:center">
+        
+         
+          
+          <text>请输入支付密码</text>
+        
+        </view>
+        <view class="pas-num">
+          <text>微信支付</text>
+          <text style="font-size:70rpx;line-height:100rpx;font-weight:350;">￥{{totalmoney}}</text>
+        </view>
+        <view class="yinhang"><image src="../../imgs/yinhang.png" class="yinhangimages"></image><text style="line-height:40rpx;">建设银行储蓄卡(2267)</text></view>
+        <view class="pas-box">
+          <view class="box-six">
+
+            <input class="pas-input" type="digit" maxlength="6" focus="true" bindinput="bindHideKeyboard"  name="password"></input>
+
+            <view class="six">
+              <text class="i {{len==0?'active':''}}">
+                <text class="b" wx:if="{{len>0}}" style="width:30rpx;height:30rpx;background:#000;border-radius:50%;"></text>
+              </text>
+
+              <text class="i {{len==1?'active':''}}">
+                <text class="b" wx:if="{{len>1}}" style="width:30rpx;height:30rpx;background:#000;border-radius:50%;"></text>
+              </text>
+
+              <text class="i {{len==2?'active':''}}">
+                <text class="b" wx:if="{{len>2}}" style="width:30rpx;height:30rpx;background:#000;border-radius:50%;"></text>
+              </text>
+              <text class="i {{len==3?'active':''}}">
+                <text class="b" wx:if="{{len>3}}" style="width:30rpx;height:30rpx;background:#000;border-radius:50%;"></text>
+              </text>
+
+              <text class="i {{len==4?'active':''}}">
+                <text class="b" wx:if="{{len>4}}" style="width:30rpx;height:30rpx;background:#000;border-radius:50%;"></text>
+              </text>
+
+              <text class="i {{len==5?'active':''}}">
+                <text class="b" wx:if="{{len>5}}" style="width:30rpx;height:30rpx;background:#000;border-radius:50%;"></text>
+              </text>
+              
+            </view>
+          </view>
+</view>
+  </view>
+
+   <view class="paybg" bindtap="noshow"  wx:if="{{paybgbol}}"></view>
+    
+
+     </view>

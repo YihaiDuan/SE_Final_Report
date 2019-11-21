@@ -1,0 +1,48 @@
+page{
+  background: #f6f7f8;
+
+}
+.page-body{
+  display:flex;
+  flex-direction: column;
+}
+.top{
+  display:flex;
+  flex-direction: column;
+}
+.one{
+   margin:30rpx 0; 
+   flex:1;
+   text-align: center;
+   font-size:30rpx;
+}
+.news{
+    margin:20rpx 60rpx;
+  background: #fff;
+  padding-bottom:20rpx;
+  border-radius: 10rpx;
+}
+.image{
+    display:block;
+    margin:0 auto;
+   width:480rpx;
+   height:480rpx;
+}
+
+.booknews{
+   display:flex;
+   padding:0 160rpx;
+}
+
+.booknews image{
+ width:40rpx;
+ height:40rpx;
+margin-right:20rpx;
+
+}
+.text{
+    display:block;
+   text-align:center;
+    font-size:30rpx;
+
+}

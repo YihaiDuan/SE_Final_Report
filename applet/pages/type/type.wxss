@@ -1,0 +1,105 @@
+Page {
+  background: #fff;
+}
+
+.containe {
+  width: 100%;
+  height:100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.left_tabbar {
+  width: 32%;
+}
+
+.right_content {
+  width: 68%;
+}
+
+.left_tabbar_item {
+  color: #333;
+  font-size: 30rpx;
+  width: 100%;
+  padding: 30rpx 0;
+  text-align: center;
+  border-bottom: 1rpx solid #fff;
+  font-weight:500;
+}
+
+.left_tabbar_list {
+  background: #eee;
+}
+
+.left_tabbar .active {
+  background: #fff;
+  color: #007bff;
+  transition: all 0.5s;
+  animation: show 0.5s;
+  font-weight:700;
+  border-left:8rpx solid #007bff;
+  font-size:30rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+@-webkit-keyframes show {
+  0% {
+    opacity: 0;
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateY(360deg);
+  }
+}
+
+
+
+.tab_panel {
+  margin: 0 20rpx;
+  font-size: 26rpx;
+}
+
+.tab_panel view {
+  padding: 20rpx;
+}
+.typeimage{
+ width:100rpx;
+ height:150rpx;
+ margin-right:10rpx;
+
+}
+.rightnews{
+display:flex;
+flex-direction: column;
+padding:16rpx;
+}
+.name{
+font-size:32rpx;
+font-weight:500;
+color:#333;
+}
+.num{
+color:#999;
+font-size:28rpx;
+margin-top:36rpx;
+
+}

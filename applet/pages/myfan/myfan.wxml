@@ -1,0 +1,7 @@
+<view  wx:if="{{!showbol}}">
+还没有关注他人
+</view>
+
+<view   wx:if="{{showbol}}"  wx:for="{{userlist}}">
+用户名:{{item.nickname}}
+</view>

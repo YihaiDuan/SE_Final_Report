@@ -1,0 +1,67 @@
+<view wx:if="{{!nodate}}" style="text-align:center;">
+<text style=" margin:30rpx 0;flex:1;font-size:30rpx;display:inline-block;">你尚未借书,请先将书添加到借书栏，进行借书</text>
+</view>
+
+<view  wx:if="{{nodate}}">
+
+<form  bindsubmit="submit">
+
+<view style="border-top:2rpx solid #F5F5F5;margin-bottom:120rpx;">
+<view class="box item"  >
+<view>
+
+
+<checkbox-group name="checks"   bindchange="checkboxChange"  >
+  <label wx:for="{{lists}}" style="display:block;position:relative;height:186rpx;"  >
+  <view   class="body inner txt" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}"  style="{{item.txtStyle}}">
+    <checkbox  class="checkbox"  style="display:block" value="{{item.id}}" checked="{{item.selected=='true'}}"/>
+    <view style="display:flex">
+    <image style="flex:1" class="bookimages" src="{{item.bookimages}}"></image>
+    <view  style="margin-left:10rpx">
+  <view  class="righttext" style="font-size:32rpx;">  {{item.booktitle}}</view>
+ <view    class="righttext"> 价格:<text  style="font-size:32rpx;color:#007BFF">￥{{item.price}}</text></view>
+  <view    class="righttext"  style="color:#999"> 到期时间:{{item.deadline}}</view>
+    </view>
+  </view>
+  </view>
+   <view class="four inner del"  data-id="{{item.id}}" data-index="{{index}}"bindtap="deleteborrowlan" wx:if="{{show}}"  bindtap="deleteborrowlan"  data-id="{{item.id}}">删除</view>
+  </label>
+</checkbox-group>
+
+
+</view>
+
+</view>
+
+
+
+
+
+<view class="bottom">
+<view class="qr" >
+<radio-group class="radio-group group"  name="sex" style="margin-top:16rpx;margin-left:36rpx;"  bindtap="bindSelectAll" >
+<label  wx:if="{{selectedAllStatus}}" >
+    <radio value=""   checked/>
+</label>
+<label  wx:if="{{!selectedAllStatus}}">
+<radio value="" />
+</label>
+</radio-group>
+<view class="whole">全选</view>
+<!--
+<view style="margin-right:16rpx;font-size:34rpx;margin-top:20rpx;">总计:<text style="color:red;margin-left:6rpx;">{{count}}</text></view>
+</view>
+-->
+<view style="margin-right:16rpx;font-size:34rpx;margin-top:20rpx;text-align:right;flex:1;">总计:<text style="color:blue;margin-left:6rpx;">{{count}}</text></view>
+</view>
+
+<view class="pay"  wx:if="{{count!=0}}"  ><button  form-type="submit" plain="true" style="color:#fff;background:#007BFF;border-color:#007BFF;font-size:38rpx;padding:0 50rpx;">确认</button></view>
+
+<view class="pay"  wx:if="{{count==0}}"   ><button  bindtap="warn" plain="true" style="color:#fff;background:#007BFF;border-color:#007BFF;font-size:38rpx;padding:0 50rpx;">确认</button></view>
+
+</view>
+
+</view>
+</form>
+
+</view>

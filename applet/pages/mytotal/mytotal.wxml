@@ -1,0 +1,38 @@
+<view class="box">
+<view class="top">
+<image src="../../images/champion.png" class="champion"></image>
+<text class="news">您超过了<text style="color:#007bff;font-size:60rpx;margin:0 16rpx;">{{dis}}%</text>的借阅人</text>
+</view>
+<view class="status">
+<!-- <veiw class="left">
+<text class="one">读过书籍</text>
+<text class="tow" style="border-right:1rpx solid #E5E6E0">{{readnum}}</text>
+<text class="three">本</text>
+</veiw> -->
+
+<view class="right" >
+<text class="one" style="padding-left:30rpx;">借过书籍</text>
+<text class="tow" style="border-left:1rpx solid #E5E6E0">{{borrownum}}</text>
+<text class="three">本</text>
+</view>
+</view>
+<view class="time"><text class="timenews">{{curyear}}每月借阅量分布</text></view>
+<view style="margin:10rpx 60rpx;display:flex;font-size:28rpx;">
+<view style="flex:1;text-align:left;"><text style="background:#007bff;color:#fff;padding:12rpx 24rpx;"  bindtap="deleteyear">上一年</text></view>
+<view style="flex:1;text-align:right;"><text style="background:#007bff;color:#fff;padding:12rpx 24rpx;"  bindtap="addyear">下一年</text></view>
+</view>
+<canvas class="canvas" canvas-id="lineGraph">
+</canvas>
+
+
+
+
+
+
+<!-- <view class="time" ><text class="timenews">借阅偏好分布</text></view>
+<canvas class="canvas1" canvas-id="pieGraph"></canvas> -->
+<view style="text-align:center;">
+<button size="mini"  open-type="share"  bindtap="share" style="background:#007bff;color:#fff;font-size:32rpx;padding:0 240rpx;border-radius:32rpx;margin:10rpx auto;">分享我的阅历</button>
+</view>
+<view style="margin:20rpx auto;text-align:center;font-size:26rpx;color:#999;margin-top:60rpx;">————以上数据更新于{{maxyear}}年{{month}}月{{day}}日————</view>
+</view>

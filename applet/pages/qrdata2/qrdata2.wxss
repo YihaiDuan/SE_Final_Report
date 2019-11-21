@@ -1,0 +1,144 @@
+page{
+  background: #f6f7f8;
+
+}
+.page-body{
+  display:flex;
+  flex-direction: column;
+}
+.top{
+  display:flex;
+  flex-direction: column;
+}
+.one{
+   margin:30rpx 0; 
+   flex:1;
+   text-align: center;
+   font-size:30rpx;
+}
+.news{
+    margin:20rpx 60rpx;
+  background: #fff;
+  padding-bottom:20rpx;
+  border-radius: 10rpx;
+}
+.image{
+    display:block;
+    margin:0 auto;
+   width:480rpx;
+   height:480rpx;
+}
+
+.booknews{
+   display:flex;
+   padding:0 160rpx;
+}
+
+.booknews image{
+ width:40rpx;
+ height:40rpx;
+margin-right:20rpx;
+
+}
+.text{
+    display:block;
+   text-align:center;
+    font-size:30rpx;
+
+}
+
+.tishi{
+padding:20rpx;
+padding-top:60rpx;
+}
+.title{
+padding:10rpx 0;
+color:#999;
+font-size:28rpx;
+}
+.content{
+padding:0 10rpx;
+color:#333;
+font-size: 24rpx;
+display:flex;
+flex-direction: column;
+}
+.ctext{
+line-height:40rpx;
+
+
+}
+
+
+.payable{
+padding:30rpx;
+font-size:32rpx;
+color:#6B6C67;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+.box{
+padding:0 30rpx;
+}
+.top{
+margin:20rpx 0;
+margin-bottom:40rpx;
+font-size:30rpx;
+color:#A4A5A0;
+display:flex;
+}
+.lefttop{
+flex:1;
+}
+.equivalent{
+ background:#007bff;
+ margin-bottom:20rpx;
+ color:#fff;
+ display:flex;
+}
+.leftequi{
+border-left:4rpx dotted #fff;
+ border-right:1rpx dotted #fff;
+ flex:1;
+ display:flex;
+ flex-direction: column;
+}
+.rightequi{
+ border-right:4rpx dotted #fff;
+ flex:2;
+ display:flex;
+ flex-direction: column;
+}
+.price{
+   text-align: center;
+   padding:20rpx 0;
+   font-size:34rpx;
+}
+
+
+
+.top{
+height:150rpx;
+padding-top:60rpx;
+text-align: center;
+
+
+}
+.textnotice{
+
+color:#333;
+margin-top:40rpx;
+font-weight: 700;
+font-size:34rpx;
+display: block;
+}

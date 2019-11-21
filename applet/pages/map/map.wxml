@@ -1,0 +1,3 @@
+
+<!--show-location-->
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14"   markers="{{markers}}" bindmarkertap="markertap" bindcallouttap="markertap"show-location  style="width: 100%; height: 1180rpx"></map>

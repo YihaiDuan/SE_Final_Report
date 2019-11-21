@@ -1,0 +1,31 @@
+
+<view class="box">
+<view class="top">
+<view class="vouchers">
+<view class="leftvouchers">代金劵</view>
+<view class="rightvouchers">
+<view class="price">￥<text style="font-size:90rpx;margin-left:8rpx;">{{discountdetail.discount}}</text></view>
+</view>
+</view>
+</view>
+<view class="title">
+<view class="ctitle">商品介绍</view>
+</view>
+<view class="catalog">{{discountdetail.discount}}元代金劵</view>
+<view class="content"  style="font-size:34rpx">
+代金劵可直接用于还书时产生的费用的抵扣。
+</view>
+</view>
+<view class="bottombar">
+<view class="leftbottombar">
+<text style="color:#ccc;margin-right:18rpx;font-size:28rpx;">积分</text><text style="color:#FE7101;margin-right:18rpx;font-size:40rpx;">{{needscore}}</text>
+</view>
+<view class="rightbottombar"   bindtap="pay" wx:if="{{paybol}}">
+立即兑换
+</view>
+
+<view class="rightbottombar"   bindtap="pay" wx:if="{{!paybol}}">
+积分不足
+</view>
+
+</view>

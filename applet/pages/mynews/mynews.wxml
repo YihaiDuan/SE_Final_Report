@@ -1,0 +1,107 @@
+<view class="mynews">
+   <view class="news"  >
+
+   <text class="newstext" bindtap="changeimage" style="line-height:120rpx;">头像</text>
+
+
+   <image src="../../images/userimages.png"    wx:if="{{logs.userimages=='null'}}"  class="newsimages"   bindtap="changeimage"></image>
+
+
+<image src="{{logs.userimages}}" data-url="{{logs.userimages}}"   wx:if="{{logs.userimages!='null'}}" bindtap="previewuserimages" class="newsimages"        ></image>
+
+   </view>
+
+
+ <view class="news"  >
+
+   <text class="newstext" bindtap="changebackimage" style="line-height:120rpx;">个人主页背景</text>
+
+
+   <image src="../../backimg/.png"    wx:if="{{logs.backimg=='null'}}"  class="newsimages"   bindtap="changebackimage"></image>
+
+
+<image src="{{logs.backimg}}" data-url="{{logs.backimg}}"   wx:if="{{logs.backimg!='null'}}" bindtap="previewbackimages" class="newsimages"        ></image>
+
+   </view>
+
+
+
+
+
+
+
+
+
+
+   <view class="news">
+    <text class="newstext">昵称</text> 
+    <navigator url="../changeinfo/changeinfo?changevalue=nickname"   hover-class="none">
+    <text class="detial">{{logs.nickname}}</text>
+    </navigator>
+   </view>
+
+    <view class="news">
+   <text  class="newstext">性别</text>
+    <navigator url="../changeinfo/changeinfo?changevalue=sex"    hover-class="none">
+   <text class="detial">{{logs.sex}}</text>
+   </navigator>
+   </view>
+
+
+</view>
+
+
+<view class="mynews">
+
+<view class="news1" wx:if="{{logs.personQR!='null'}}"    >
+   <text class="newstext" bindtap="scanpersonQR">个人二维码</text>
+   <image src="http://localhost：8080/BorrowBook/images/{{logs.personQR}}" data-url="{{logs.personQR}}" bindtap="previewpersonQR" class="qrimages"  ></image>
+    </view>
+
+
+<view class="news1" wx:if="{{logs.personQR=='null'}}" >
+   <text class="newstext">个人二维码</text>
+   <text class="detial"   bindtap="scanpersonQR">扫码上传</text>
+    </view>
+
+
+
+
+  <view class="news"  wx:if="{{logs.latitude=='null'}}" >
+   <text class="newstext">位置共享</text>
+   <text class="detial"    bindtap="sharelocation">分享</text>
+    </view>
+
+ <view class="news"  wx:if="{{logs.latitude!='null'}}">
+   <text class="newstext">位置共享</text>
+   <text class="detial">已提供</text>
+    </view>
+
+
+ <view class="news" >
+   <text class="newstext">手机号</text>
+   <navigator url="../changeinfo/changeinfo?changevalue=phone"   hover-class="none">
+   <text class="detial">{{logs.phone}}</text>
+</navigator>
+    </view>
+
+ 
+
+  <view class="news" >
+   <text class="newstext">邮箱</text>
+   <navigator url="../changeinfo/changeinfo?changevalue=e_mail"   hover-class="none">
+   <text class="detial">{{logs.e_mail}}</text>
+</navigator>
+    </view>
+
+ 
+   <navigator url="../changeinfo/changeinfo?changevalue=sign"   hover-class="none">
+  <view class="news" >
+   <text class="newstext">个性签名</text>
+
+   <text class="detial">{{logs.nicesign}}</text>
+
+    </view>
+    </navigator>
+ 
+</view>

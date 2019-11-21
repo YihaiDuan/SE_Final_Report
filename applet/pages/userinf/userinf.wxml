@@ -1,0 +1,249 @@
+<view class="page">  
+<view class="top">
+<image src="{{user.backimg}}" style="width:100%" mode="widthFix" ></image>
+
+</view>
+
+<view class="top1"  >
+<image src="{{userinf.userimages}}" class="topimages"></image>
+<view class="name" style="color:#fff;">{{userinf.nickname}}</view>
+<view class="follow">
+<view class="left1" style="flex:1;color:#fff;font-size:32rpx;">
+<!-- <navigator  hover-class="none" url="../mygod/mygod?id=0&&userid={{userid}}" style="margin-left:100rpx;">
+关注 {{userinf.fannum}}
+</navigator> -->
+</view>
+<!-- <view class="right1" style="flex:1;color:#fff;font-size:32rpx;">
+<navigator  hover-class="none"  url="../mygod/mygod?id=1&&userid={{userid}}"  style="margin-right:100rpx;">
+粉丝 {{userinf.fansnum}}
+</navigator>
+</view> -->
+</view >
+
+
+<view class="news"  wx:if="{{bol}}">
+
+<navigator hover-class="none"  url="../mynews/mynews"  wx:if="{{bol1==1}}"  hover-class="none">
+<text class="nbew"  >编辑资料</text>
+
+</navigator>
+
+<!-- <view  wx:if="{{bol1==0}}" >
+<text class="nbew" wx:if="{{fanbol==1}}"   bindtap="closefan" >已关注</text>
+
+<text class="nbew" wx:if="{{fanbol==0}}"  bindtap="openfan">关注</text>
+</view> -->
+<view  style="text-align:center;font-size:30rpx;color:#999;margin-top:30rpx" wx:if="{{collectlist.length==0}}"  >欢迎您完善个人资料</view>
+</view>
+</view>
+
+
+
+  <!--顶部导航栏-->  
+  <!-- <view class="swiper-tab">  
+    <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav" >收藏</view>   -->
+    <!-- <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">动态 {{userinf.dynamicnum}}</view>   -->
+<!-- 
+    <view wx:if="{{logs.userid==userid}}"  class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">关于我</view>  
+
+  <view wx:if="{{logs.userid!=userid}}"  class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">关于Ta</view>   -->
+
+  <!-- </view>   -->
+  <!--内容主体-->  
+  <!-- <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange" style="height:{{clicentheight}}px" >  
+    <swiper-item>  
+      <view> -->
+ <!-- <view  style="text-align:center;font-size:30rpx;color:#999;margin-top:30rpx" wx:if="{{collectlist.length==0}}"  >该用户暂无收藏图书</view> -->
+<!-- <view>
+ <scroll-view scroll-y="true" style="height:{{clicentheight1}}px" >
+   <view class="newstop"    wx:if="{{collectlist.length!=0}}">
+    </view>
+ <view class="news"  wx:if="{{collectlist.length!=0}}" >
+  
+<view class="booknews"    wx:for="{{collectlist}}"> -->
+<!-- <navigator url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.categoryid}}"
+  style="display:flex"  hover-class="none" >
+    <view>
+    <image src="{{item.bookimages}}" class="left" mode="aspectFit" ></image>
+    </view>
+    <view class="right">
+    <view style="display:flex;">
+    <view style="flex:1;">
+     <text class="one1">{{item.booktitle}}</text>
+    </view>
+     </view>
+       <view >
+      <text class="author" style="flex:1;display:block;">作者：{{item.author}}</text>
+       <text class="introduce" style="flex:1;display:block;">{{item.introduce}}</text>
+     </view>
+   
+ 
+    </view>
+   </navigator> 
+ </view>
+<view class="load" wx:if="{{true}}">已加载完全部内容</view>
+</view> 
+
+</scroll-view>
+</view>
+
+  </view>   
+     </swiper-item>   -->
+
+
+    <!-- <swiper-item>  
+      <view>
+<view  style="text-align:center;font-size:30rpx;color:#999;margin-top:30rpx" wx:if="{{dynamiclist.size=='0'}}"  >该用户暂无发动态</view>
+<scroll-view scroll-y="true" class="box" wx:if="{{dynamiclist.size!=0}}" style="height:{{clicentheight1}}px" >
+<view   wx:if="{{dynamiclist.size!=0}}" >
+<view class="news"  wx:for="{{dynamiclist}}" >
+<view class="top2">
+<navigator   wx:if="{{logs.userid==item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=1"  hover-class="none">
+<image src="{{item.userimages}}" class="topimages"></image>
+</navigator>
+
+<navigator   wx:if="{{logs.userid!=item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=0"  hover-class="none">
+<image src="{{item.userimages}}" class="topimages"></image>
+</navigator>
+
+<view class="new"  >
+<navigator   wx:if="{{logs.userid!=item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=0"  hover-class="none">
+<view class="name">{{item.nickname}}</view>
+</navigator>
+<navigator   wx:if="{{logs.userid==item.userid}}"  url="../userinf/userinf?userid={{item.userid}}&bol1=1"  hover-class="none">
+<view class="name">{{item.nickname}}</view>
+</navigator>
+<navigator   wx:if="{{item.type=='0'}}"  url="../dynamicdetail/dynamicdetail?dynamicid={{item.dynamicid}}">
+<view class="time">{{item.date}}</view>
+</navigator>
+
+<navigator  hover-class="none"  wx:if="{{item.type=='1'}}"  url="../bookreview/bookreview?dynamicid={{item.dynamicid}}">
+<view class="time">{{item.date}}</view>
+</navigator>
+
+<navigator  hover-class="none"  wx:if="{{item.type=='2'}}"  url="../sharegroupdetail/sharegroupdetail?groupmainid={{item.groupmainid}}">
+<view class="time">{{item.date}}</view>
+</navigator>
+</view> -->
+
+
+<!-- <view   wx:if="{{bol}}">
+<view  wx:if="{{item.fanbol!='2'}}">
+
+<view class="follow" bindtap="AddFan" data-otherid="{{item.userid}}"  wx:if="{{item.fanbol=='0'}}">+关注</view>
+<view class="follow" bindtap="DeleteFan" data-otherid="{{item.userid}}"   wx:if="{{item.fanbol=='1'}}">已关注</view>
+</view>
+</view>
+
+
+<view  wx:if="{{!bol}}">
+<view class="follow" bindtap="nologin" >+关注</view>
+</view>
+
+</view>
+
+<view class="center"  wx:if="{{item.type=='0'}}">
+<view class="content">
+<navigator url="../dynamicdetail/dynamicdetail?dynamicid={{item.dynamicid}}"  hover-class="none">
+{{item.describ}}
+</navigator>
+</view>
+
+<view class="cimages" >
+<image bindtap="previewuserimages"  wx:for="{{item.images}}"   wx:if="{{item.img!=0}}"src="https://www.xunjia.net.cn/BorrowBook/images/{{item.img}}"  data-url="{{item.img}}"  class="cimage" >
+</image>
+</view>
+</view>
+
+<view class="center"   wx:if="{{item.type=='1'}}">
+<navigator url="../bookreview/bookreview?dynamicid={{item.dynamicid}}"  hover-class="none">
+<view class="content">
+{{item.title}}
+</view>
+<view class="subject">
+{{item.describ}}
+</view>
+</navigator>
+</view>
+
+
+<view class="center"   wx:if="{{item.type=='2'}}">
+<navigator url="../sharegroupdetail/sharegroupdetail?groupmainid={{item.groupmainid}}"  hover-class="none">
+<view class="subject">
+{{item.describ}}
+</view>
+</navigator>
+</view>
+
+
+<navigator  hover-class="none"  url="../particulars/particulars?bookid={{item.bookid}}&advice={{item.typeid}}">
+<view style="margin-top:10rpx;background:#E7E9E8;padding:10rpx; margin-left:110rpx;display:flex;">
+<view class="imagebox">
+<image src="{{item.bookimages}}" class="bookimages"></image>
+</view>
+<view class="booknews">
+<view class="bookname">{{item.booktitle}}</view>
+<view class="author">{{item.author}}</view>
+</view>
+</view>
+</navigator>
+
+
+
+<view class="thumbs">
+
+<view  wx:if="{{bol}}">
+<view class="t1"   wx:if="{{item.admirebol=='false'}}">
+<text class="iconfont icon-icon-good" style="margin-right:12rpx;font-size:30rpx;color:#5D5E60"  bindtap="Addadmire"  data-dynamicid="{{item.dynamicid}}"  ></text>{{item.admirenum}}
+</view>
+
+
+<view class="t1"   wx:if="{{item.admirebol=='true'}}">
+<text class="iconfont icon-icon-good" style="margin-right:12rpx;font-size:30rpx;color:#007bff" bindtap="Deleteadmire"  data-dynamicid="{{item.dynamicid}}"></text>{{item.admirenum}}
+</view>
+</view>
+
+<view class="t1"   wx:if="{{!bol}}" bindtap="nologin">
+<text class="iconfont icon-icon-good" style="margin-right:12rpx;font-size:30rpx;color:#5D5E60"></text>{{item.admirenum}}
+</view>
+
+
+<navigator  wx:if="{{item.type=='0'||item.type=='2'}}" url="../dynamicdetail/dynamicdetail?dynamicid={{item.dynamicid}}" hover-class="none">
+<view class="t1"><text class="iconfont icon-pinglun1" style="margin-right:12rpx;font-size:34rpx;color:#5D5E60;font-weight:bold;"></text>{{item.count}}</view>
+</navigator>
+
+<navigator  wx:if="{{item.type=='1'}}" url="../bookreview/bookreview?dynamicid={{item.dynamicid}}" hover-class="none">
+<view class="t1"><text class="iconfont icon-pinglun1" style="margin-right:12rpx;font-size:34rpx;color:#5D5E60;font-weight:bold;"></text>{{item.count}}</view>
+</navigator>
+
+<view class="t1">
+<button data-dynamicid="{{item.dynamicid}}" bindtap="setButtonId" type="mini" open-type="share" plain="true"  data-dynamicid="{{item.dynamicid}}"  style="border:0  solid #fff;padding:0;margin-top:-40rpx;">  
+<text class="iconfont icon-wodefenxiang" style="margin-right:12rpx;font-size:30rpx;color:#5D5E60;"></text>
+</button>
+</view>
+
+</view>
+
+</view>
+<view class="load" wx:if="{{true}}">已加载完全部内容</view>
+</view>
+
+</scroll-view>
+
+</view>  
+    </swiper-item>   -->
+
+
+
+
+    <!-- <swiper-item>  
+      <view class="mynews">
+      <view class="one">个人信息</view>
+      <view class="tt">性别: {{userinf.sex}}</view>
+      <view class="tt">手机号: {{userinf.phone}}</view>
+       <view class="tt">邮箱: {{userinf.e_mail}}</view>
+       <view class="tt">个性签名: {{user.nicesign}}</view>
+      </view>  
+    </swiper-item>   -->
+  <!-- </swiper>   -->
+</view>  

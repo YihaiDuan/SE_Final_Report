@@ -1,0 +1,265 @@
+
+.top{
+  background:url("../../images/beijing.jpg");
+  background-size: 100%;
+  width:100%;
+  height:420rpx;
+  overflow:hidden;
+  filter: blur(2px);
+}
+.top1{
+position:absolute;
+top:0;
+left:0;
+  width:100%;
+  height:420rpx;
+  text-align: center;
+    background:rgba(140,140, 160, 1); 
+
+  
+}
+.topimages{
+ width:140rpx;
+ height:140rpx;
+ border-radius: 60%;
+
+}
+.name{
+ color:#FFFFFF;
+ font-size:32rpx;
+ font-weight: 500;
+ 
+}
+.swiper-tab {  
+  display: flex;  
+  flex-direction: row;  
+  line-height: 80rpx;  
+}  
+.tab-item {  
+  width: 33.3%;  
+  text-align: center;  
+  font-size: 32rpx;  
+  color: #777;  
+  line-height:36px;
+}  
+.swiper {  
+  height: 500px;  
+  background:#F3F5F5;
+}  
+.on {  
+  color:#007bff;  
+
+  border-bottom:6rpx solid #007bff;  
+}  
+.follow{
+    display:flex;
+    text-align:center;
+    margin-top:20rpx;
+}
+.nbew{
+  border:2rpx solid #fff;
+  color:#fff;
+  font-size:32rpx;
+  display:inline-block;
+  padding:20rpx 60rpx;
+  border-radius: 24rpx;
+  margin-bottom: 20rpx;
+}
+.one{
+  margin:30rpx 0;
+  padding-left:20rpx;
+  font-size:30rpx;
+  color:#828385;
+  font-weight:bold;
+  border-left:6rpx solid #007bff;
+}
+.tt{
+    font-size:30rpx;
+      margin:20rpx 0;
+  padding-left:20rpx;
+  color:#919294;
+}
+
+.news{
+padding:10rpx 20rpx;
+
+
+}
+.top2{
+padding:10rpx 0;
+display:flex;
+
+}
+.topimages{
+margin-top:40rpx;
+width:90rpx;
+height:90rpx;
+border-radius: 50%;
+
+}
+
+.name{
+font-size:32rpx;
+color:#fff;
+margin-bottom:6rpx;
+}
+.time{
+font-size:22rpx;
+color:#999;
+}
+.follow{
+ color:#E42A29;
+ font-size:30rpx;
+ margin-top:10rpx;
+
+}
+.center{
+ margin-left:110rpx;
+ font-size:32rpx;
+ letter-spacing: 2rpx;
+}
+.cimages{
+margin-top:10rpx;
+display:flex;
+
+flex-wrap:wrap;
+
+}
+.cimage{
+  width:32.5%;
+  height:160rpx;
+  margin-right:0.5%;
+  margin-bottom:0.8%;
+}
+.bookimages{
+  width:135rpx;
+  height:135rpx;
+  margin-top:-6rpx;
+  margin-left:-12rpx;
+
+}
+.imagebox{
+  width:90rpx;
+  height:135rpx;
+  overflow:hidden;
+
+}
+.booknews{
+padding: 6rpx 10rpx;
+
+flex:1;
+
+}
+.bookname{
+ color:#383A39;
+ font-size:30rpx;
+ line-height:40rpx;
+ width:480rpx;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.author{
+    
+    margin-top:6rpx;
+color:#7D7F7E;
+font-size:24rpx;
+
+}
+.thumbs{
+margin:30rpx 0;
+margin-left:110rpx;
+display:flex;
+}
+.t1{
+color:#909193;
+margin-right:90rpx;
+font-size:26rpx;
+}
+
+.subject{
+ color:#999;
+ font-size:30rpx;
+ margin:20rpx 0;
+ letter-spacing: 2rpx;
+ line-height:40rpx;
+ height:80rpx;
+ overflow: hidden;
+}
+
+.newstop{
+    padding:10rpx 10rpx;
+    padding-bottom:10rpx;
+    font-size:30rpx;
+}
+
+.left1{
+  width:160rpx;
+  height:140rpx;
+   margin-right:10rpx;
+  
+}
+.right1{
+   display:flex;
+   flex-direction: column;
+}
+.left{
+  width:200rpx;
+  height:200rpx;
+   margin-right:10rpx;
+  
+}
+.right{
+   display:flex;
+   flex-direction: column;
+   margin-top:12rpx;
+}
+.one1{
+  display:block;
+  margin-bottom:16rpx;  
+  font-size:35rpx;
+  color:#000;
+   width:330rpx;
+   overflow:hidden;
+   white-space:nowrap;  
+  text-overflow:ellipsis;  
+}
+.author{
+  line-height:36rpx;
+  display:block;
+  margin-bottom:16rpx;  
+  font-size:28rpx;
+  color:#999;
+   width:330rpx;
+   overflow:hidden;
+   white-space:nowrap;  
+  text-overflow:ellipsis;  
+
+}
+.tow1{
+  font-size:26rpx;
+  color:#A0A19D;
+  width:480rpx;
+  height:70rpx;
+   overflow:hidden;
+}
+
+.introduce
+{
+font-size:26rpx;
+color:#A0A19D;
+width:480rpx;
+line-height:35rpx;
+height:70rpx;
+overflow:hidden;
+}
+
+.load{
+text-align: center;
+margin-top:20rpx;
+margin-bottom:20rpx;
+color:#999;
+font-size:30rpx;
+
+
+}

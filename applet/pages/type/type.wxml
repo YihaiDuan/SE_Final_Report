@@ -1,0 +1,36 @@
+
+<view   wx:for="{{typelist}}" style="display:none;">
+name<view>{{item.typename}}</view>
+<view  wx:for="{{item.list}}">
+<navigator url="../typebook/typebook?cateid={{item.cateid}}">
+{{item.catename}}数量{{item.booknum}}
+</navigator>
+</view>
+</view>
+
+<view class="containe">
+
+
+  <view class="left_tabbar">
+    <scroll-view scroll-y="true" style="height:{{deviceHeight}}px;" class="left_tabbar_list">
+      <view bindtap="changeTab" data-index="{{index}}" data-name="{{item.tabName}}"  data-typeid="{{item.typeid}}" class="left_tabbar_item {{activeIndex==index?'active':''}}" wx:for="{{tabs}}">{{item.tabName}}</view>
+    </scroll-view>
+  </view>
+
+
+  <view class="right_content">
+    <scroll-view  scroll-y="true" style="height:{{deviceHeight}}px;" class="tab_panel">
+      <view>
+        <view wx:for="{{contentList}}" > 
+        <navigator hover-class="none"  url="../typebook/typebook?cateid={{item.cateid}}"   style="display:flex;">
+         <image src="{{item.img}}" class="typeimage" mode="aspectFill"></image>
+         <view class="rightnews">
+         <text class="name">{{item.name}}</text>
+         <text class="num">{{item.num}}本</text>
+         </view>
+         </navigator>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
