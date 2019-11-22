@@ -1,2 +1,3 @@
 # SE_Final_Report
-Wechat
+
+Software Engineering Final Report
